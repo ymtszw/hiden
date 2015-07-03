@@ -1,0 +1,52 @@
+"*":
+  "exception-reporting":
+    userId: "3d23f0e0-d111-bd92-9a40-fba7f6317449"
+  welcome:
+    showOnStartup: false
+  core:
+    disabledPackages: [
+      "autocomplete-ruby"
+      "underline-trailing-whitespace"
+      "linter-rubocop"
+    ]
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+  editor:
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    preferredLineLength: 130
+    fontSize: 10
+  linter:
+    subtleLinterErrors: [
+      "rubocop"
+    ]
+  "linter-rubocop":
+    rubocopExecutablePath: "/Users/yumatsuzawa/.rbenv/shims/rubocop"
+    executablePath: "/Users/yumatsuzawa/.rbenv/shims/rubocop"
+  "autocomplete-ruby":
+    port: 33534
+  "autocomplete-plus": {}
+  "tabs-to-spaces":
+    onSave: "untabify"
+  "file-types":
+    dt: "source.jade"
+  pigments:
+    mergeColorDuplicates: true
+  "trailing-spaces":
+    enableForIndentation: true
+    enableForCursorLines: true
+  "merge-conflicts":
+    gitPath: "/usr/local/bin/git"
+  "linter-scalac": {}
+  "git-diff":
+    showIconsInEditorGutter: true
+  "linter-ruby":
+    rubyExecutablePath: "/Users/yumatsuzawa/.rbenv/shims/ruby"
+  "haskell-ghc-mod":
+    ghcModPath: "/usr/bin/ghc-mod"
+    ghcModiPath: "/usr/bin/ghc-modi"
+  "ide-haskell":
+    useLinter: true
