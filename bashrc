@@ -66,4 +66,3 @@ __git_complete gmerge _git_merge
 __git_complete gommit _git_commit
 __git_complete gbase _git_rebase
 __git_complete gadd _git_add
-
