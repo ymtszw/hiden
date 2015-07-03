@@ -1,6 +1,4 @@
-$if Bash
-  set completion-ignore-case on
-$endif
+set completion-ignore-case on
 
 "\C-p": history-search-backward
 "\C-n": history-search-forward
