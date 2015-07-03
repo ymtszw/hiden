@@ -38,21 +38,22 @@ endif
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+  " Let NeoBundle manage NeoBundle
+  " Required:
+  NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+  " My Bundles here:
+  " Refer to |:NeoBundle-examples|.
+  " Note: You don't set neobundle setting in .gvimrc!
+
+  " Required:
+  filetype plugin indent on
+
+  " If there are uninstalled bundles found on startup,
+  " this will conveniently prompt you to install them.
+  NeoBundleCheck
+
+  NeoBundle 'surround.vim'
+  NeoBundle 'bronson/vim-trailing-whitespace'
 
 call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
-NeoBundle 'surround.vim'
