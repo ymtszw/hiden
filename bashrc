@@ -1,5 +1,3 @@
-export PS1="\[\e[1;4m\][\t]\[\e[0m\][\u@\h \W]$\[\e[0m\] "
-
 # OS/env specific configs
 if [ "$(uname)" = "Darwin" ] # OSX
 then
@@ -18,6 +16,9 @@ export PATH="/usr/share/scala/scala-2.11.6/bin/:$PATH"
 export PATH="/usr/share/dmd/dmd2/osx/bin/:$PATH"
 export PATH="/usr/share/dub/:$PATH"
 
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+
 # bash options
 #shopt -s autocd # need Bash4.0
 shopt -s cdspell
@@ -35,6 +36,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # added by travis gem
 [ -f /Users/yumatsuzawa/.travis/travis.sh ] && source /Users/yumatsuzawa/.travis/travis.sh
 
+# aliases and completions
 alias ssh='~/bin/ssh'
 alias gstat='git status'
 alias ggrep='git grep'
@@ -66,3 +68,6 @@ __git_complete gmerge _git_merge
 __git_complete gommit _git_commit
 __git_complete gbase _git_rebase
 __git_complete gadd _git_add
+
+# prompt
+export PS1="\[\e[1;4m\][\t]\[\e[0m\][\u@\h \w]\[\e[0m\]\n\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
