@@ -1,11 +1,22 @@
 export PS1="\[\e[1;4m\][\t]\[\e[0m\][\u@\h \W]$\[\e[0m\] "
 
+# OS/env specific configs
+if [ "$(uname)" = "Darwin" ] # OSX
+then
+  alias ls='ls -G'
+  source /usr/local/etc/bash_completion
+  export PATH="/Users/yumatsuzawa/.stack/programs/x86_64-osx/ghc-7.8.4/bin/:$PATH"
+else
+  alias ls='ls --color=auto'
+  source /etc/bash_completion
+  source /usr/share/bash-completion/completions/git
+fi
+
 export PATH="/usr/share/mongodb/mongodb-osx-x86_64-3.0.3/bin/:$PATH"
 export PATH="/usr/share/play/activator-1.3.2-minimal/:$PATH"
 export PATH="/usr/share/scala/scala-2.11.6/bin/:$PATH"
 export PATH="/usr/share/dmd/dmd2/osx/bin/:$PATH"
 export PATH="/usr/share/dub/:$PATH"
-export PATH="/Users/yumatsuzawa/.stack/programs/x86_64-osx/ghc-7.8.4/bin/:$PATH"
 
 # bash options
 #shopt -s autocd # need Bash4.0
@@ -13,12 +24,6 @@ shopt -s cdspell
 shopt -s dotglob
 shopt -s extglob
 #shopt -s globstar # need Bash4.0
-
-# bash_completion
-source /usr/local/etc/bash_completion
-
-# git
-# source /usr/share/git-core/git-completion.bash
 
 # rbenv
 eval "$(rbenv init -)"
@@ -30,7 +35,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # added by travis gem
 [ -f /Users/yumatsuzawa/.travis/travis.sh ] && source /Users/yumatsuzawa/.travis/travis.sh
 
-alias ls='ls -G'
 alias ssh='~/bin/ssh'
 alias gstat='git status'
 alias ggrep='git grep'
@@ -62,3 +66,4 @@ __git_complete gmerge _git_merge
 __git_complete gommit _git_commit
 __git_complete gbase _git_rebase
 __git_complete gadd _git_add
+
