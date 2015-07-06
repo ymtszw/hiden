@@ -48,6 +48,7 @@ alias gheck='git checkout'
 alias gfetc='git fetch'
 alias gfetch='gfetc'
 alias gipul='git pull'
+alias gipull='git pull'
 alias gmerg='git merge'
 alias gmerge='git merge'
 alias gommit='git commit'
@@ -63,6 +64,7 @@ __git_complete gheck _git_checkout
 __git_complete gfetc _git_fetch
 __git_complete gfetch _git_fetch
 __git_complete gipul _git_pull
+__git_complete gipull _git_pull
 __git_complete gmerg _git_merge
 __git_complete gmerge _git_merge
 __git_complete gommit _git_commit
