@@ -55,6 +55,7 @@ alias gerge='git merge'
 alias gommit='git commit'
 alias gbase='git rebase'
 alias gadd='git add'
+alias gpick='git cherry-pick'
 __git_complete gstat _git_stat
 __git_complete ggrep _git_grep
 __git_complete gdiff _git_diff
@@ -72,6 +73,7 @@ __git_complete gerge _git_merge
 __git_complete gommit _git_commit
 __git_complete gbase _git_rebase
 __git_complete gadd _git_add
+__git_complete gpick _git_cherry_pick
 
 # prompt
 export PS1="\[\e[1;4m\][\t]\[\e[0m\][\u@\h \w]\[\e[0m\]\n\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
