@@ -37,7 +37,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -f /Users/yumatsuzawa/.travis/travis.sh ] && source /Users/yumatsuzawa/.travis/travis.sh
 
 # aliases and completions
-alias ssh='~/bin/ssh'
+[ -f ~/bin/ssh ] && alias ssh='~/bin/ssh'
 alias gstat='git status'
 alias ggrep='git grep'
 alias gdiff='git diff'
