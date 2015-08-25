@@ -9,6 +9,7 @@ else
   source /etc/bash_completion
   source /usr/share/bash-completion/completions/git
 fi
+source /usr/local/etc/completion-ruby/completion-ruby-all
 
 export PATH="/usr/share/mongodb/mongodb-osx-x86_64-3.0.3/bin/:$PATH"
 export PATH="/usr/share/play/activator-1.3.2-minimal/:$PATH"
