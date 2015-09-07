@@ -55,6 +55,7 @@ alias gipull='git pull'
 alias gmerg='git merge'
 alias gmerge='git merge'
 alias gerge='git merge'
+alias guash='git merge --squash'
 alias gommit='git commit'
 alias gbase='git rebase'
 alias gadd='git add'
@@ -73,6 +74,7 @@ __git_complete gipull _git_pull
 __git_complete gmerg _git_merge
 __git_complete gmerge _git_merge
 __git_complete gerge _git_merge
+__git_complete guash _git_merge
 __git_complete gommit _git_commit
 __git_complete gbase _git_rebase
 __git_complete gadd _git_add
