@@ -38,4 +38,4 @@ Obviously vim settings. Source it from `.vimrc`
 source ~/dotfile/vimrc
 ```
 
-Requires Shougo/neobundle. Install it then use vim.
+Requires https://github.com/Shougo/neobundle.vim. Install it then use vim.
