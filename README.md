@@ -1,6 +1,6 @@
 # dotfile
 
-Unix environment settings for development use.
+Setting files for development use.
 
 # Usage
 
@@ -12,7 +12,7 @@ $ git clone https://github.com/yumatsuzawa/dotfile.git
 
 ## bashrc
 
-Useful settings for Bash, includes many aliases. Source it from `.bashrc` like this:
+Settings for Bash, includes many aliases. Source it from `.bashrc` like this:
 
 ```
 source ~/dotfile/bashrc
