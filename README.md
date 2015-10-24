@@ -18,7 +18,7 @@ Useful settings for Bash, includes many aliases. Source it from `.bashrc` like t
 source ~/dotfile/bashrc
 ```
 
-Requires mernen/completion-ruby, jimeh/git-aware-prompt and rbenv. Install them, then reload your `.bashrc`.
+Requires https://github.com/mernen/completion-ruby, https://github.com/jimeh/git-aware-prompt and rbenv. Install them, then reload your `.bashrc`.
 
 ## inputrc
 
