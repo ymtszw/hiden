@@ -24,8 +24,8 @@ Requires https://github.com/mernen/completion-ruby, https://github.com/jimeh/git
 
 Alternate your terminal input behavior like case-insensitive path completion. Include from `.inputrc` like this:
 
-```
-source ~/dotfile/inputrc
+```perl
+$include ~/dotfile/inputrc
 ```
 
 Then restart your shell.
