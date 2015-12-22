@@ -3,7 +3,7 @@ if [ "$(uname)" = "Darwin" ] # OSX
 then
   alias ls='ls -G'
   source /usr/local/etc/bash_completion
-  export PATH="/Users/yumatsuzawa/.stack/programs/x86_64-osx/ghc/bin:$PATH"
+  export PATH="$HOME/.stack/programs/x86_64-osx/ghc/bin:$PATH"
 else
   alias ls='ls --color=auto'
   source /etc/bash_completion
@@ -16,7 +16,8 @@ export PATH="/usr/share/play/activator-1.3.2-minimal/:$PATH"
 export PATH="/usr/share/scala/scala-2.11.6/bin/:$PATH"
 export PATH="/usr/share/dmd/dmd2/osx/bin/:$PATH"
 export PATH="/usr/share/dub/:$PATH"
-export PATH="/Users/yumatsuzawa/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
