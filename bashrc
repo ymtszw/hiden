@@ -3,6 +3,7 @@ if [ "$(uname)" = "Darwin" ] # OSX
 then
   alias ls='ls -G'
   source /usr/local/etc/bash_completion
+  source /usr/local/git/contrib/completion/git-completion.bash
   export PATH="$HOME/.stack/programs/x86_64-osx/ghc/bin:$PATH"
 else
   alias ls='ls --color=auto'
