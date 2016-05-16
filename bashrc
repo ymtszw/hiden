@@ -20,6 +20,8 @@ export PATH="/usr/share/dub/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+[ -d "/opt/mongo/bin" ] && export PATH="/opt/mongo/bin:$PATH"
+
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
@@ -43,6 +45,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # aliases and completions
 [ -e ~/bin/ssh ] && alias ssh='~/bin/ssh'
 [ -x `which colordiff` ] && alias diff='colordiff -u'
+alias ll='ls -lha'
 alias gstat='git status'
 alias ggrep='git grep'
 alias gdiff='git diff'
