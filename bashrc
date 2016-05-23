@@ -24,6 +24,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
+source "$HOME/.asdf/asdf.sh"
+source "$HOME/.asdf/completions/asdf.bash"
 
 # bash options
 #shopt -s autocd # need Bash4.0
