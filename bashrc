@@ -18,7 +18,6 @@ export PATH="/usr/share/scala/scala-2.11.6/bin/:$PATH"
 export PATH="/usr/share/dmd/dmd2/osx/bin/:$PATH"
 export PATH="/usr/share/dub/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 
 [ -d "/opt/mongo/bin" ] && export PATH="/opt/mongo/bin:$PATH"
 
@@ -33,10 +32,6 @@ shopt -s cdspell
 shopt -s dotglob
 shopt -s extglob
 #shopt -s globstar # need Bash4.0
-
-# rbenv
-eval "$(rbenv init -)"
-
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
