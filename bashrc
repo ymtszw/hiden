@@ -21,10 +21,13 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.mix/escripts:$PATH"
 
+eval "$(rbenv init -)"
+
 [ -d "/opt/mongo/bin" ] && export PATH="/opt/mongo/bin:$PATH"
 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
+source "$HOME/.rbenv/completions/rbenv.bash"
 source "$HOME/.asdf/asdf.sh"
 source "$HOME/.asdf/completions/asdf.bash"
 
