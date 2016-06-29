@@ -32,11 +32,17 @@ source "$HOME/.asdf/asdf.sh"
 source "$HOME/.asdf/completions/asdf.bash"
 
 # bash options
-#shopt -s autocd # need Bash4.0
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=10000
+export HISTFILESIZE=100000
+## Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+shopt -s autocd # need Bash4.0
 shopt -s cdspell
 shopt -s dotglob
 shopt -s extglob
-#shopt -s globstar # need Bash4.0
+shopt -s globstar # need Bash4.0
+shopt -s histappend
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
