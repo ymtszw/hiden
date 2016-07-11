@@ -10,8 +10,6 @@ else
   source /etc/bash_completion
   source /usr/share/bash-completion/completions/git
 fi
-source /usr/local/etc/completion-ruby/completion-ruby-all
-complete -C '/usr/local/bin/aws_completer' aws
 
 export PATH="/usr/share/mongodb/mongodb-osx-x86_64-3.0.3/bin/:$PATH"
 export PATH="/usr/share/play/activator-1.3.2-minimal/:$PATH"
@@ -31,6 +29,10 @@ source "${GITAWAREPROMPT}/main.sh"
 source "$HOME/.rbenv/completions/rbenv.bash"
 source "$HOME/.asdf/asdf.sh"
 source "$HOME/.asdf/completions/asdf.bash"
+source /usr/local/etc/completion-ruby/completion-ruby-all
+complete -C '/usr/local/bin/aws_completer' aws
+source "$HOME/dotfile/npm-completion.bash"
+
 
 # bash options
 export HISTCONTROL=ignoredups:erasedups
