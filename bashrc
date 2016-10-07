@@ -23,6 +23,7 @@ export PATH="$HOME/.mix/escripts:$PATH"
 eval "$(rbenv init -)"
 
 [ -d "/opt/mongo/bin" ] && export PATH="/opt/mongo/bin:$PATH"
+[ -e "$HOME/.pythonrc" ] && export PYTHONSTARTUP=~/.pythonrc
 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
@@ -30,6 +31,7 @@ source "$HOME/.rbenv/completions/rbenv.bash"
 source "$HOME/.asdf/asdf.sh"
 source "$HOME/.asdf/completions/asdf.bash"
 source /usr/local/etc/completion-ruby/completion-ruby-all
+source /usr/local/etc/pip-bash-completion/pip
 complete -C '/usr/local/bin/aws_completer' aws
 source "$HOME/dotfile/npm-completion.bash"
 
@@ -67,8 +69,8 @@ alias glog='gtree'
 alias gheck='git checkout'
 alias gfetc='git fetch'
 alias gfetch='gfetc'
-alias gipul='git pull'
-alias gipull='git pull'
+alias gipul='git pull --prune origin'
+alias gipull='git pull --prune origin'
 alias gmerg='git merge'
 alias gmerge='git merge'
 alias gerge='git merge'
@@ -99,3 +101,8 @@ __git_complete gpick _git_cherry_pick
 
 # prompt
 export PS1="\[\e[1;4m\][\t]\[\e[0m\][\u@\h \w]\[\e[0m\]\n\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+
+# less option
+export LESS='-g -i -M -R -S -W -z-4 -x2'
+# use less as pager
+export PAGER=less
