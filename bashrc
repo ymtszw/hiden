@@ -62,6 +62,7 @@ alias ll='ls -lha'
 alias gstat='git status'
 alias ggrep='git grep'
 alias gdiff='git diff'
+alias gsumm='git --no-pager diff --stat'
 alias gcomm='git commit --interactive --verbose'
 alias gpush='git push'
 alias gtree='git log --graph --all --oneline --decorate=full'
@@ -82,6 +83,7 @@ alias gpick='git cherry-pick'
 __git_complete gstat _git_stat
 __git_complete ggrep _git_grep
 __git_complete gdiff _git_diff
+__git_complete gsumm _git_diff
 __git_complete gcomm _git_commit
 __git_complete gpush _git_push
 __git_complete gtree _git_log
@@ -98,6 +100,12 @@ __git_complete gommit _git_commit
 __git_complete gbase _git_rebase
 __git_complete gadd _git_add
 __git_complete gpick _git_cherry_pick
+
+# review current HEAD against its merge-base (branch/diverge point) from master
+grev() {
+  git diff $@ master...HEAD
+}
+__git_complete grev _git_diff
 
 # prompt
 export PS1="\[\e[1;4m\][\t]\[\e[0m\][\u@\h \w]\[\e[0m\]\n\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
