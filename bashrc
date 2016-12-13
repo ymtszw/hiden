@@ -59,6 +59,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -e ~/bin/ssh ] && alias ssh='~/bin/ssh'
 [ -x `which colordiff` ] && alias diff='colordiff -u'
 alias ll='ls -lha'
+alias a.='atom .'
 alias gstat='git status'
 alias ggrep='git grep'
 alias gdiff='git diff'
