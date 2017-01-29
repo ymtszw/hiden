@@ -54,6 +54,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # aliases and completions
 [ -e ~/bin/ssh ] && alias ssh='~/bin/ssh'
+[ -e ~/bin/enable_acs ] && alias enable_acs='~/bin/enable_acs'
+[ -e ~/bin/disable_acs ] && alias disable_acs='~/bin/disable_acs'
 [ -x `which colordiff` ] && alias diff='colordiff -u'
 alias ll='ls -lha'
 alias a.='atom .'
