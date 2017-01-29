@@ -17,10 +17,7 @@ export PATH="/usr/share/scala/scala-2.11.6/bin/:$PATH"
 export PATH="/usr/share/dmd/dmd2/osx/bin/:$PATH"
 export PATH="/usr/share/dub/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.mix/escripts:$PATH"
-
-eval "$(rbenv init -)"
 
 [ -d "/opt/mongo/bin" ] && export PATH="/opt/mongo/bin:$PATH"
 [ -e "$HOME/.pythonrc" ] && export PYTHONSTARTUP=~/.pythonrc
