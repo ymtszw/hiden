@@ -11,6 +11,7 @@ else
   source /usr/share/bash-completion/completions/git
 fi
 
+export PATH="/usr/local/bin/:$PATH"
 export PATH="/usr/share/mongodb/mongodb-osx-x86_64-3.0.3/bin/:$PATH"
 export PATH="/usr/share/play/activator-1.3.2-minimal/:$PATH"
 export PATH="/usr/share/scala/scala-2.11.6/bin/:$PATH"
@@ -18,6 +19,7 @@ export PATH="/usr/share/dmd/dmd2/osx/bin/:$PATH"
 export PATH="/usr/share/dub/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.mix/escripts:$PATH"
+export PATH="/opt/activator-1.3.12-minimal/bin/:$PATH"
 
 [ -d "/opt/mongo/bin" ] && export PATH="/opt/mongo/bin:$PATH"
 [ -e "$HOME/.pythonrc" ] && export PYTHONSTARTUP=~/.pythonrc
@@ -27,9 +29,9 @@ source "${GITAWAREPROMPT}/main.sh"
 source "$HOME/.rbenv/completions/rbenv.bash"
 source "$HOME/.asdf/asdf.sh"
 source "$HOME/.asdf/completions/asdf.bash"
-source /usr/local/etc/completion-ruby/completion-ruby-all
-source /usr/local/etc/pip-bash-completion/pip
-complete -C '/usr/local/bin/aws_completer' aws
+source "/usr/local/etc/completion-ruby/completion-ruby-all"
+source "/usr/local/etc/pip-bash-completion/pip"
+complete -C "/usr/local/bin/aws_completer" aws
 source "$HOME/dotfile/npm-completion.bash"
 
 
@@ -59,6 +61,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -x `which colordiff` ] && alias diff='colordiff -u'
 alias ll='ls -lha'
 alias a.='atom .'
+alias cdu='cd ..'
 alias gstat='git status'
 alias ggrep='git grep'
 alias gdiff='git diff'
