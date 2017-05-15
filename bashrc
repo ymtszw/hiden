@@ -85,6 +85,7 @@ alias gommit='git commit'
 alias gbase='git rebase'
 alias gadd='git add'
 alias gpick='git cherry-pick'
+alias gaddi='git add --interactive'
 __git_complete gstat _git_stat
 __git_complete ggrep _git_grep
 __git_complete gdiff _git_diff
