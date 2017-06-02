@@ -20,6 +20,7 @@ export PATH="/usr/share/dub/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.mix/escripts:$PATH"
 export PATH="/opt/activator-1.3.12-minimal/bin/:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 [ -d "/opt/mongo/bin" ] && export PATH="/opt/mongo/bin:$PATH"
 [ -e "$HOME/.pythonrc" ] && export PYTHONSTARTUP=~/.pythonrc
@@ -55,9 +56,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -f /Users/yumatsuzawa/.travis/travis.sh ] && source /Users/yumatsuzawa/.travis/travis.sh
 
 # aliases and completions
-[ -e ~/bin/ssh ] && alias ssh='~/bin/ssh'
-[ -e ~/bin/enable_acs ] && alias enable_acs='~/bin/enable_acs'
-[ -e ~/bin/disable_acs ] && alias disable_acs='~/bin/disable_acs'
 [ -x `which colordiff` ] && alias diff='colordiff -u'
 alias cdu='cd ..'
 alias ll='ls -lha'
