@@ -49,6 +49,9 @@ shopt -s extglob
 shopt -s globstar # need Bash4.0
 shopt -s histappend
 
+# Erlang kernel options
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
