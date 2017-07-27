@@ -1,0 +1,35 @@
+--langdef=Elixir
+--langmap=Elixir:.ex.exs
+--regex-Elixir=/^[ \t]*def(p?)[ \t]+([a-z_][a-zA-Z0-9_?!]*)/\2/f,function,functions/
+--regex-Elixir=/^[ \t]*defpt[ \t]+([a-z_][a-zA-Z0-9_?!]*)/\1/f,function,functions/
+--regex-Elixir=/^[ \t]*defun(p?)[ \t]+([a-z_][a-zA-Z0-9_?!]*)/\2/f,function,functions/
+--regex-Elixir=/^[ \t]*defunpt[ \t]+([a-z_][a-zA-Z0-9_?!]*)/\1/f,function,functions/
+--regex-Elixir=/^[ \t]*defcallback[ \t]+([a-z_][a-zA-Z0-9_?!]*)/\1/c,callbacks,callbacks (defcallback ...)/
+--regex-Elixir=/^[ \t]*defdelegate[ \t]+([a-z_][a-zA-Z0-9_?!]*)/\1/d,delegates,delegates (defdelegate ...)/
+--regex-Elixir=/^[ \t]*defexception[ \t]+([A-Z][a-zA-Z0-9_]*\.)*([A-Z][a-zA-Z0-9_?!]*)/\2/e,exceptions,exceptions (defexception ...)/
+--regex-Elixir=/^[ \t]*defimpl[ \t]+([A-Z][a-zA-Z0-9_]*\.)*([A-Z][a-zA-Z0-9_?!]*)/\2/i,implementations,implementations (defimpl ...)/
+--regex-Elixir=/^[ \t]*defmacro(p?)[ \t]+([a-z_][a-zA-Z0-9_?!]*)\(/\2/M,macro,macros/
+--regex-Elixir=/^[ \t]*defmacro(p?)[ \t]+([a-zA-Z0-9_?!]+)?[ \t]+([^ \tA-Za-z0-9_]+)[ \t]*[a-zA-Z0-9_!?!]/\3/M,macro,operators/
+--regex-Elixir=/^[ \t]*defmodule[ \t]+([A-Z][a-zA-Z0-9_]*\.)*([A-Z][a-zA-Z0-9_?!]*)/\2/m,modules,modules (defmodule ...)/
+--regex-Elixir=/^[ \t]*defprotocol[ \t]+([A-Z][a-zA-Z0-9_]*\.)*([A-Z][a-zA-Z0-9_?!]*)/\2/p,protocols,protocols (defprotocol...)/
+--regex-Elixir=/^[ \t]*Record\.defrecord[ \t]+:([a-zA-Z0-9_]+)/\1/r,records,records (defrecord...)/
+--regex-Elixir=/^[ \t]*test[ \t]+\"([a-z_][a-zA-Z0-9_?! ]*)\"*/\1/t,tests,tests (test ...)/
+
+--langdef=scala
+--langmap=scala:.scala
+--regex-scala=/^[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\1/c,class,classes/
+--regex-scala=/^[ \t]*trait[ \t]+([a-zA-Z0-9_]+)/\1/t,traits/
+--regex-scala=/^[ \t]*type[ \t]+([a-zA-Z0-9_]+)/\1/T,types/
+--regex-scala=/^[ \t]*(private)?[ \t]+def[ \t]+([a-zA-Z0-9_]+)/\2/f,function,function/
+--regex-scala=/^[ \t]*val[ \t]+([a-zA-Z0-9_]+)/\1/v,variable,immutable variables/
+--regex-scala=/^[ \t]*var[ \t]+([a-zA-Z0-9_]+)/\1/v,variable,mutable variables/
+--regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
+--regex-scala=/^[ \t]*case class[ \t]+([a-zA-Z0-9_]+)/\1/c,class,case classes/
+--regex-scala=/^[ \t]*object[ \t]+([a-zA-Z0-9_]+)/\1/o,objects/
+
+--langdef=Elm
+--langmap=Elm:.elm
+--regex-Elm=/^(port[[:blank:]]+)?([[:lower:]][[:alnum:]_']+)[[:blank:]]*:/\2/f,function,functions/
+--regex-Elm=/^(\([|?!%$+:.=<\/>,-]+\))[[:blank:]]*:/\1/f,function,functions/
+--regex-Elm=/^type +([[:upper:]][[:alnum:]_]+)/\1/t,typedef,type,types/
+--regex-Elm=/^type[[:blank:]]+alias[[:blank:]]+([[:upper:]][[:alnum:]_]+)/\1/a,typedef,type-aliases/
