@@ -1,13 +1,13 @@
 # dotfile
 
-Setting files for development use.
+Prepare various files for new environment.
 
 # Usage
 
 Clone into your home directory by:
 
 ```
-$ git clone https://github.com/yumatsuzawa/dotfile.git
+$ git clone https://github.com/ymtszw/dotfile.git ~/dotfile
 ```
 
 ## bashrc
@@ -32,10 +32,17 @@ Then restart your shell.
 
 ## vimrc
 
-Obviously vim settings. Source it from `.vimrc`
+Source it from `.vimrc`
 
 ```
 source ~/dotfile/vimrc
 ```
 
 Requires https://github.com/Shougo/neobundle.vim. Install it then use vim.
+
+## Git template
+
+```
+$ ln -s ~/dotfile/git ~/.git_template
+$ git conifg --global init.templatedir ~/.git_template
+```
