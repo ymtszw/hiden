@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+if [ -f mix.exs ]; then
+  PORT=7878 mix test
+fi
