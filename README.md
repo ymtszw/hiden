@@ -44,5 +44,10 @@ Requires https://github.com/Shougo/neobundle.vim. Install it then use vim.
 
 ```
 $ ln -s ~/dotfile/git ~/.git_template
-$ git conifg --global init.templatedir ~/.git_template
+$ git conifg --global init.templatedir '~/.git_template'
+```
+
+## Git global ignore
+```
+$ git config --global core.excludesfile '~/dotfile/gitignore_global'
 ```
