@@ -3,3 +3,4 @@ bower_components/
 .DS_store
 tags
 start.sh
+elm-stuff/
