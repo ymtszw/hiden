@@ -40,4 +40,4 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Importing shared settings; overriding some aliases in zsh modules
 
-source "$HOME/dotfile/shrc.sh"
+source "$HOME/dotfile/bashismrc.sh"

@@ -60,4 +60,4 @@ __git_complete grev _git_diff
 
 # Importing shared settings
 
-source "$HOME/dotfile/shrc.sh"
+source "$HOME/dotfile/bashismrc.sh"
