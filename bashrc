@@ -70,30 +70,32 @@ alias cddodai='cd ~/workspace/dodai'
 alias cdsolomon='cd ~/workspace/solomon'
 alias gstat='git status'
 alias ggrep='git grep'
+alias gg='git grep'
 alias gdiff='git diff'
+alias gd='git diff'
 alias gsumm='git --no-pager diff --stat'
 alias gcomm='git commit --interactive --verbose'
 alias gpush='git push'
 alias gtree='git log --graph --all --oneline --decorate --boundary'
 alias glog='gtree'
+alias gl='gtree'
 alias gheck='git checkout'
 alias gmast='git checkout master'
 alias gfetc='git fetch'
-alias gfetch='gfetc'
 alias gipul='git pull --prune'
-alias gipull='git pull --prune'
-alias gmerg='git merge'
-alias gmerge='git merge'
 alias gerge='git merge'
 alias guash='git merge --squash'
 alias gommit='git commit'
 alias gbase='git rebase'
 alias gadd='git add'
+alias ga='git add'
 alias gpick='git cherry-pick'
 alias gaddi='git add --interactive'
 __git_complete gstat _git_stat
 __git_complete ggrep _git_grep
+__git_complete gg _git_grep
 __git_complete gdiff _git_diff
+__git_complete gd _git_diff
 __git_complete gsumm _git_diff
 __git_complete gcomm _git_commit
 __git_complete gpush _git_push
@@ -102,14 +104,13 @@ __git_complete gheck _git_checkout
 __git_complete gfetc _git_fetch
 __git_complete gfetch _git_fetch
 __git_complete gipul _git_pull
-__git_complete gipull _git_pull
 __git_complete gmerg _git_merge
-__git_complete gmerge _git_merge
 __git_complete gerge _git_merge
 __git_complete guash _git_merge
 __git_complete gommit _git_commit
 __git_complete gbase _git_rebase
 __git_complete gadd _git_add
+__git_complete ga _git_add
 __git_complete gpick _git_cherry_pick
 
 # review current HEAD against its merge-base (branch/diverge point) from master
