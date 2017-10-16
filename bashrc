@@ -18,7 +18,6 @@ fi
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 source "$HOME/.rbenv/completions/rbenv.bash"
-source "$HOME/.asdf/completions/asdf.bash"
 source "/usr/local/etc/completion-ruby/completion-ruby-all"
 source "/usr/local/etc/pip-bash-completion/pip"
 complete -C "/usr/local/bin/aws_completer" aws

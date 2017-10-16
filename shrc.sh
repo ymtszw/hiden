@@ -25,6 +25,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Sources
 
 source "$HOME/.asdf/asdf.sh"
+source "$HOME/.asdf/completions/asdf.bash" # Compatible for Bash/Zsh
 [ -f /Users/yumatsuzawa/.travis/travis.sh ] && source /Users/yumatsuzawa/.travis/travis.sh
 source <(npm completion)
 
