@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+set -euo pipefail
 if [ -f mix.exs ]; then
   PORT=7878 mix test
+elif [ -f package.json ]; then
+  if npm run | grep '^  test$' > /dev/null; then
+    npm test
+  fi
 fi
