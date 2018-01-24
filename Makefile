@@ -55,7 +55,7 @@ asdf_plugins:
 	$(ASDF_WITHOUT_PATH) plugin-add nodejs | true
 
 .PHONY: fish
-fish: /usr/local/bin/fish ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins ;
+fish: /usr/local/bin/fish ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
 
 /usr/local/bin/fish:
 	brew install fish
@@ -69,6 +69,12 @@ fish: /usr/local/bin/fish ~/.config/fish/functions/fisher.fish ~/.config/fish/co
 .PHONY: fish_plugins
 fish_plugins:
 	fish -c "fisher fzf aws docker-completion ymtszw/theme-agnoster"
+
+.PHONY: set_shell
+set_shell:
+	# Password will be prompted
+	chsh -s /usr/local/bin/fish
+	if ! grep -q '/usr/local/bin/fish' /etc/shells; then echo /usr/local/bin/fish | sudo tee -a /etc/shells; fi
 
 .PHONY: atom
 atom: /Applications/Atom.app atom_config init_atom_packages ;
