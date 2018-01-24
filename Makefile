@@ -25,7 +25,7 @@ brew: /usr/local/bin/brew brew_packages ;
 
 .PHONY: brew_packages
 brew_packages:
-	brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc | true # Continue if already installed
+	brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc jq | true # Continue if already installed
 
 # It will upgrade itself to the latest version, after first boot
 LATEST_ITERM = iTerm2-3_1_5.zip
@@ -36,7 +36,7 @@ LATEST_ITERM = iTerm2-3_1_5.zip
 	rm $(LATEST_ITERM)
 
 .PHONY: asdf
-asdf: ~/.asdf/bin/asdf ~/.config/fish/completions/asdf.fish ;
+asdf: ~/.asdf/bin/asdf ~/.config/fish/completions/asdf.fish asdf_plugins ;
 
 ~/.asdf/bin/asdf:
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1 # Can be upgraded by git-pull
@@ -44,6 +44,15 @@ asdf: ~/.asdf/bin/asdf ~/.config/fish/completions/asdf.fish ;
 ~/.config/fish/completions/asdf.fish:
 	mkdir -p ~/.config/fish/completions
 	ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions/asdf.fish
+
+ASDF_WITHOUT_PATH = ~/.asdf/bin/asdf
+asdf_plugins:
+	@# Continue if already installed
+	$(ASDF_WITHOUT_PATH) plugin-add erlang | true
+	$(ASDF_WITHOUT_PATH) plugin-add elixir | true
+	$(ASDF_WITHOUT_PATH) plugin-add elm | true
+	$(ASDF_WITHOUT_PATH) plugin-add ruby | true
+	$(ASDF_WITHOUT_PATH) plugin-add nodejs | true
 
 .PHONY: fish
 fish: /usr/local/bin/fish ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins ;
