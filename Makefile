@@ -15,7 +15,18 @@ else
 endif
 
 .PHONY: install_stuff
-install_stuff: install_fonts /Applications/iTerm.app ;
+install_stuff: /usr/local/bin/brew /Applications/iTerm.app /usr/local/bin/fish install_fonts ;
+
+/usr/local/bin/brew:
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# It will upgrade itself to the latest version, after first boot
+LATEST_ITERM = iTerm2-3_1_5.zip
+/Applications/iTerm.app:
+	curl -O https://iterm2.com/downloads/stable/$(LATEST_ITERM)
+	unzip -q $(LATEST_ITERM)
+	sudo mv iTerm.app /Applications/.
+	rm $(LATEST_ITERM)
 
 .PHONY: install_fonts
 install_fonts: ~/Library/Fonts/Source\ Code\ Pro\ for\ Powerline.otf ~/Library/Fonts/migmix-2m-bold.ttf ;
@@ -31,11 +42,3 @@ LATEST_MIGMIX = migmix-2m-20150712
 	unzip -q $(LATEST_MIGMIX).zip
 	cp $(LATEST_MIGMIX)/migmix-2m-*.ttf ~/Library/Fonts/.
 	rm -rf $(LATEST_MIGMIX)*
-
-# It will upgrade itself to the latest version, after first boot
-LATEST_ITERM = iTerm2-3_1_5.zip
-/Applications/iTerm.app:
-	curl -O https://iterm2.com/downloads/stable/$(LATEST_ITERM)
-	unzip -q $(LATEST_ITERM)
-	sudo mv iTerm.app /Applications/.
-	rm $(LATEST_ITERM)
