@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Command to enable organization VPN
+# Currently at ACCESS CO., Ltd., we use java tool called SeciossPass
+EXECUTABLE="/Applications/SeciossPass/SeciossPass.jar"
+if [[ -f $EXECUTABLE ]]; then
+  ( # Subshell
+    pushd "$(dirname $EXECUTABLE)"
+      java -jar $EXECUTABLE &
+    popd
+  ) > /dev/null 2>&1
+else
+  echo "VPN program not available: $EXECUTABLE"
+  exit 1
+fi
