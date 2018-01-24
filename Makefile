@@ -71,7 +71,7 @@ fish_plugins:
 	fish -c "fisher fzf aws docker-completion ymtszw/theme-agnoster"
 
 .PHONY: atom
-atom: /Applications/Atom.app atom_config atom_packages_init ;
+atom: /Applications/Atom.app atom_config init_atom_packages ;
 
 ATOM_ZIP = atom-mac.zip
 /Applications/Atom.app:
@@ -88,11 +88,15 @@ atom_config:
 	ln -Fs ~/hiden/.atom/config.cson ~/.atom/config.cson
 
 # Check the most fundamental package. If not exist, perform init install
-.PHONY: atom_packages_init
-atom_packages_init: ~/.atom/packages/linter ;
+.PHONY: init_atom_packages
+init_atom_packages: ~/.atom/packages/linter ;
 
 ATOM_PACKAGE_FILE = atom_packages.txt
 ~/.atom/packages/linter:
+	make install_atom_packages:
+
+.PHONY: install_atom_packages
+install_atom_packages:
 	@# apm commands may need to be absolute path before first boot
 	@# This is rather heavy action; better do it one by one, or create more "smart" install script
 	apm install --package-file $(ATOM_PACKAGE_FILE)
@@ -100,8 +104,8 @@ ATOM_PACKAGE_FILE = atom_packages.txt
 	apm install ymtszw/language-elixir-with-croma
 	apm install ymtszw/language-elm
 
-.PHONY: atom_package_list
-atom_package_list:
+.PHONY: dump_atom_packages
+dump_atom_packages:
 	@# Source information of git packages aren't dumped
 	apm list --bare --installed --enabled | sed -E '/language-el(ixir|m)/d' > $(ATOM_PACKAGE_FILE)
 
