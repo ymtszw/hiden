@@ -40,4 +40,4 @@ end
 
 # Import common settings
 
-source "$HOME/dotfile/shrc.sh"
+source "$HOME/hiden/shrc.sh"

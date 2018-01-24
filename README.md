@@ -22,12 +22,14 @@ Bunch of my personal configurations/convenient scripts for development environme
 
 # Installation
 
+Currently only supports macOS.
+
 ```
 $ git clone https://github.com/ymtszw/hiden.git ~/hiden
 $ cd hiden
 $ make
 ```
 
-Just re-invoke `make` to pull latest changes.
+And set "Load preferences from a custom folder or URL: ~/hiden/iterm2" in iTerm2.
 
-Currently only supports macOS.
+Just re-invoke `make` to pull latest changes.
