@@ -38,14 +38,14 @@ LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
 .PHONY: asdf
 asdf: ~/.asdf/bin/asdf ~/.config/fish/completions/asdf.fish asdf_plugins ;
 
-~/.asdf/bin/asdf:
+ASDF_WITHOUT_PATH = ~/.asdf/bin/asdf
+$(ASDF_WITHOUT_PATH):
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1 # Can be upgraded by git-pull
 
 ~/.config/fish/completions/asdf.fish:
 	mkdir -p ~/.config/fish/completions
 	ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions/asdf.fish
 
-ASDF_WITHOUT_PATH = ~/.asdf/bin/asdf
 asdf_plugins:
 	@# Continue if already installed
 	$(ASDF_WITHOUT_PATH) plugin-add erlang | true
@@ -55,9 +55,10 @@ asdf_plugins:
 	$(ASDF_WITHOUT_PATH) plugin-add nodejs | true
 
 .PHONY: fish
-fish: /usr/local/bin/fish ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
+fish: $(FISH) ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
 
-/usr/local/bin/fish:
+FISH = /usr/local/bin/fish
+$(FISH):
 	brew install fish
 
 ~/.config/fish/functions/fisher.fish:
@@ -73,8 +74,8 @@ fish_plugins:
 .PHONY: set_shell
 set_shell:
 	# Password will be prompted
-	chsh -s /usr/local/bin/fish
-	if ! grep -q '/usr/local/bin/fish' /etc/shells; then echo /usr/local/bin/fish | sudo tee -a /etc/shells; fi
+	chsh -s $(FISH)
+	if ! grep -q "$(FISH)" /etc/shells; then echo $(FISH) | sudo tee -a /etc/shells; fi
 
 .PHONY: atom
 atom: /Applications/Atom.app atom_config init_atom_packages ;
