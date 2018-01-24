@@ -15,7 +15,7 @@ else
 endif
 
 .PHONY: install_stuff
-install_stuff: brew /Applications/iTerm.app asdf fish atom install_fonts ;
+install_stuff: brew /Applications/iTerm.app asdf fish atom vim install_fonts misc ;
 
 .PHONY: brew
 brew: /usr/local/bin/brew brew_packages ;
@@ -100,6 +100,18 @@ atom_packages_init: ~/.atom/packages/linter ;
 	apm uninstall language-elm | true
 	apm install ymtszw/language-elm
 
+# This might someday be revisited; neovim and dein.vim are gaining power today
+.PHONY: vim
+vim: ~/.vim/bundle/neobundle.vim ~/.vimrc ;
+
+~/.vim/bundle/neobundle.vim:
+	curl -O https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh
+	./install.sh
+	rm install.sh
+
+~/.vimrc:
+	ln -s ~/hiden/.vimrc ~/.vimrc
+
 .PHONY: install_fonts
 install_fonts: ~/Library/Fonts/Source\ Code\ Pro\ for\ Powerline.otf ~/Library/Fonts/migmix-2m-bold.ttf ;
 
@@ -114,3 +126,17 @@ LATEST_MIGMIX = migmix-2m-20150712
 	unzip -q $(LATEST_MIGMIX).zip
 	cp $(LATEST_MIGMIX)/migmix-2m-*.ttf ~/Library/Fonts/.
 	rm -rf $(LATEST_MIGMIX)*
+
+.PHONY: misc
+misc: ~/.ctags ~/.vimrc ~/.config/git/ignore git_template ;
+
+~/.ctags:
+	ln -s ~/hiden/.ctags ~/.ctags
+
+~/.config/git/ignore:
+	mkdir -p ~/.config/git
+	ln -s ~/hiden/gitignore_global ~/.config/git/ignore
+
+.PHONY: git_template
+git_template:
+	git config --global core.excludesFile ~/.hiden/git
