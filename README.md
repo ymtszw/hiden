@@ -13,6 +13,7 @@ Bunch of my personal configurations/convenient scripts for development environme
     - Using [fork of theme-agnoster](https://github.com/ymtszw/theme-agnoster)
 - Using [`atom`](https://atom.io/)
     - Using [MigMix 2M font](http://mix-mplus-ipa.osdn.jp/migmix/)
+- Using [`asdf`](https://github.com/asdf-vm/asdf) as language versions manager
 - Utilizing [`ctags`](http://ctags.sourceforge.net/)
 - Utilizing [git template](https://git-scm.com/docs/git-init#_template_directory)
   and [git global ignore config (core.excludesFile)](https://git-scm.com/docs/git-config#git-config-coreexcludesFile)
@@ -23,7 +24,10 @@ Bunch of my personal configurations/convenient scripts for development environme
 
 ```
 $ git clone https://github.com/ymtszw/hiden.git ~/hiden
+$ cd hiden
 $ make
 ```
 
 Just re-invoke `make` to pull latest changes.
+
+Currently only supports macOS.
