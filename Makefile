@@ -28,12 +28,12 @@ brew_packages:
 	brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc ctags jq | true # Continue if already installed
 
 # It will upgrade itself to the latest version, after first boot
-LATEST_ITERM = iTerm2-3_1_5.zip
+LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
 /Applications/iTerm.app:
-	curl -O https://iterm2.com/downloads/stable/$(LATEST_ITERM)
-	unzip -q $(LATEST_ITERM)
+	curl -O https://iterm2.com/downloads/stable/$(LATEST_ITERM_ZIP)
+	unzip -q $(LATEST_ITERM_ZIP)
 	sudo mv iTerm.app /Applications/.
-	rm $(LATEST_ITERM)
+	rm $(LATEST_ITERM_ZIP)
 
 .PHONY: asdf
 asdf: ~/.asdf/bin/asdf ~/.config/fish/completions/asdf.fish asdf_plugins ;
