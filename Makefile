@@ -15,7 +15,7 @@ else
 endif
 
 .PHONY: install_stuff
-install_stuff: brew /Applications/iTerm.app asdf fish install_fonts ;
+install_stuff: brew /Applications/iTerm.app asdf fish atom install_fonts ;
 
 .PHONY: brew
 brew: /usr/local/bin/brew brew_packages ;
@@ -69,6 +69,36 @@ fish: /usr/local/bin/fish ~/.config/fish/functions/fisher.fish ~/.config/fish/co
 .PHONY: fish_plugins
 fish_plugins:
 	fish -c "fisher fzf aws docker-completion ymtszw/theme-agnoster"
+
+.PHONY: atom
+atom: /Applications/Atom.app atom_config atom_packages_init ;
+
+ATOM_ZIP = atom-mac.zip
+/Applications/Atom.app:
+	curl -Lo $(ATOM_ZIP) https://atom.io/download/mac
+	unzip -q $(ATOM_ZIP)
+	sudo mv Atom.app /Applications/.
+	rm $(ATOM_ZIP)
+
+.PHONY: atom_config
+atom_config:
+	ln -Fs ~/hiden/.atom/styles.less ~/.atom/styles.less
+	ln -Fs ~/hiden/.atom/keymap.cson ~/.atom/keymap.cson
+	ln -Fs ~/hiden/.atom/snippets.cson ~/.atom/snippets.cson
+	ln -Fs ~/hiden/.atom/config.cson ~/.atom/config.cson
+
+# Check the most fundamental package. If not exist, perform init install
+.PHONY: atom_packages_init
+atom_packages_init: ~/.atom/packages/linter ;
+
+~/.atom/packages/linter:
+	@# apm commands may need to be absolute path before first boot
+	@# This is rather heavy action; better do it one by one, or create more "smart" install script
+	apm install --package-file atom_packages.txt | true # Git packages won't install automatically
+	apm uninstall language-elixir | true
+	apm install ymtszw/language-elixir-with-croma
+	apm uninstall language-elm | true
+	apm install ymtszw/language-elm
 
 .PHONY: install_fonts
 install_fonts: ~/Library/Fonts/Source\ Code\ Pro\ for\ Powerline.otf ~/Library/Fonts/migmix-2m-bold.ttf ;

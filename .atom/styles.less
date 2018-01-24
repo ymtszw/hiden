@@ -1,0 +1,85 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
+}
+
+// Color tones, moved over from file-icons/styles/colours.less in order to get around import issues over symlink
+@adjust-tone: 15%;
+
+@red:     #ac4142;
+@green:   #90a959;
+@yellow:  #f4bf75;
+@blue:    #6a9fb5;
+@maroon:  #8f5536;
+@purple:  #aa759f;
+@orange:  #d28445;
+@cyan:    #75b5aa;
+@pink:    #ff00cc;
+
+@light-red:     lighten(@red, @adjust-tone);
+@medium-green:  @green;
+@medium-yellow: @yellow;
+@medium-purple: @purple;
+@dark-orange:   darken(@orange, @adjust-tone);
+@dark-cyan:     darken(@cyan, @adjust-tone);
+
+// Custom file icons
+.elixir-icon {
+  &[data-name$="_test.exs"]:before      { color: @medium-green;  }
+  &[data-path*="/solomon/core/"], &[data-path^="core/"] {
+    &:before                            { color: @dark-cyan;     }
+  }
+}
+.scala-icon {
+  &[data-name$="Spec.scala"]:before     { color: @medium-green;  }
+  &[data-name^="Build.scala"]:before    { color: @medium-purple; }
+}
+.ruby-icon {
+  &[data-name$=".god"]:before           { color: @dark-orange;   }
+}
+.elm-icon {
+  &[data-name*="View"]:before { color: @medium-yellow; }
+}
+
+// In search result views where file icons are shown in headers of search hits, html structures are a bit different
+[data-path*="/solomon/core/"] {
+  .elixir-icon:before { color: @dark-cyan; }
+}
+
+atom-text-editor, atom-text-editor.editor {
+  .highlight.ideographic-space {
+    .region:after {
+      color: white;
+      content: '□';
+      background-color: @light-red;
+    }
+  }
+}
