@@ -139,4 +139,4 @@ misc: ~/.ctags ~/.vimrc ~/.config/git/ignore git_template ;
 
 .PHONY: git_template
 git_template:
-	git config --global core.excludesFile ~/.hiden/git
+	git config --global init.templateDir ~/hiden/git_template
