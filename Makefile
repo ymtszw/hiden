@@ -91,14 +91,19 @@ atom_config:
 .PHONY: atom_packages_init
 atom_packages_init: ~/.atom/packages/linter ;
 
+ATOM_PACKAGE_FILE = atom_packages.txt
 ~/.atom/packages/linter:
 	@# apm commands may need to be absolute path before first boot
 	@# This is rather heavy action; better do it one by one, or create more "smart" install script
-	apm install --package-file atom_packages.txt | true # Git packages won't install automatically
-	apm uninstall language-elixir | true
+	apm install --package-file $(ATOM_PACKAGE_FILE)
+	@# Git packages won't install automatically
 	apm install ymtszw/language-elixir-with-croma
-	apm uninstall language-elm | true
 	apm install ymtszw/language-elm
+
+.PHONY: atom_package_list
+atom_package_list:
+	@# Source information of git packages aren't dumped
+	apm list --bare --installed --enabled | sed -E '/language-el(ixir|m)/d' > $(ATOM_PACKAGE_FILE)
 
 # This might someday be revisited; neovim and dein.vim are gaining power today
 .PHONY: vim

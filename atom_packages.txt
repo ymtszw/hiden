@@ -5,7 +5,6 @@ busy-signal@1.4.3
 convert-to-utf8@0.2.4
 elm-format@3.0.0
 elmjutsu@7.2.2
-escape-utils@0.5.3
 file-icons@2.1.16
 highlight-selected@0.13.1
 indent-guide-improved@1.4.13
@@ -40,6 +39,4 @@ show-ideographic-space@1.0.2
 trailing-spaces@0.4.0
 zentabs@0.8.9
 
-language-elixir@0.20.3-croma
-language-elm@1.5.1-ymtszw
 
