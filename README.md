@@ -26,7 +26,7 @@ Currently only supports macOS.
 
 ```
 $ git clone https://github.com/ymtszw/hiden.git ~/hiden
-$ cd hiden
+$ cd ~/hiden
 $ make
 ```
 

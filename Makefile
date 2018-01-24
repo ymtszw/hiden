@@ -145,6 +145,7 @@ misc: ~/.ctags ~/.vimrc ~/.config/git/ignore git_template ;
 ~/.config/git/ignore:
 	mkdir -p ~/.config/git
 	ln -s ~/hiden/gitignore_global ~/.config/git/ignore
+	git config --global --unset core.excludesFile
 
 .PHONY: git_template
 git_template:
