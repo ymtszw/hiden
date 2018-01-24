@@ -159,8 +159,4 @@ git_template:
 
 .PHONY: start_fish
 start_fish:
-ifeq ($(shell echo $SHELL), /usr/local/bin/fish)
-	@# Already using fish
-else
 	fish
-endif
