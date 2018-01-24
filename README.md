@@ -1,72 +1,29 @@
-# dotfile
+# hiden -- 秘伝
 
-Prepare various files for new environment.
+Bunch of my personal configurations/convenient scripts for development environments.
 
-# Usage
+"秘伝" stands for "book of secret arts".
 
-Clone into your home directory by:
+# Components
 
-```
-$ git clone https://github.com/ymtszw/dotfile.git ~/dotfile
-```
+- Using [iTerm2](https://www.iterm2.com/)
+    - Using [Source Code Pro for Powerline font](https://github.com/powerline/fonts)
+- Using [`fish`](https://github.com/fish-shell/fish-shell)
+  and [`fisherman`](https://github.com/fisherman/fisherman) package manager
+    - Using [fork of theme-agnoster](https://github.com/ymtszw/theme-agnoster)
+- Using [`atom`](https://atom.io/)
+    - Using [MigMix 2M font](http://mix-mplus-ipa.osdn.jp/migmix/)
+- Utilizing [`ctags`](http://ctags.sourceforge.net/)
+- Utilizing [git template](https://git-scm.com/docs/git-init#_template_directory)
+  and [git global ignore config (core.excludesFile)](https://git-scm.com/docs/git-config#git-config-coreexcludesFile)
+- Also have some convenient scripts and Vim configurations
 
-## bashrc
 
-Settings for Bash, includes many aliases. Source it from `.bashrc` like this:
-
-```
-source ~/dotfile/bashrc
-```
-
-Requires https://github.com/mernen/completion-ruby, https://github.com/jimeh/git-aware-prompt and rbenv. Install them, then reload your `.bashrc`.
-
-## zshrc
-
-```
-git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
-ln -s ~/dotfile/zshrc .zshrc
-```
-
-Expects OSX. Using [Zim](https://github.com/Eriner/zim).
-
-## config.fish
+# Installation
 
 ```
-ln -s ~/dotfile/config.fish ~/.config/fish/config.fish
-mkdir -p ~/.config/fish/completions
-ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions/asdf.fish
+$ git clone https://github.com/ymtszw/hiden.git ~/hiden
+$ make
 ```
 
-Many completions are included by default. Though aws-cli [not yet](https://github.com/aws/aws-cli/issues/1079).
-
-## inputrc
-
-Alternate your terminal input behavior like case-insensitive path completion. Include from `.inputrc` like this:
-
-```perl
-$include ~/dotfile/inputrc
-```
-
-Then restart your shell.
-
-## vimrc
-
-Source it from `.vimrc`
-
-```
-source ~/dotfile/vimrc
-```
-
-Requires https://github.com/Shougo/neobundle.vim. Install it then use vim.
-
-## Git template
-
-```
-$ ln -s ~/dotfile/git ~/.git_template
-$ git conifg --global init.templatedir '~/.git_template'
-```
-
-## Git global ignore
-```
-$ git config --global core.excludesfile '~/dotfile/gitignore_global'
-```
+Just re-invoke `make` to pull latest changes.
