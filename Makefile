@@ -2,7 +2,7 @@ MAKEFLAGS += --no-print-directory
 SHELL = bash
 
 .PHONY: all
-all: check_requirements install_stuff ;
+all: check_requirements install_stuff start_fish ;
 
 .PHONY: check_requirements
 check_requirements:
@@ -156,3 +156,11 @@ misc: ~/.ctags ~/.vimrc ~/.config/git/ignore git_template ;
 .PHONY: git_template
 git_template:
 	git config --global init.templateDir ~/hiden/git_template
+
+.PHONY: start_fish
+start_fish:
+ifeq ($(shell echo $SHELL), /usr/local/bin/fish)
+	@# Already using fish
+else
+	fish
+endif
