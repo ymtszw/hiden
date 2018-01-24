@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# General rule: id_rsa[.pub] is used for organization account
+mkdir -p ~/.ssh/_org
+if [[ -f ~/.ssh/id_rsa ]]; then
+  mv -v ~/.ssh/id_rsa* ~/.ssh/_org/
+else
+  mv -v ~/.ssh/_org/id_rsa* ~/.ssh/
+fi
