@@ -25,7 +25,7 @@ brew: /usr/local/bin/brew brew_packages ;
 
 .PHONY: brew_packages
 brew_packages:
-	brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc jq | true # Continue if already installed
+	brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc ctags jq | true # Continue if already installed
 
 # It will upgrade itself to the latest version, after first boot
 LATEST_ITERM = iTerm2-3_1_5.zip
