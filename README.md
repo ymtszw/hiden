@@ -17,7 +17,7 @@ Bunch of my personal configurations/convenient scripts for development environme
 - Utilizing [`ctags`](http://ctags.sourceforge.net/)
 - Utilizing [git template](https://git-scm.com/docs/git-init#_template_directory)
   and [git global ignore config (core.excludesFile)](https://git-scm.com/docs/git-config#git-config-coreexcludesFile)
-- Also have some convenient scripts and Vim configurations
+- Also installs some other utility programs, has convenient scripts and Vim configurations
 
 
 # Installation
