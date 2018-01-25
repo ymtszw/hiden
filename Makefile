@@ -106,7 +106,7 @@ ATOM_PACKAGE_FILE = atom_packages.txt
 install_atom_packages:
 	@# apm commands may need to be absolute path before first boot
 	@# This is rather heavy action; better do it one by one, or create more "smart" install script
-	apm install --package-file $(ATOM_PACKAGE_FILE)
+	apm install --packages-file $(ATOM_PACKAGE_FILE)
 	@# Git packages won't install automatically
 	apm install ymtszw/language-elixir-with-croma
 	apm install ymtszw/language-elm
