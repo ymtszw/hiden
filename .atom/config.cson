@@ -107,6 +107,8 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
   "one-dark-ui": {}
   "plantuml-viewer":
     openInSplitPane: false
