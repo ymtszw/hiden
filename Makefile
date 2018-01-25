@@ -146,10 +146,14 @@ LATEST_MIGMIX = migmix-2m-20150712
 	rm -rf $(LATEST_MIGMIX)*
 
 .PHONY: misc
-misc: ~/.ctags ~/.vimrc ~/.config/git/ignore git_template ;
+misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
 
 ~/.ctags:
 	ln -s ~/hiden/.ctags ~/.ctags
+
+~/.gnupg/gpg-agent.conf:
+	mkdir -p ~/.gnupg
+	ln -s ~/hiden/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 ~/.config/git/ignore:
 	mkdir -p ~/.config/git
