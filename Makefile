@@ -25,7 +25,9 @@ brew: /usr/local/bin/brew brew_packages ;
 
 .PHONY: brew_packages
 brew_packages:
-	brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc ctags jq | true # Continue if already installed
+	@# Continue if already installed
+	-brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc
+	-brew install ctags jq gpg2 gpg-agent pinentry-mac
 
 # It will upgrade itself to the latest version, after first boot
 LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
@@ -48,11 +50,11 @@ $(ASDF_WITHOUT_PATH):
 
 asdf_plugins:
 	@# Continue if already installed
-	$(ASDF_WITHOUT_PATH) plugin-add erlang | true
-	$(ASDF_WITHOUT_PATH) plugin-add elixir | true
-	$(ASDF_WITHOUT_PATH) plugin-add elm | true
-	$(ASDF_WITHOUT_PATH) plugin-add ruby | true
-	$(ASDF_WITHOUT_PATH) plugin-add nodejs | true
+	-$(ASDF_WITHOUT_PATH) plugin-add erlang
+	-$(ASDF_WITHOUT_PATH) plugin-add elixir
+	-$(ASDF_WITHOUT_PATH) plugin-add elm
+	-$(ASDF_WITHOUT_PATH) plugin-add ruby
+	-$(ASDF_WITHOUT_PATH) plugin-add nodejs
 
 .PHONY: fish
 fish: $(FISH) ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
