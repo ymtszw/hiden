@@ -34,10 +34,10 @@ LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
 	sudo mv iTerm.app /Applications/.
 	rm $(LATEST_ITERM_ZIP)
 
-.PHONY: asdf
-asdf: ~/.asdf/bin/asdf ~/.config/fish/completions/asdf.fish asdf_plugins ;
-
 ASDF_WITHOUT_PATH = ~/.asdf/bin/asdf
+.PHONY: asdf
+asdf: $(ASDF_WITHOUT_PATH) ~/.config/fish/completions/asdf.fish asdf_plugins ;
+
 $(ASDF_WITHOUT_PATH):
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1 # Can be upgraded by git-pull
 
@@ -53,10 +53,10 @@ asdf_plugins:
 	-$(ASDF_WITHOUT_PATH) plugin-add ruby
 	-$(ASDF_WITHOUT_PATH) plugin-add nodejs
 
+FISH = /usr/local/bin/fish
 .PHONY: fish
 fish: $(FISH) ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
 
-FISH = /usr/local/bin/fish
 $(FISH):
 	brew install fish
 
