@@ -6,13 +6,9 @@ all: check_requirements install_stuff start_fish ;
 
 .PHONY: check_requirements
 check_requirements:
-ifeq ($(shell uname), Darwin)
-	@# macOS detected
+	@if [[ "$(abspath $(dir .))" != "$(abspath $(dir ~))" ]]; then echo "hiden must be at ~/hiden !"; exit 1; fi
+	@if [[ "$(shell uname)" != "Darwin" ]]; then echo "Only supports macOS"; exit 1; fi
 	@which -s curl git
-else
-	@echo "Only supports macOS"
-	@exit 1
-endif
 
 .PHONY: install_stuff
 install_stuff: brew /Applications/iTerm.app asdf fish atom vim install_fonts misc ;
