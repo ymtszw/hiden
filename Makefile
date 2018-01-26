@@ -142,6 +142,18 @@ LATEST_MIGMIX = migmix-2m-20150712
 	cp $(LATEST_MIGMIX)/migmix-2m-*.ttf ~/Library/Fonts/.
 	rm -rf $(LATEST_MIGMIX)*
 
+.PHONY: user_bin
+user_bin: ~/bin ~/bin/toggle_id ~/bin/ ;
+
+~/bin:
+	mkdir -p ~/bin
+
+~/bin/toggle_id:
+	ln -Fs ~/hiden/bin/toggle_id ~/bin/toggle_id
+
+~/bin/vpn:
+	ln -Fs ~/hiden/bin/vpn ~/bin/vpn
+
 .PHONY: misc
 misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
 
