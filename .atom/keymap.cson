@@ -30,9 +30,8 @@
   'ctrl-w': 'editor:delete-to-beginning-of-word'
   'ctrl-shift-W': 'editor:delete-to-end-of-word'
   'ctrl-u': 'editor:delete-to-beginning-of-line'
-  'cmd-k cmd-u': 'change-case:upper'
-  'cmd-k cmd-l': 'change-case:lower'
-  'cmd-k cmd-f': 'change-case:upperFirst'
+  'ctrl-shift-cmd-n': 'editor:add-selection-below'
+  'ctrl-shift-cmd-p': 'editor:add-selection-up'
 'body':
   'ctrl-v': 'core:page-down'
   'ctrl-r': 'core:page-up'
@@ -43,7 +42,6 @@
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-cmd-w': 'tabs:close-all-tabs'
-  'ctrl-cmd-n': 'pane:split-down-and-move-active-item'
 '.advanced-open-file atom-text-editor':
   'ctrl-k': 'editor:delete-to-end-of-line'
   'ctrl-i': 'unset!'
