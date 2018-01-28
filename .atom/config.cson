@@ -55,7 +55,6 @@
   editor:
     autoIndentOnPaste: false
     fontFamily: "\"MigMix 2M\""
-    fontSize: 13
     invisibles: {}
     preferredLineLength: 130
     scrollPastEnd: true
@@ -89,8 +88,7 @@
     fixOnSave: true
   "linter-shellcheck":
     enableNotice: true
-  "linter-ui-default":
-    panelHeight: 81
+  "linter-ui-default": {}
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-plus":
