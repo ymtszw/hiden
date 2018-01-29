@@ -31,7 +31,7 @@
   'ctrl-shift-W': 'editor:delete-to-end-of-word'
   'ctrl-u': 'editor:delete-to-beginning-of-line'
   'ctrl-shift-cmd-n': 'editor:add-selection-below'
-  'ctrl-shift-cmd-p': 'editor:add-selection-up'
+  'ctrl-shift-cmd-p': 'editor:add-selection-above'
 'body':
   'ctrl-v': 'core:page-down'
   'ctrl-r': 'core:page-up'
