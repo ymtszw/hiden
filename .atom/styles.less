@@ -32,7 +32,8 @@ atom-text-editor::shadow .cursor {
 }
 
 // Color tones, moved over from file-icons/styles/colours.less in order to get around import issues over symlink
-@adjust-tone: 15%;
+@adjust: 15%;
+@ultra-adjust: 30%;
 
 @red:     #ac4142;
 @green:   #90a959;
@@ -44,29 +45,30 @@ atom-text-editor::shadow .cursor {
 @cyan:    #75b5aa;
 @pink:    #ff00cc;
 
-@light-red:     lighten(@red, @adjust-tone);
-@medium-green:  @green;
-@medium-yellow: @yellow;
-@medium-purple: @purple;
-@dark-orange:   darken(@orange, @adjust-tone);
-@dark-cyan:     darken(@cyan, @adjust-tone);
+@light-red:       lighten(@red, @adjust);
+@medium-green:    @green;
+@medium-yellow:   @yellow;
+@medium-purple:   @purple;
+@dark-orange:     darken(@orange, @adjust);
+@dark-cyan:       darken(@cyan, @adjust);
+@ultralight-pink: lighten(@pink, @ultra-adjust);
 
 // Custom file icons
 .elixir-icon {
-  &[data-name$="_test.exs"]:before      { color: @medium-green;  }
+  &[data-name$="_test.exs"]:before { color: @medium-green; }
   &[data-path*="/solomon/core/"], &[data-path^="core/"] {
-    &:before                            { color: @dark-cyan;     }
+    &:before { color: @dark-cyan; }
   }
 }
 .scala-icon {
-  &[data-name$="Spec.scala"]:before     { color: @medium-green;  }
-  &[data-name^="Build.scala"]:before    { color: @medium-purple; }
+  &[data-name$="Spec.scala"]:before { color: @medium-green; }
+  &[data-name^="Build.scala"]:before { color: @medium-purple; }
 }
 .ruby-icon {
-  &[data-name$=".god"]:before           { color: @dark-orange;   }
+  &[data-name$=".god"]:before { color: @dark-orange; }
 }
 .elm-icon {
-  &[data-name*="View"]:before { color: @medium-yellow; }
+  &[data-path*="View"]:before { color: @ultralight-pink; }
 }
 
 // In search result views where file icons are shown in headers of search hits, html structures are a bit different

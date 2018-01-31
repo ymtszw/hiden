@@ -41,6 +41,7 @@
       "language-gfm"
       "linter-elixir-credo"
       "markdown-preview"
+      "linter-elm-make"
     ]
     packagesWithKeymapsDisabled: [
       "language-yaml"
@@ -81,8 +82,13 @@
     autocompleteEnabled: false
   linter:
     lintOnChangeInterval: 1
+    lintPreviewTabs: false
+  "linter-elm-analyse": {}
   "linter-elm-make":
     lintOnTheFly: true
+    logDebugMessages: true
+    showCodeActions: false
+    showInferredTypeAnnotations: true
   "linter-eslint":
     disableEslintIgnore: true
     fixOnSave: true
