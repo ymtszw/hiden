@@ -81,6 +81,7 @@
     autocompleteEnabled: false
   linter:
     lintOnChangeInterval: 1
+    lintOnOpen: false
     lintPreviewTabs: false
   "linter-elm-analyse": {}
   "linter-elm-make":
