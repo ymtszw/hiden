@@ -41,7 +41,6 @@
       "language-gfm"
       "linter-elixir-credo"
       "markdown-preview"
-      "linter-elm-make"
     ]
     packagesWithKeymapsDisabled: [
       "language-yaml"
