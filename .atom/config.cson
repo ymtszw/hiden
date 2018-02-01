@@ -39,7 +39,6 @@
       ]
     disabledPackages: [
       "language-gfm"
-      "linter-elixir-credo"
       "markdown-preview"
     ]
     packagesWithKeymapsDisabled: [
