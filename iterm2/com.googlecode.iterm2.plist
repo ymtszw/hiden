@@ -740,7 +740,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 1129 620 392 0 0 1920 1897 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>487 1411 796 473 0 0 1920 1897 </string>
+	<string>296 445 918 381 0 0 1920 1897 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 4 1920 1893 0 0 1920 1897 </string>
 	<key>NeverWarnAboutShortLivedSessions_EE2CF20B-6CCE-41EA-8315-EA1FE399FCF4</key>
@@ -1023,6 +1023,8 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1079,13 +1081,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.43921568989753723</real>
+				<real>0.51439088582992554</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.38823530077934265</real>
+				<real>0.46512907743453979</real>
 				<key>Red Component</key>
-				<real>0.36078432202339172</real>
+				<real>0.43546438217163086</real>
 			</dict>
 			<key>Guid</key>
 			<string>EE2CF20B-6CCE-41EA-8315-EA1FE399FCF4</string>
@@ -1396,6 +1398,8 @@
 				<key>Red Component</key>
 				<real>0.023000000044703484</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1461,7 +1465,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.013098298159523021</real>
+			<real>0.083054409898477163</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
@@ -1562,7 +1566,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-23T16:46:20Z</date>
+	<date>2018-02-01T00:56:33Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -4356,5 +4360,11 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>3.1.5</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>kCPKUseSystemColorPicker</key>
+	<true/>
 </dict>
 </plist>
