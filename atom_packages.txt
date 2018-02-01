@@ -31,7 +31,8 @@ language-scala@1.1.9
 language-slim@1.0.0
 language-textile@0.2.0
 linter@2.2.0
-linter-elm-analyse@0.0.2
+linter-elm-analyse@0.0.3
+linter-elm-make@0.28.1
 linter-eslint@8.4.1
 linter-flow@5.6.1
 linter-ruby@1.2.6
