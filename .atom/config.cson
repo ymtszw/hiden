@@ -80,12 +80,12 @@
   "language-elm":
     autocompleteEnabled: false
   linter:
+    lintOnChange: false
     lintOnChangeInterval: 1
     lintOnOpen: false
     lintPreviewTabs: false
   "linter-elm-analyse": {}
   "linter-elm-make":
-    lintOnTheFly: true
     logDebugMessages: true
     showCodeActions: false
     showInferredTypeAnnotations: true
