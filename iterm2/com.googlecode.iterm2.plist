@@ -740,9 +740,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 1129 620 392 0 0 1920 1897 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>296 445 918 381 0 0 1920 1897 </string>
+	<string>296 374 796 473 0 0 1920 1897 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1920 1893 0 0 1920 1897 </string>
+	<string>0 365 1426 1532 0 0 1920 1897 </string>
 	<key>NeverWarnAboutShortLivedSessions_EE2CF20B-6CCE-41EA-8315-EA1FE399FCF4</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_EE2CF20B-6CCE-41EA-8315-EA1FE399FCF4_selection</key>
@@ -1465,7 +1465,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.083054409898477163</real>
+			<real>0.0</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
@@ -1485,7 +1485,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Working Directory</key>
 			<string>/Users/yumatsuzawa</string>
 		</dict>
@@ -1566,7 +1566,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-01T00:56:33Z</date>
+	<date>2018-02-03T17:02:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
