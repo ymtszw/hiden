@@ -116,7 +116,7 @@ install_git_packages:
 .PHONY: dump_atom_packages
 dump_atom_packages:
 	@# Source information of git packages aren't dumped
-	apm list --bare --installed --enabled | sed -E '/language-el(ixir|m)/d' > $(ATOM_PACKAGE_FILE)
+	apm list --bare --installed --enabled | sed -E '/(language-el(ixir|m)|^\s*$$)/d' > $(ATOM_PACKAGE_FILE)
 
 .PHONY: update_atom_packages
 update_atom_packages: install_updated_packages prune_uninstalled_packages ;
