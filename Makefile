@@ -11,7 +11,7 @@ check_requirements:
 	@which -s curl git
 
 .PHONY: install_stuff
-install_stuff: brew /Applications/iTerm.app asdf fish atom vim install_fonts misc ;
+install_stuff: brew /Applications/iTerm.app asdf fish atom vim install_fonts user_bin misc ;
 
 .PHONY: brew
 brew: /usr/local/bin/brew brew_packages ;
@@ -143,7 +143,7 @@ LATEST_MIGMIX = migmix-2m-20150712
 	rm -rf $(LATEST_MIGMIX)*
 
 .PHONY: user_bin
-user_bin: ~/bin ~/bin/toggle_id ~/bin/ ;
+user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ;
 
 ~/bin:
 	mkdir -p ~/bin
@@ -153,6 +153,9 @@ user_bin: ~/bin ~/bin/toggle_id ~/bin/ ;
 
 ~/bin/vpn:
 	ln -Fs ~/hiden/bin/vpn ~/bin/vpn
+
+~/bin/local_git_user:
+	ln -Fs ~/hiden/bin/local_git_user ~/bin/local_git_user
 
 .PHONY: misc
 misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
