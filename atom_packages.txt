@@ -53,5 +53,3 @@ project-manager@3.3.5
 show-ideographic-space@1.0.2
 trailing-spaces@0.4.0
 zentabs@0.8.9
-
-

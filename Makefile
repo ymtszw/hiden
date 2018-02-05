@@ -77,7 +77,7 @@ set_shell:
 	if ! grep -q "$(FISH)" /etc/shells; then echo $(FISH) | sudo tee -a /etc/shells; fi
 
 .PHONY: atom
-atom: /Applications/Atom.app atom_config init_atom_packages ;
+atom: /Applications/Atom.app atom_config init_atom_packages update_atom_packages install_git_packages  ;
 
 ATOM_ZIP = atom-mac.zip
 /Applications/Atom.app:
@@ -106,7 +106,10 @@ install_atom_packages:
 	@# apm commands may need to be absolute path before first boot
 	@# This is rather heavy action; better do it one by one, or create more "smart" install script
 	apm install --packages-file $(ATOM_PACKAGE_FILE)
-	@# Git packages won't install automatically
+
+.PHONY: install_git_packages
+install_git_packages:
+	@# Git packages won't install automatically; always install latest
 	apm install ymtszw/language-elixir-with-croma
 	apm install ymtszw/language-elm
 
@@ -114,6 +117,19 @@ install_atom_packages:
 dump_atom_packages:
 	@# Source information of git packages aren't dumped
 	apm list --bare --installed --enabled | sed -E '/language-el(ixir|m)/d' > $(ATOM_PACKAGE_FILE)
+
+.PHONY: update_atom_packages
+update_atom_packages: install_updated_packages prune_uninstalled_packages ;
+
+.PHONY: install_updated_packages
+install_updated_packages:
+	@# Do not re-install disabled packages
+	apm list --bare --installed | sed -E '/language-el(ixir|m)/d' | comm -23 $(ATOM_PACKAGE_FILE) - | xargs -n1 apm install
+
+.PHONY: prune_uninstalled_packages
+prune_uninstalled_packages:
+	@# Regenerate current apm list since it could be updated by `install_updated_packages` target
+	apm list --bare --installed | sed -E '/language-el(ixir|m)/d' | comm -13 $(ATOM_PACKAGE_FILE) - | sed -E 's/@.*//' | xargs -n1 apm uninstall
 
 # This might someday be revisited; neovim and dein.vim are gaining power today
 .PHONY: vim
