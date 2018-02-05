@@ -93,7 +93,8 @@
     fixOnSave: true
   "linter-shellcheck":
     enableNotice: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 81
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-plus":
