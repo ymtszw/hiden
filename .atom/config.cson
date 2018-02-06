@@ -89,12 +89,12 @@
     showCodeActions: false
     showInferredTypeAnnotations: true
   "linter-eslint":
-    disableEslintIgnore: true
-    fixOnSave: true
+    disableWhenNoEslintConfig: false
   "linter-shellcheck":
     enableNotice: true
   "linter-ui-default":
-    panelHeight: 81
+    panelRepresents: "Entire Project"
+    showProviderName: true
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-plus":
