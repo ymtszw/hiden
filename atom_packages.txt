@@ -2,6 +2,8 @@ advanced-open-file@0.16.7
 atom-alignment@0.13.0
 atom-jade@0.3.0
 atom-wrap-in-tag@0.6.0
+build@0.70.0
+build-elm-analyse@0.0.2
 busy-signal@1.4.3
 convert-to-utf8@0.2.4
 elm-format@3.0.0
@@ -31,7 +33,6 @@ language-slim@1.0.0
 language-textile@0.2.0
 linter@2.2.0
 linter-elixir-credo@1.1.0
-linter-elm-analyse@0.0.3
 linter-elm-make@0.28.1
 linter-eslint@8.4.1
 linter-flow@5.6.1

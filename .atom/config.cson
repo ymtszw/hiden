@@ -18,6 +18,9 @@
   "autocomplete-paths": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
+  build:
+    panelVisibility: "Hidden"
+    stealFocus: false
   "copy-with-style":
     preset1:
       font_family: "Courier New"
@@ -142,6 +145,7 @@
       "jenkins"
       "Kibana"
       "hiden"
+      "elm-analyse"
     ]
     locales: [
       "en-US"
