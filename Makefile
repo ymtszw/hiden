@@ -159,7 +159,7 @@ LATEST_MIGMIX = migmix-2m-20150712
 	rm -rf $(LATEST_MIGMIX)*
 
 .PHONY: user_bin
-user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ;
+user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ~/bin/imgcat ;
 
 ~/bin:
 	mkdir -p ~/bin
@@ -172,6 +172,9 @@ user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ;
 
 ~/bin/local_git_user:
 	ln -Fs ~/hiden/bin/local_git_user ~/bin/local_git_user
+
+~/bin/imgcat:
+	ln -Fs ~/hiden/bin/imgcat ~/bin/imgcat
 
 .PHONY: misc
 misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
