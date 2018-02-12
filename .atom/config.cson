@@ -146,6 +146,8 @@
       "Kibana"
       "hiden"
       "elm-analyse"
+      "Blick"
+      "Heroku"
     ]
     locales: [
       "en-US"
