@@ -70,6 +70,17 @@ atom-text-editor::shadow .cursor {
 .elm-icon {
   &[data-path*="View"]:before { color: @ultralight-pink; }
 }
+.js-icon {
+  &[data-path*="test/"]:before { color: @medium-green; }
+}
+.test-js-icon:before,
+.test-coffee-icon:before,
+.test-ts-icon:before,
+.test-ruby-icon:before,
+.test-react-icon:before,
+.test-generic-icon:before {
+  color: @medium-green;
+}
 
 // In search result views where file icons are shown in headers of search hits, html structures are a bit different
 [data-path*="/solomon/core/"] {
