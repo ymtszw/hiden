@@ -24,7 +24,7 @@ brew_packages:
 	@# Continue if already installed
 	-brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc
 	# Make sure gpg 2+ is installed in order to use gpg-agent with keychain
-	-brew install ctags jq gpg2 pinentry-mac
+	-brew install ctags jq gpg2 pinentry-mac fzf
 
 # It will upgrade itself to the latest version, after first boot
 LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
@@ -68,7 +68,7 @@ $(FISH):
 
 .PHONY: fish_plugins
 fish_plugins:
-	fish -c "fisher fzf aws docker-completion ymtszw/theme-agnoster"
+	fish -c "fisher aws docker-completion ymtszw/theme-agnoster"
 
 .PHONY: set_shell
 set_shell:
