@@ -91,8 +91,7 @@
     logDebugMessages: true
     showCodeActions: false
     showInferredTypeAnnotations: true
-  "linter-eslint":
-    disableWhenNoEslintConfig: false
+  "linter-eslint": {}
   "linter-shellcheck":
     enableNotice: true
   "linter-ui-default":
