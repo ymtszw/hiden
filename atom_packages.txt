@@ -10,11 +10,11 @@ convert-to-utf8@0.2.4
 elm-format@3.0.0
 elmjutsu@7.2.2
 esformatter@2.3.0
-file-icons@2.1.16
+file-icons@2.1.17
 highlight-selected@0.13.1
 indent-guide-improved@1.4.13
 intentions@1.1.5
-language-babel@2.83.1
+language-babel@2.84.0
 language-d@3.3.1
 language-ejs@0.4.0
 language-erlang@3.2.0
@@ -23,7 +23,7 @@ language-gettext@0.6.1
 language-gherkin@1.0.4
 language-haml@0.25.2
 language-haskell@1.17.3
-language-jade@0.7.2
+language-jade@0.7.3
 language-latex@1.1.1
 language-markdown@0.25.1
 language-plantuml@0.2.0
@@ -41,9 +41,9 @@ linter-ruby@1.2.6
 linter-shellcheck@1.4.6
 linter-stylelint@4.2.0
 linter-swagger@0.4.2
-linter-ui-default@1.6.10
-markdown-preview-plus@2.5.1
-minimap@4.29.7
+linter-ui-default@1.7.1
+markdown-preview-plus@2.5.5
+minimap@4.29.8
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
