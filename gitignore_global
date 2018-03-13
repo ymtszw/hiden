@@ -6,3 +6,4 @@ start.sh
 elm-stuff/
 npm-debug.log
 yarn-error.log
+ensime.sbt
