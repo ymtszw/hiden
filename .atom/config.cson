@@ -1,4 +1,9 @@
 "*":
+  Ensime:
+    enableAutoInstallOfDependencies: false
+    enableTypeTooltip: false
+    ensimeServerVersion: "2.0.0"
+    runServersDetached: true
   Hydrogen: {}
   "advanced-open-file":
     createDirectories: true
