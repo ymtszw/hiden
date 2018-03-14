@@ -55,6 +55,7 @@
       "git-diff-details"
       "elm-format"
       "copy-with-style"
+      "Ensime"
     ]
     projectHome: "/Users/yumatsuzawa/workspace"
     telemetryConsent: "limited"
