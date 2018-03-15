@@ -33,11 +33,7 @@ abbr goms 'git commit --gpg-sign'
 abbr gba 'git rebase'
 abbr ga 'git add'
 abbr gai 'git add --interactive'
-# review current HEAD against its merge-base (branch/diverge point) from master
-function grev
-  git diff $argv master...HEAD
-end
-
+abbr grev 'git diff master...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
 
 # Import common settings
 
