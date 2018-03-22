@@ -34,6 +34,7 @@ abbr gba 'git rebase'
 abbr ga 'git add'
 abbr gai 'git add --interactive'
 abbr grev 'git diff master...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
+abbr gpi 'git cherry-pick'
 
 # Import common settings
 
