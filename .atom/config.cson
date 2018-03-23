@@ -39,6 +39,10 @@
   core:
     closeDeletedFileTabs: true
     customFileTypes:
+      "source.erlang": [
+        "relx.config"
+        "sys.config"
+      ]
       "source.jade": [
         "dt"
       ]
