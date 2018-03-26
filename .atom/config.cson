@@ -98,6 +98,7 @@
     lintPreviewTabs: false
   "linter-elm-analyse": {}
   "linter-elm-make":
+    alwaysCompileMain: true
     logDebugMessages: true
     showCodeActions: false
     showInferredTypeAnnotations: true
