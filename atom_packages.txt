@@ -45,7 +45,7 @@ linter-shellcheck@1.4.6
 linter-stylelint@4.2.0
 linter-swagger@0.4.2
 linter-ui-default@1.7.1
-markdown-preview-plus@2.5.6
+markdown-preview-plus@2.5.7
 minimap@4.29.8
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
