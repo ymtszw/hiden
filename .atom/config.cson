@@ -39,6 +39,9 @@
   core:
     closeDeletedFileTabs: true
     customFileTypes:
+      "source.elixir": [
+        "mix.lock"
+      ]
       "source.erlang": [
         "relx.config"
         "sys.config"
