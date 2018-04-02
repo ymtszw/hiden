@@ -158,6 +158,7 @@
       "elm-analyse"
       "Blick"
       "Heroku"
+      "testgear"
     ]
     locales: [
       "en-US"
