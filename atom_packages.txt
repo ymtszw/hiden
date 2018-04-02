@@ -25,6 +25,7 @@ language-erlang@3.2.0
 language-fish-shell@1.1.0
 language-gettext@0.6.1
 language-gherkin@1.0.4
+language-gitignore@0.3.0
 language-haml@0.31.0
 language-haskell@1.17.3
 language-jade@0.7.3
