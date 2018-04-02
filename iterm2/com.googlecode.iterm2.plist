@@ -568,7 +568,15 @@
 	<string>Default</string>
 	<key>Default Bookmark Guid</key>
 	<string>EE2CF20B-6CCE-41EA-8315-EA1FE399FCF4</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<false/>
 	<key>DisableFullscreenTransparency</key>
+	<false/>
+	<key>EnableDivisionView</key>
 	<false/>
 	<key>GlobalKeyMap</key>
 	<dict>
@@ -689,7 +697,13 @@
 	<false/>
 	<key>HideTab</key>
 	<true/>
+	<key>HideTabCloseButton</key>
+	<false/>
+	<key>HideTabNumber</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
+	<key>JobName</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
@@ -1489,6 +1503,8 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>AAC70990-A907-4AFA-9AD6-B8D8AFAD763B</string>
 	<key>NoSyncLastTipTime</key>
@@ -1514,6 +1530,8 @@
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -1566,8 +1584,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-05T04:32:53Z</date>
+	<date>2018-04-01T23:59:15Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
@@ -1576,11 +1596,13 @@
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.25276442307692315</real>
+	<real>0.59999999999999998</real>
+	<key>StretchTabsToFillBar</key>
+	<false/>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>UseBorder</key>
-	<true/>
+	<false/>
 	<key>Window Arrangements</key>
 	<dict>
 		<key>Default</key>
@@ -4350,6 +4372,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>WindowNumber</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
