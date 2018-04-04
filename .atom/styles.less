@@ -50,6 +50,7 @@ atom-text-editor::shadow .cursor {
 @medium-yellow:   @yellow;
 @medium-purple:   @purple;
 @dark-orange:     darken(@orange, @adjust);
+@light-cyan:      lighten(@cyan, @adjust);
 @dark-cyan:       darken(@cyan, @adjust);
 @ultralight-pink: lighten(@pink, @ultra-adjust);
 
@@ -58,6 +59,11 @@ atom-text-editor::shadow .cursor {
   &[data-name$="_test.exs"]:before { color: @medium-green; }
   &[data-path*="/solomon/core/"], &[data-path^="core/"] {
     &:before { color: @dark-cyan; }
+  }
+  &[data-name$="mix.lock"]:before {
+    font-family: "FontAwesome";
+    content: "\f023";
+    font-size: 150%;
   }
 }
 .scala-icon {
