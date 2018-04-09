@@ -183,14 +183,14 @@ vim: ~/.vim/bundle/neobundle.vim ~/.vimrc ;
 ### SSH related
 
 .PHONY: ssh
-ssh: force_ssh_config ~/bin/ssh ;
+ssh: force_ssh_config force_user_ssh ;
 
 .PHONY: force_ssh_config
 force_ssh_config:
 	cat ~/hiden/.ssh/config_entry_point > ~/.ssh/config
 	chmod 644 ~/.ssh/config
 
-~/bin/ssh:
+force_user_ssh:
 	ln -Fs ~/hiden/bin/ssh ~/bin/ssh
 
 ### Fonts
