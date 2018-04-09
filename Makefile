@@ -184,15 +184,27 @@ force_vimrc:
 ### SSH related
 
 .PHONY: ssh
-ssh: force_ssh_config ~/.sshrc ;
+ssh: force_ssh_config /usr/local/bin/sshrc ~/.sshrc ~/.sshrc.d ~/.sshrc.d/.vimrc ;
+
+# Using patched version
+/usr/local/bin/sshrc:
+	curl -Lo /usr/local/bin/sshrc https://raw.githubusercontent.com/taylorskalyo/sshrc/954d34ecd4761eb91f41cda0c54434b57ef4b6a3/sshrc
+	chmod +x /usr/local/bin/sshrc
 
 .PHONY: force_ssh_config
 force_ssh_config:
 	cat ~/hiden/.ssh/config_entry_point > ~/.ssh/config
 	chmod 644 ~/.ssh/config
+	ln -Fs ~/SparkleShare/sparkleshare/ssh-config ~/.ssh/config.dodai
 
 ~/.sshrc:
 	ln -Fs ~/hiden/.sshrc ~/.sshrc
+
+~/.sshrc.d:
+	mkdir -p ~/.sshrc.d
+
+~/.sshrc.d/.vimrc:
+	ln -Fs ~/.vimrc ~/.sshrc.d/.vimrc
 
 ### Fonts
 

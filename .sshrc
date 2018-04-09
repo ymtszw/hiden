@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+sshrcd="$SSHHOME/.sshrc.d"
+echo -e "\\e[36m[sshrc] Bringing dot-files with you! ($(ls -A "$sshrcd"))\\e[m"
+export VIMINIT="let \$MYVIMRC='${sshrcd}/.vimrc' | source \$MYVIMRC"
