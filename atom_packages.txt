@@ -36,6 +36,7 @@ language-rust@0.4.12
 language-scala@1.1.9
 language-slim@1.0.0
 language-textile@0.2.0
+language-viml@1.1.6
 linter@2.2.0
 linter-elixir-credo@1.1.0
 linter-elm-make@0.28.3
