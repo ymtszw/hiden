@@ -77,12 +77,12 @@ $(ASDF_WITHOUT_PATH):
 	ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions/asdf.fish
 
 asdf_plugins:
-	@# Continue if already installed
-	-$(ASDF_WITHOUT_PATH) plugin-add erlang
-	-$(ASDF_WITHOUT_PATH) plugin-add elixir
-	-$(ASDF_WITHOUT_PATH) plugin-add elm
-	-$(ASDF_WITHOUT_PATH) plugin-add ruby
-	-$(ASDF_WITHOUT_PATH) plugin-add nodejs
+	$(ASDF_WITHOUT_PATH) plugin-add erlang || $(ASDF_WITHOUT_PATH) plugin-update erlang
+	$(ASDF_WITHOUT_PATH) plugin-add elixir || $(ASDF_WITHOUT_PATH) plugin-update elixir
+	$(ASDF_WITHOUT_PATH) plugin-add elm || $(ASDF_WITHOUT_PATH) plugin-update elm
+	$(ASDF_WITHOUT_PATH) plugin-add ruby || $(ASDF_WITHOUT_PATH) plugin-update ruby
+	$(ASDF_WITHOUT_PATH) plugin-add nodejs || $(ASDF_WITHOUT_PATH) plugin-update nodejs
+	$(ASDF_WITHOUT_PATH) plugin-add rust || $(ASDF_WITHOUT_PATH) plugin-update rust
 
 ### fish related
 
