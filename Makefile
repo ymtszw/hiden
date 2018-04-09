@@ -17,7 +17,27 @@ check_requirements:
 # Install stuff!
 #
 .PHONY: install_stuff
-install_stuff: brew /Applications/iTerm.app asdf fish atom vim install_fonts user_bin misc ;
+install_stuff: user_bin brew /Applications/iTerm.app asdf fish atom vim ssh install_fonts misc ;
+
+### Custom scripts
+
+.PHONY: user_bin
+user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ~/bin/imgcat ;
+
+~/bin:
+	mkdir -p ~/bin
+
+~/bin/toggle_id:
+	ln -Fs ~/hiden/bin/toggle_id ~/bin/toggle_id
+
+~/bin/vpn:
+	ln -Fs ~/hiden/bin/vpn ~/bin/vpn
+
+~/bin/local_git_user:
+	ln -Fs ~/hiden/bin/local_git_user ~/bin/local_git_user
+
+~/bin/imgcat:
+	ln -Fs ~/hiden/bin/imgcat ~/bin/imgcat
 
 ### Homebrew related
 
@@ -190,26 +210,6 @@ LATEST_MIGMIX = migmix-2m-20150712
 	unzip -q $(LATEST_MIGMIX).zip
 	cp $(LATEST_MIGMIX)/migmix-2m-*.ttf ~/Library/Fonts/.
 	rm -rf $(LATEST_MIGMIX)*
-
-### Custom scripts
-
-.PHONY: user_bin
-user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ~/bin/imgcat ;
-
-~/bin:
-	mkdir -p ~/bin
-
-~/bin/toggle_id:
-	ln -Fs ~/hiden/bin/toggle_id ~/bin/toggle_id
-
-~/bin/vpn:
-	ln -Fs ~/hiden/bin/vpn ~/bin/vpn
-
-~/bin/local_git_user:
-	ln -Fs ~/hiden/bin/local_git_user ~/bin/local_git_user
-
-~/bin/imgcat:
-	ln -Fs ~/hiden/bin/imgcat ~/bin/imgcat
 
 ### Other dot-files
 
