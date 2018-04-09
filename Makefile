@@ -2,7 +2,7 @@ MAKEFLAGS += --no-print-directory
 SHELL = bash
 
 .PHONY: all
-all: check_requirements install_stuff start_fish ;
+all: check_requirements install_stuff ;
 
 .PHONY: check_requirements
 check_requirements:
@@ -194,7 +194,3 @@ misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
 .PHONY: git_template
 git_template:
 	git config --global init.templateDir ~/hiden/git_template
-
-.PHONY: start_fish
-start_fish:
-	fish
