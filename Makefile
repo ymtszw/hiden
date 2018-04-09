@@ -161,6 +161,19 @@ vim: ~/.vim/bundle/neobundle.vim ~/.vimrc ;
 ~/.vimrc:
 	ln -s ~/hiden/.vimrc ~/.vimrc
 
+### SSH related
+
+.PHONY: ssh
+ssh: force_ssh_config ~/bin/ssh ;
+
+.PHONY: force_ssh_config
+force_ssh_config:
+	cat ~/hiden/.ssh/config_entry_point > ~/.ssh/config
+	chmod 644 ~/.ssh/config
+
+~/bin/ssh:
+	ln -Fs ~/hiden/bin/ssh ~/bin/ssh
+
 ### Fonts
 
 .PHONY: install_fonts
