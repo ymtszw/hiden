@@ -4,14 +4,22 @@ SHELL = bash
 .PHONY: all
 all: check_requirements install_stuff ;
 
+#
+# Ensure prerequisites for executing various commands in hiden
+#
 .PHONY: check_requirements
 check_requirements:
 	@if [[ "$(abspath $(dir .))" != "$(abspath $(dir ~))" ]]; then echo "hiden must be at ~/hiden !"; exit 1; fi
 	@if [[ "$(shell uname)" != "Darwin" ]]; then echo "Only supports macOS"; exit 1; fi
 	@which -s curl git
 
+#
+# Install stuff!
+#
 .PHONY: install_stuff
 install_stuff: brew /Applications/iTerm.app asdf fish atom vim install_fonts user_bin misc ;
+
+### Homebrew related
 
 .PHONY: brew
 brew: /usr/local/bin/brew brew_packages ;
@@ -26,6 +34,8 @@ brew_packages:
 	# Make sure gpg 2+ is installed in order to use gpg-agent with keychain
 	-brew install ctags jq gpg2 pinentry-mac fzf sshrc
 
+### iTerm2 related
+
 # It will upgrade itself to the latest version, after first boot
 LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
 /Applications/iTerm.app:
@@ -33,6 +43,8 @@ LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
 	unzip -q $(LATEST_ITERM_ZIP)
 	sudo mv iTerm.app /Applications/.
 	rm $(LATEST_ITERM_ZIP)
+
+### asdf related
 
 ASDF_WITHOUT_PATH = ~/.asdf/bin/asdf
 .PHONY: asdf
@@ -52,6 +64,8 @@ asdf_plugins:
 	-$(ASDF_WITHOUT_PATH) plugin-add elm
 	-$(ASDF_WITHOUT_PATH) plugin-add ruby
 	-$(ASDF_WITHOUT_PATH) plugin-add nodejs
+
+### fish related
 
 FISH = /usr/local/bin/fish
 .PHONY: fish
@@ -75,6 +89,8 @@ set_shell:
 	@# Password will be prompted
 	if [[ "$${SHELL}" != "$(FISH)" ]]; then chsh -s $(FISH); fi
 	if ! grep -q "$(FISH)" /etc/shells; then echo $(FISH) | sudo tee -a /etc/shells; fi
+
+### Atom editor related
 
 .PHONY: atom
 atom: /Applications/Atom.app atom_config init_atom_packages update_atom_packages install_git_packages  ;
@@ -131,6 +147,8 @@ prune_uninstalled_packages:
 	@# Regenerate current apm list since it could be updated by `install_updated_packages` target
 	apm list --bare --installed | sed -E '/language-el(ixir|m)/d' | comm -13 $(ATOM_PACKAGE_FILE) - | sed -E 's/@.*//' | xargs -n1 apm uninstall
 
+### Vim related
+
 # This might someday be revisited; neovim and dein.vim are gaining power today
 .PHONY: vim
 vim: ~/.vim/bundle/neobundle.vim ~/.vimrc ;
@@ -142,6 +160,8 @@ vim: ~/.vim/bundle/neobundle.vim ~/.vimrc ;
 
 ~/.vimrc:
 	ln -s ~/hiden/.vimrc ~/.vimrc
+
+### Fonts
 
 .PHONY: install_fonts
 install_fonts: ~/Library/Fonts/Source\ Code\ Pro\ for\ Powerline.otf ~/Library/Fonts/migmix-2m-bold.ttf ;
@@ -157,6 +177,8 @@ LATEST_MIGMIX = migmix-2m-20150712
 	unzip -q $(LATEST_MIGMIX).zip
 	cp $(LATEST_MIGMIX)/migmix-2m-*.ttf ~/Library/Fonts/.
 	rm -rf $(LATEST_MIGMIX)*
+
+### Custom scripts
 
 .PHONY: user_bin
 user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ~/bin/imgcat ;
@@ -175,6 +197,8 @@ user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ~/bin/imgcat ;
 
 ~/bin/imgcat:
 	ln -Fs ~/hiden/bin/imgcat ~/bin/imgcat
+
+### Other dot-files
 
 .PHONY: misc
 misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
