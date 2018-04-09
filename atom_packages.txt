@@ -10,7 +10,7 @@ build-elm-analyse@0.0.2
 busy-signal@1.4.3
 convert-to-utf8@0.2.4
 elm-format@3.0.0
-elmjutsu@7.3.3
+elmjutsu@7.3.4
 esformatter@2.3.0
 file-icons@2.1.18
 highlight-selected@0.13.1
