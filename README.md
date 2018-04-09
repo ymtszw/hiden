@@ -4,7 +4,7 @@ Bunch of my personal configurations/convenient scripts for development environme
 
 "秘伝" stands for "book of secret arts".
 
-# Components
+## Components
 
 - Using [iTerm2](https://www.iterm2.com/)
     - Using [Source Code Pro for Powerline font](https://github.com/powerline/fonts)
@@ -20,7 +20,7 @@ Bunch of my personal configurations/convenient scripts for development environme
 - Also installs some other utility programs, has convenient scripts and Vim configurations
 
 
-# Installation
+## Installation
 
 Currently only supports macOS.
 
@@ -33,3 +33,16 @@ $ make
 And set "Load preferences from a custom folder or URL: ~/hiden/iterm2" in iTerm2.
 
 Just re-invoke `make` to pull latest changes.
+
+## SSH Configs and [sshrc]
+
+Since OpenSSH 7.3 (which is met by latest macOS's default `/usr/bin/ssh`), `ssh_config` can `Include` other config files.
+
+With hiden, `~/.ssh/config` file will be initialized to `Include` files matching a pattern `~/.ssh/config.*`,
+so you can add any environment/machine specific `ssh_config`s in local files such as `~/.ssh/config.local`,
+without contaminating them with remote `ssh_config`s.
+
+Also, hiden installs [sshrc] to the environment and use it as a replacement for `ssh` by putting `~/bin/ssh`.
+[sshrc] allows transporting various dot-files with you when you SSH to any server with `openssl` installed.
+
+[sshrc]: https://github.com/Russell91/sshrc
