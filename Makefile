@@ -24,7 +24,7 @@ brew_packages:
 	@# Continue if already installed
 	-brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc
 	# Make sure gpg 2+ is installed in order to use gpg-agent with keychain
-	-brew install ctags jq gpg2 pinentry-mac fzf
+	-brew install ctags jq gpg2 pinentry-mac fzf sshrc
 
 # It will upgrade itself to the latest version, after first boot
 LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
