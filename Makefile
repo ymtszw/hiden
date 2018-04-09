@@ -49,10 +49,9 @@ brew: /usr/local/bin/brew brew_packages ;
 
 .PHONY: brew_packages
 brew_packages:
-	@# Continue if already installed
-	-brew install coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc
-	# Make sure gpg 2+ is installed in order to use gpg-agent with keychain
-	-brew install ctags jq gpg2 pinentry-mac fzf sshrc
+	@# Installing or upgrading already installed ones using `brew bundle`
+	@# If `brew bundle`'s automatic installation of Homebrew-bundle fails, try manually git-cloning the Homebrew-bundle repository!
+	brew bundle --file=~/hiden/Brewfile
 
 ### iTerm2 related
 
