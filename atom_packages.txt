@@ -10,7 +10,7 @@ build-elm-analyse@0.0.2
 busy-signal@1.4.3
 convert-to-utf8@0.2.4
 elm-format@3.0.0
-elmjutsu@7.3.4
+elmjutsu@7.3.5
 esformatter@2.3.0
 file-icons@2.1.18
 highlight-selected@0.13.1
@@ -20,6 +20,7 @@ indent-guide-improved@1.4.13
 intentions@1.1.5
 language-babel@2.84.0
 language-d@3.3.1
+language-docker@1.1.8
 language-ejs@0.4.0
 language-erlang@3.2.0
 language-fish-shell@1.1.0
