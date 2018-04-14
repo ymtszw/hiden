@@ -42,7 +42,7 @@ With hiden, `~/.ssh/config` file will be initialized to `Include` files matching
 so you can add any environment/machine specific `ssh_config`s in local files such as `~/.ssh/config.local`,
 without contaminating them with remote `ssh_config`s.
 
-Also, hiden installs [sshrc] to the environment and use it as a replacement for `ssh` by putting `~/bin/ssh`.
-[sshrc] allows transporting various dot-files with you when you SSH to any server with `openssl` installed.
+Also, hiden installs [sshrc] to the environment, which allows transporting
+various dot-files with you when you SSH to any server with `openssl` installed.
 
 [sshrc]: https://github.com/Russell91/sshrc
