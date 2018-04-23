@@ -165,6 +165,8 @@
       "solomon_acs"
       "testgear_acs"
       "sazabi"
+      "antikythera"
+      "AntikytheraInstanceExample"
     ]
     locales: [
       "en-US"
