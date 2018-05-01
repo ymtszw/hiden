@@ -167,10 +167,14 @@
       "sazabi"
       "antikythera"
       "AntikytheraInstanceExample"
+      "Qiita"
+      "Qiita"
+      "Websocket"
+      "websocket"
+      "Elasticsearch"
     ]
     locales: [
       "en-US"
-      "ja-JP"
     ]
   "symbols-tree-view":
     autoToggle: true
