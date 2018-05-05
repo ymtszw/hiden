@@ -70,7 +70,7 @@
     autoIndentOnPaste: false
     fontFamily: "\"MigMix 2M\""
     invisibles: {}
-    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…　、。「」（）？！"
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…　、。「」（）？！・"
     preferredLineLength: 130
     scrollPastEnd: true
   "elm-format": {}
