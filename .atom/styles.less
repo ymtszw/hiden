@@ -57,7 +57,7 @@ atom-text-editor::shadow .cursor {
 // Custom file icons
 .elixir-icon {
   &[data-name$="_test.exs"]:before { color: @medium-green; }
-  &[data-path*="/solomon/core/"], &[data-path^="core/"] {
+  &[data-path*="/antikythera/core/"], &[data-path^="core/"] {
     &:before { color: @dark-cyan; }
   }
   &[data-name$="mix.lock"]:before {
@@ -89,9 +89,9 @@ atom-text-editor::shadow .cursor {
 }
 
 // In search result views where file icons are shown in headers of search hits, html structures are a bit different
-[data-path*="/solomon/core/"] .elixir-icon:before { color: @dark-cyan; }
-[data-path*="View"]           .elm-icon:before    { color: @ultralight-pink; }
-[data-path*="test/"]          .js-icon:before     { color: @medium-green; }
+[data-path*="/antikythera/core/"] .elixir-icon:before { color: @dark-cyan; }
+[data-path*="View"] .elm-icon:before { color: @ultralight-pink; }
+[data-path*="test/"] .js-icon:before { color: @medium-green; }
 
 atom-text-editor, atom-text-editor.editor {
   .highlight.ideographic-space {
