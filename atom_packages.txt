@@ -10,9 +10,9 @@ build-elm-analyse@0.0.2
 busy-signal@1.4.3
 convert-to-utf8@0.2.4
 elm-format@3.0.0
-elmjutsu@8.1.0
+elmjutsu@8.1.4
 esformatter@2.3.0
-file-icons@2.1.19
+file-icons@2.1.21
 highlight-selected@0.13.1
 hyperclick@0.1.5
 hyperlink-hyperclick@2.0.0
@@ -27,8 +27,8 @@ language-fish-shell@1.1.0
 language-gettext@0.6.1
 language-gherkin@1.0.4
 language-gitignore@0.3.0
-language-haml@0.31.0
-language-haskell@1.17.6
+language-haml@0.31.1
+language-haskell@1.17.7
 language-jade@0.7.3
 language-latex@1.1.1
 language-markdown@0.25.1
@@ -40,7 +40,7 @@ language-textile@0.2.0
 language-viml@1.1.8
 linter@2.2.0
 linter-elixir-credo@1.1.0
-linter-elm-make@0.28.3
+linter-elm-make@0.28.5
 linter-eslint@8.4.1
 linter-flow@5.6.1
 linter-ruby@1.2.6
@@ -48,7 +48,7 @@ linter-shellcheck@1.4.7
 linter-stylelint@4.3.0
 linter-swagger@0.4.2
 linter-ui-default@1.7.1
-markdown-preview-plus@3.0.1
+markdown-preview-plus@3.2.0
 minimap@4.29.8
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1

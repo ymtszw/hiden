@@ -115,7 +115,8 @@
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-plus":
-    enableLatexRenderingByDefault: true
+    mathConfig:
+      enableLatexRenderingByDefault: true
     useGitHubStyle: true
   minimap:
     displayCodeHighlights: false
