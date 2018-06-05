@@ -109,7 +109,6 @@
   "linter-shellcheck":
     enableNotice: true
   "linter-ui-default":
-    panelHeight: 81
     panelRepresents: "Entire Project"
     showProviderName: true
   "markdown-preview":
