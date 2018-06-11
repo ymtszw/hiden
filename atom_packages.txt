@@ -10,7 +10,7 @@ build-elm-analyse@0.0.2
 busy-signal@1.4.3
 convert-to-utf8@0.2.4
 elm-format@3.0.0
-elmjutsu@8.1.4
+elmjutsu@8.2.0
 esformatter@2.3.0
 file-icons@2.1.21
 highlight-selected@0.13.1
@@ -48,14 +48,14 @@ linter-shellcheck@1.4.7
 linter-stylelint@4.3.0
 linter-swagger@0.4.2
 linter-ui-default@1.7.1
-markdown-preview-plus@3.2.0
+markdown-preview-plus@3.3.0
 minimap@4.29.8
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
 minimap-linter@2.1.3
 plantuml-viewer@0.7.2
-project-manager@3.3.5
+project-manager@3.3.6
 show-ideographic-space@1.0.2
 trailing-spaces@0.4.0
 zentabs@0.8.9
