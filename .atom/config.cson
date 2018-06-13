@@ -55,6 +55,12 @@
     disabledPackages: [
       "language-gfm"
       "markdown-preview"
+      "archive-view"
+      "bookmarks"
+      "autoflow"
+      "background-tips"
+      "autosave"
+      "welcome"
     ]
     packagesWithKeymapsDisabled: [
       "language-yaml"
@@ -85,8 +91,11 @@
     ".god$": "source.ruby"
   "find-and-replace":
     scrollToResultOnLiveSearch: true
+  "git-diff": {}
   "git-diff-details":
     enableSyntaxHighlighting: true
+  github:
+    viewChangesForCurrentFileDiffPaneSplitDirection: "right"
   "highlight-column":
     lineMode: true
   "incremental-search":
