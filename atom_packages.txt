@@ -28,10 +28,10 @@ language-gettext@0.6.1
 language-gherkin@1.0.4
 language-gitignore@0.3.0
 language-haml@0.31.1
-language-haskell@1.17.7
+language-haskell@1.17.8
 language-jade@0.7.3
 language-latex@1.1.1
-language-markdown@0.25.1
+language-markdown@0.26.0
 language-plantuml@0.2.0
 language-rust@0.4.12
 language-scala@1.1.9
@@ -48,7 +48,7 @@ linter-shellcheck@1.4.7
 linter-stylelint@4.3.0
 linter-swagger@0.4.2
 linter-ui-default@1.7.1
-markdown-preview-plus@3.3.0
+markdown-preview-plus@3.3.1
 minimap@4.29.8
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
