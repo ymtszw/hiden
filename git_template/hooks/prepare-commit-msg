@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # HOWTOUSE: Save this file as '.git/hooks/prepare-commit-msg' in your repository,
 #            and give Execution permission.
