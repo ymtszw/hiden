@@ -61,6 +61,7 @@
       "background-tips"
       "autosave"
       "welcome"
+      "Ensime"
     ]
     packagesWithKeymapsDisabled: [
       "language-yaml"
