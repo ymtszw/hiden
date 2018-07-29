@@ -20,6 +20,10 @@
       "="
       "::"
     ]
+  "atom-package-deps":
+    ignored: [
+      "elmjutsu"
+    ]
   "autocomplete-paths": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
