@@ -195,7 +195,6 @@ ssh: force_ssh_config /usr/local/bin/sshrc ~/.sshrc ~/.sshrc.d ~/.sshrc.d/.vimrc
 force_ssh_config:
 	cat ~/hiden/.ssh/config_entry_point > ~/.ssh/config
 	chmod 644 ~/.ssh/config
-	ln -Fs ~/SparkleShare/sparkleshare/ssh-config ~/.ssh/config.dodai
 
 ~/.sshrc:
 	ln -Fs ~/hiden/.sshrc ~/.sshrc
