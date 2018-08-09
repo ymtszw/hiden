@@ -10,7 +10,7 @@ busy-signal@1.4.3
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
 elm-format@3.0.0
-elmjutsu@8.2.0
+elmjutsu@8.2.1
 esformatter@2.3.0
 file-icons@2.1.22
 highlight-selected@0.14.0
@@ -48,7 +48,7 @@ linter-shellcheck@1.4.7
 linter-stylelint@4.3.2
 linter-swagger@0.5.1
 linter-ui-default@1.7.1
-markdown-preview-plus@3.3.3
+markdown-preview-plus@3.3.4
 minimap@4.29.8
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
