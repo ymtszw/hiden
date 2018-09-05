@@ -89,6 +89,7 @@
     autocompleteFuzzyFilteringEnabled: true
     autocompleteMaxSuggestions: 5
     cacheDirectory: "/var/folders/6c/z0cqt0mj4790yk2z1n4zbnh00000gn/T/elmjutsu9341OU1ZmXa4Zykj"
+    logDebugMessages: true
     showTypesInTooltip: true
   "exception-reporting":
     userId: "d4a5935a-272c-0572-8dc3-3d49725ee940"
