@@ -37,6 +37,7 @@ abbr gai 'git add --interactive'
 abbr grev 'git diff master...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
 abbr gpi 'git cherry-pick'
 abbr ssr 'sshrc'
+abbr sed 'gsed'
 
 function rl -d "Reload fish config"
   source "$HOME/.config/fish/config.fish"

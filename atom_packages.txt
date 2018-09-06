@@ -27,6 +27,7 @@ language-fish-shell@1.1.0
 language-gettext@0.6.1
 language-gherkin@1.0.4
 language-gitignore@0.3.0
+language-glsl@2.0.4
 language-haml@0.31.1
 language-haskell@1.17.8
 language-jade@0.7.3
@@ -40,7 +41,6 @@ language-textile@0.2.0
 language-viml@1.1.8
 linter@2.2.0
 linter-elixir-credo@1.1.0
-linter-elm-make@0.28.5
 linter-eslint@8.4.1
 linter-flow@5.6.1
 linter-ruby@1.2.6
