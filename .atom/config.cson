@@ -66,6 +66,7 @@
       "autosave"
       "welcome"
       "Ensime"
+      "linter-elm-make"
     ]
     packagesWithKeymapsDisabled: [
       "language-yaml"
