@@ -20,6 +20,48 @@
       "="
       "::"
     ]
+  "atom-beautify":
+    css:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+    elm:
+      beautify_on_save: true
+    general:
+      _analyticsUserId: "043c98a1-8a57-4f0d-a577-b3566b2d3a9c"
+      loggerLevel: "info"
+      showLoadingView: false
+    html:
+      beautify_on_save: true
+      end_with_newline: true
+      extra_liners: [
+        ""
+      ]
+      indent_inner_html: true
+    js:
+      beautify_on_save: true
+      end_with_comma: true
+      end_with_newline: true
+      object_curly_spacing: true
+    json:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+    less:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+    markdown:
+      default_beautifier: "Tidy Markdown"
+      disabled: true
+    scss:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+    typescript:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+    vue:
+      beautify_on_save: true
+      default_beautifier: "Prettier"
+    yaml:
+      disabled: true
   "atom-package-deps":
     ignored: [
       "elmjutsu"
@@ -87,10 +129,10 @@
     scrollPastEnd: true
   "elm-format": {}
   elmjutsu:
+    alwaysCompileMain: true
     autocompleteFuzzyFilteringEnabled: true
     autocompleteMaxSuggestions: 5
     cacheDirectory: "/var/folders/6c/z0cqt0mj4790yk2z1n4zbnh00000gn/T/elmjutsu9341OU1ZmXa4Zykj"
-    globalAutocompleteEnabled: true
     logDebugMessages: true
     showTypesInTooltip: true
     typeAwareAutocompleteEnabled: true
@@ -233,6 +275,9 @@
   editor:
     autoIndentOnPaste: false
     tabLength: 4
+".js.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!#@%^&*|+=[]{}`?-…"
 ".md.text":
   "bracket-matcher":
     autocompleteCharacters: [
