@@ -30,7 +30,7 @@ language-glsl@2.0.4
 language-haml@0.31.1
 language-haskell@1.17.8
 language-jade@0.7.3
-language-latex@1.1.1
+language-latex@1.2.0
 language-markdown@0.26.0
 language-plantuml@0.2.0
 language-rust@0.4.12
