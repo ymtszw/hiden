@@ -26,6 +26,7 @@
       default_beautifier: "Prettier"
     elm:
       beautify_on_save: true
+      disabled: true
     general:
       _analyticsUserId: "043c98a1-8a57-4f0d-a577-b3566b2d3a9c"
       loggerLevel: "info"
@@ -134,9 +135,12 @@
     autocompleteMaxSuggestions: 5
     cacheDirectory: "/var/folders/6c/z0cqt0mj4790yk2z1n4zbnh00000gn/T/elmjutsu9341OU1ZmXa4Zykj"
     globalAutocompleteEnabled: true
+    insertDefaultArgumentsCompletionEnabled: false
+    insertIfThenElseCompletionEnabled: false
+    insertLetInCompletionEnabled: false
     logDebugMessages: true
+    replaceWithInferredTypeCompletionEnabled: false
     showTypesInTooltip: true
-    typeAwareAutocompleteEnabled: true
   "exception-reporting":
     userId: "d4a5935a-272c-0572-8dc3-3d49725ee940"
   "file-types":

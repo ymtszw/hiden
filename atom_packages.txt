@@ -10,7 +10,8 @@ build-elm-analyse@0.0.2
 busy-signal@1.4.3
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
-elmjutsu@8.6.4
+elm-format@3.2.0
+elmjutsu@9.0.0
 esformatter@2.3.0
 file-icons@2.1.25
 highlight-selected@0.14.0
@@ -47,7 +48,7 @@ linter-shellcheck@1.5.0
 linter-stylelint@4.3.2
 linter-swagger@0.5.1
 linter-ui-default@1.7.1
-markdown-preview-plus@3.6.3
+markdown-preview-plus@3.7.0
 minimap@4.29.9
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
