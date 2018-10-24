@@ -11,7 +11,7 @@ busy-signal@1.4.3
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
 elm-format@3.2.0
-elmjutsu@9.0.0
+elmjutsu@9.0.3
 esformatter@2.3.0
 file-icons@2.1.25
 highlight-selected@0.14.0
@@ -32,7 +32,7 @@ language-haml@0.31.1
 language-haskell@1.17.8
 language-jade@0.7.3
 language-latex@1.2.0
-language-markdown@0.26.0
+language-markdown@0.27.0
 language-plantuml@0.2.0
 language-rust@0.4.12
 language-scala@1.1.9
