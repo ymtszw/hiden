@@ -13,7 +13,7 @@ convert-to-utf8@0.2.4
 elm-format@3.2.0
 elmjutsu@9.0.3
 esformatter@2.3.0
-file-icons@2.1.25
+file-icons@2.1.26
 highlight-selected@0.14.0
 hyperclick@0.1.5
 hyperlink-hyperclick@2.0.0
@@ -48,12 +48,12 @@ linter-shellcheck@1.5.0
 linter-stylelint@4.3.2
 linter-swagger@0.5.1
 linter-ui-default@1.7.1
-markdown-preview-plus@3.7.0
+markdown-preview-plus@3.7.1
 minimap@4.29.9
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
-minimap-linter@2.2.0
+minimap-linter@2.2.1
 plantuml-viewer@0.7.2
 project-manager@3.3.6
 show-ideographic-space@1.0.2
