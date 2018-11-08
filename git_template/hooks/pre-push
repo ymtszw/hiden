@@ -8,3 +8,6 @@ if [ -f package.json ]; then
     npm test
   fi
 fi
+if [ -f tests/*.elm ]; then
+  elm-test
+fi
