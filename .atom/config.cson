@@ -110,6 +110,7 @@
       "welcome"
       "Ensime"
       "linter-elm-make"
+      "build-elm-analyse"
     ]
     packagesWithKeymapsDisabled: [
       "language-yaml"
@@ -130,11 +131,10 @@
     scrollPastEnd: true
   "elm-format": {}
   elmjutsu:
-    alwaysCompileMain: true
     autocompleteMaxSuggestions: 5
     cacheDirectory: "/var/folders/6c/z0cqt0mj4790yk2z1n4zbnh00000gn/T/elmjutsu9341OU1ZmXa4Zykj"
+    codeActionsEnabled: false
     globalAutocompleteEnabled: true
-    insertDefaultArgumentsCompletionEnabled: false
     insertIfThenElseCompletionEnabled: false
     insertLetInCompletionEnabled: false
     logDebugMessages: true
