@@ -6,12 +6,11 @@ atom-ternjs@0.18.3
 atom-wrap-in-tag@0.6.0
 browser-plus@0.0.98
 build@0.70.0
-build-elm-analyse@0.0.2
 busy-signal@1.4.3
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
 elm-format@3.2.0
-elmjutsu@9.0.3
+elmjutsu@9.0.4
 esformatter@2.3.0
 file-icons@2.1.26
 highlight-selected@0.14.0
