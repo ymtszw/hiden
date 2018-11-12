@@ -1,6 +1,5 @@
 advanced-open-file@0.16.8
 atom-alignment@0.13.0
-atom-beautify@0.33.4
 atom-jade@0.3.0
 atom-ternjs@0.18.3
 atom-wrap-in-tag@0.6.0
@@ -10,7 +9,7 @@ busy-signal@1.4.3
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
 elm-format@3.2.0
-elmjutsu@9.2.0
+elmjutsu@9.4.0
 file-icons@2.1.26
 highlight-selected@0.14.0
 hyperclick@0.1.5
@@ -53,6 +52,7 @@ minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
 minimap-linter@2.2.1
 plantuml-viewer@0.7.2
+prettier-atom@0.55.2
 project-manager@3.3.6
 show-ideographic-space@1.0.2
 trailing-spaces@0.4.0

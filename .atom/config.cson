@@ -197,6 +197,9 @@
   "one-dark-ui": {}
   "plantuml-viewer":
     openInSplitPane: false
+  "prettier-atom":
+    formatOnSaveOptions:
+      showInStatusBar: true
   "project-manager":
     ignoreDirectories: "node_modules, vendor, deps"
     includeGitRepositories: true
