@@ -9,7 +9,7 @@ busy-signal@1.4.3
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
 elm-format@3.2.0
-elmjutsu@9.4.0
+elmjutsu@9.5.0
 file-icons@2.1.26
 highlight-selected@0.14.0
 hyperclick@0.1.5
