@@ -268,7 +268,7 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   zentabs:
-    maximumOpenedTabs: 6
+    maximumOpenedTabs: 8
     neverCloseNew: true
     neverCloseUnsaved: true
 ".elixir.html.text":
