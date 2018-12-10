@@ -9,7 +9,7 @@ busy-signal@1.4.3
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
 elm-format@3.2.0
-elmjutsu@9.9.2
+elmjutsu@9.10.1
 file-icons@2.1.26
 highlight-selected@0.14.0
 hyperclick@0.1.5
@@ -26,7 +26,7 @@ language-gherkin@1.0.4
 language-gitignore@0.3.0
 language-glsl@2.0.4
 language-haml@0.31.1
-language-haskell@1.17.8
+language-haskell@1.18.0
 language-jade@0.7.3
 language-latex@1.2.0
 language-markdown@0.27.0
@@ -52,7 +52,7 @@ minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
 minimap-linter@2.2.1
 plantuml-viewer@0.7.2
-prettier-atom@0.56.0
+prettier-atom@0.56.2
 project-manager@3.3.6
 show-ideographic-space@1.0.2
 trailing-spaces@0.4.0
