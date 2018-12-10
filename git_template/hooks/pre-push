@@ -8,6 +8,8 @@ if [ -f package.json ]; then
     npm test
   fi
 fi
-if [ -f tests/*.elm ]; then
-  elm-test
+if [ -f elm.json ]; then
+  if grep 'elm-explorations/test' > /dev/null; then
+    elm-test
+  fi
 fi
