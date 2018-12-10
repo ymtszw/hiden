@@ -9,7 +9,7 @@ if [ -f package.json ]; then
   fi
 fi
 if [ -f elm.json ]; then
-  if grep 'elm-explorations/test' > /dev/null; then
+  if grep 'elm-explorations/test' elm.json > /dev/null; then
     elm-test
   fi
 fi
