@@ -46,6 +46,7 @@ atom-text-editor::shadow .cursor {
 @pink:    #ff00cc;
 
 @light-red:       lighten(@red, @adjust);
+@medium-red:      @red;
 @medium-green:    @green;
 @medium-yellow:   @yellow;
 @medium-purple:   @purple;
@@ -100,6 +101,12 @@ atom-text-editor::shadow .cursor {
 [data-file-name*="test/"] .js-icon:before { color: @medium-green; }
 [data-file-path*="tests/"] .elm-icon:before,
 [data-file-name*="tests/"] .elm-icon:before { color: @medium-green; }
+
+// Custom icon for Dhall
+.icon[data-name$=".dhall"]:before {
+  content: "\f07C"; // "Config" icon
+  color: @medium-red;
+}
 
 // Hightlight ideographic-spaces; require ideographic-space package
 atom-text-editor, atom-text-editor.editor {

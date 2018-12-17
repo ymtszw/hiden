@@ -93,6 +93,9 @@
         "relx.config"
         "sys.config"
       ]
+      "source.haskell": [
+        "dhall"
+      ]
       "source.jade": [
         "dt"
       ]
@@ -143,8 +146,6 @@
     showTypesInTooltip: true
   "exception-reporting":
     userId: "d4a5935a-272c-0572-8dc3-3d49725ee940"
-  "file-types":
-    ".god$": "source.ruby"
   "find-and-replace":
     scrollToResultOnLiveSearch: true
   "git-diff": {}
