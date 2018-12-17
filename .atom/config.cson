@@ -174,8 +174,10 @@
   "linter-shellcheck":
     enableNotice: true
   "linter-ui-default":
-    panelRepresents: "Entire Project"
+    alwaysTakeMinimumSpace: true
+    decorateOnTreeView: "Files and Directories"
     showProviderName: true
+    statusBarClickBehavior: "Jump to next issue"
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-plus":
