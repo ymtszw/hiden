@@ -5,7 +5,7 @@ atom-ternjs@0.18.3
 atom-wrap-in-tag@0.6.0
 browser-plus@0.0.98
 build@0.70.0
-busy-signal@1.4.3
+busy-signal@2.0.0
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
 elm-format@3.2.0
@@ -29,7 +29,7 @@ language-haml@0.31.1
 language-haskell@1.18.0
 language-jade@0.7.3
 language-latex@1.2.0
-language-markdown@0.28.0
+language-markdown@0.29.0
 language-plantuml@0.2.0
 language-rust@0.4.12
 language-scala@1.1.9
@@ -38,7 +38,7 @@ language-textile@0.2.0
 language-viml@1.1.8
 linter@2.2.0
 linter-elixir-credo@1.1.0
-linter-eslint@8.4.1
+linter-eslint@8.5.0
 linter-flow@5.6.1
 linter-ruby@1.2.6
 linter-shellcheck@1.5.0
