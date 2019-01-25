@@ -32,6 +32,8 @@
   'ctrl-u': 'editor:delete-to-beginning-of-line'
   'ctrl-shift-cmd-n': 'editor:add-selection-below'
   'ctrl-shift-cmd-p': 'editor:add-selection-above'
+  'ctrl-i': 'cursor-history:next'
+  'ctrl-o': 'cursor-history:prev'
 'body':
   'ctrl-v': 'core:page-down'
   'ctrl-r': 'core:page-up'
