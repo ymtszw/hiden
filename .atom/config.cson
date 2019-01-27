@@ -63,6 +63,10 @@
       default_beautifier: "Prettier"
     yaml:
       disabled: true
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+      formatOnType: false
   "atom-package-deps":
     ignored: [
       "elmjutsu"
@@ -136,13 +140,13 @@
   elmjutsu:
     autocompleteMaxSuggestions: 5
     cacheDirectory: "/var/folders/6c/z0cqt0mj4790yk2z1n4zbnh00000gn/T/elmjutsu9341OU1ZmXa4Zykj"
-    codeActionsEnabled: false
     globalAutocompleteEnabled: true
     insertIfThenElseCompletionEnabled: false
     insertLetInCompletionEnabled: false
     logDebugMessages: true
-    replaceWithInferredTypeCompletionEnabled: false
     reportWarnings: true
+    showDocCommentsInSidekick: false
+    showSourcePathsInSidekick: false
     showTypesInTooltip: true
   "exception-reporting":
     userId: "d4a5935a-272c-0572-8dc3-3d49725ee940"
