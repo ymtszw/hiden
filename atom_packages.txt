@@ -11,7 +11,7 @@ convert-to-utf8@0.2.4
 cursor-history@0.13.1
 elm-format@3.2.0
 elmjutsu@9.10.1
-file-icons@2.1.28
+file-icons@2.1.29
 highlight-selected@0.14.0
 hyperclick@0.1.5
 hyperlink-hyperclick@2.0.0
