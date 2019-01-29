@@ -3,8 +3,8 @@ atom-alignment@0.13.0
 atom-jade@0.3.0
 atom-ternjs@0.18.3
 atom-wrap-in-tag@0.6.0
-browser-plus@0.0.98
 build@0.70.0
+build-elm-analyse@0.1.0
 busy-signal@2.0.0
 charcode-display@0.2.1
 convert-to-utf8@0.2.4
@@ -14,7 +14,7 @@ elmjutsu@9.10.1
 file-icons@2.1.29
 highlight-selected@0.14.0
 hyperclick@0.1.5
-hyperlink-hyperclick@2.0.0
+hyperlink-hyperclick@3.0.0
 indent-guide-improved@1.4.13
 intentions@1.1.5
 language-d@3.3.1
@@ -26,7 +26,7 @@ language-gettext@0.6.1
 language-gherkin@1.0.4
 language-gitignore@0.3.0
 language-glsl@2.0.4
-language-haml@0.31.1
+language-haml@0.32.1
 language-haskell@1.18.0
 language-jade@0.7.3
 language-latex@1.2.0
@@ -39,7 +39,7 @@ language-textile@0.2.0
 language-viml@1.1.8
 linter@2.2.0
 linter-elixir-credo@1.1.0
-linter-eslint@8.5.0
+linter-eslint@8.5.1
 linter-flow@5.6.1
 linter-ruby@1.3.0
 linter-shellcheck@1.6.0
