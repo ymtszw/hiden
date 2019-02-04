@@ -174,7 +174,8 @@
     logDebugMessages: true
     showCodeActions: false
     showInferredTypeAnnotations: true
-  "linter-eslint": {}
+  "linter-eslint":
+    lintHtmlFiles: true
   "linter-shellcheck":
     enableNotice: true
   "linter-ui-default":
