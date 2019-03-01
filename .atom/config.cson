@@ -207,7 +207,6 @@
     openInSplitPane: false
   "prettier-atom":
     formatOnSaveOptions:
-      enabled: true
       showInStatusBar: true
   "project-manager":
     ignoreDirectories: "node_modules, vendor, deps"

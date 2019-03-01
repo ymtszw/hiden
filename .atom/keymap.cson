@@ -34,6 +34,7 @@
   'ctrl-shift-cmd-p': 'editor:add-selection-above'
   'ctrl-i': 'cursor-history:next'
   'ctrl-o': 'cursor-history:prev'
+  'ctrl': 'linter-ui-default:expand-tooltip'
 'body':
   'ctrl-v': 'core:page-down'
   'ctrl-r': 'core:page-up'

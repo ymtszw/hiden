@@ -1,7 +1,7 @@
 advanced-open-file@0.16.8
 atom-alignment@0.13.0
 atom-jade@0.3.0
-atom-ternjs@0.18.3
+atom-ternjs@0.18.5
 atom-wrap-in-tag@0.6.0
 build@0.70.0
 build-elm-analyse@0.1.0
@@ -37,7 +37,7 @@ language-scala@1.1.9
 language-slim@1.0.0
 language-textile@0.2.0
 language-viml@1.1.9
-linter@2.2.0
+linter@2.3.0
 linter-elixir-credo@1.1.0
 linter-eslint@8.5.2
 linter-flow@5.6.1
@@ -54,7 +54,7 @@ minimap-highlight-selected@4.6.1
 minimap-linter@2.2.1
 pigments@0.40.2
 plantuml-viewer@0.7.2
-prettier-atom@0.56.3
+prettier-atom@0.56.4
 project-manager@3.3.6
 show-ideographic-space@1.0.2
 trailing-spaces@0.4.0
