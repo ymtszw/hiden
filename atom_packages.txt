@@ -1,7 +1,7 @@
 advanced-open-file@0.16.8
 atom-alignment@0.13.0
 atom-jade@0.3.0
-atom-ternjs@0.18.5
+atom-ternjs@0.19.1
 atom-wrap-in-tag@0.6.0
 build@0.70.0
 build-elm-analyse@0.1.0
