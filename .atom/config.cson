@@ -117,6 +117,7 @@
       "welcome"
       "Ensime"
       "linter-elm-make"
+      "atom-ternjs"
     ]
     packagesWithKeymapsDisabled: [
       "language-yaml"
@@ -128,6 +129,10 @@
     ]
     projectHome: "/Users/yumatsuzawa/workspace"
     telemetryConsent: "limited"
+  "cursor-history":
+    excludeClosedBuffer: true
+    rowDeltaToRemember: 40
+    searchAllPanes: false
   editor:
     autoIndentOnPaste: false
     fontFamily: "\"MigMix 2M\""
@@ -207,6 +212,7 @@
     openInSplitPane: false
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
       showInStatusBar: true
   "project-manager":
     ignoreDirectories: "node_modules, vendor, deps"
