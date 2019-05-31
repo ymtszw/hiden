@@ -63,6 +63,8 @@
       default_beautifier: "Prettier"
     yaml:
       disabled: true
+  "atom-elixir-formatter":
+    formatOnSave: "whenFormatterFilePresent"
   "atom-ide-ui":
     "atom-ide-code-format":
       formatOnSave: true
