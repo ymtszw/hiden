@@ -175,6 +175,8 @@
     lintOnChangeInterval: 1
     lintOnOpen: false
     lintPreviewTabs: false
+  "linter-elixirc":
+    forceElixirc: true
   "linter-elm-analyse": {}
   "linter-elm-make":
     alwaysCompileMain: true
