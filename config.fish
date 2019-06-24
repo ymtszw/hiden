@@ -48,6 +48,11 @@ function sshrc -d "sshrc with ssh like completions" --wraps "ssh"
   /usr/local/bin/sshrc $argv
 end
 
+function sync_history --on-event fish_preexec
+  history --save
+  history --merge
+end
+
 # Import common settings
 
 source "$HOME/hiden/shrc.sh"

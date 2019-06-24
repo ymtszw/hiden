@@ -23,3 +23,12 @@ set cursorline
 " Override tab settings from basic.vim
 set tabstop=2
 set shiftwidth=2
+
+" Plugin using vim-plug
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+
+call plug#end()
