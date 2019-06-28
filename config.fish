@@ -49,8 +49,8 @@ function sshrc -d "sshrc with ssh like completions" --wraps "ssh"
 end
 
 function sync_history --on-event fish_preexec
-    history --save
-    history --merge
+  history --save
+  history --merge
 end
 
 # Import common settings
