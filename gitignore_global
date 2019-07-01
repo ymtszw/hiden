@@ -2,7 +2,6 @@ node_modules/
 bower_components/
 .DS_store
 tags
-start.sh
 elm-stuff/
 npm-debug.log
 yarn-error.log
