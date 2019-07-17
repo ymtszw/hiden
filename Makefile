@@ -17,7 +17,7 @@ check_requirements:
 # Install stuff!
 #
 .PHONY: install_stuff
-install_stuff: user_bin brew /Applications/iTerm.app asdf fish atom vim ssh install_fonts misc ;
+install_stuff: user_bin brew asdf fish vim ssh install_fonts misc ;
 
 ### Custom scripts
 
@@ -246,7 +246,6 @@ misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
 ~/.config/git/ignore:
 	mkdir -p ~/.config/git
 	ln -s ~/hiden/gitignore_global ~/.config/git/ignore
-	git config --global --unset core.excludesFile
 
 .PHONY: git_template
 git_template:
