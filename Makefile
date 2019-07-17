@@ -101,7 +101,7 @@ $(FISH):
 
 .PHONY: fish_plugins
 fish_plugins:
-	fish -c "fisher aws docker-completion ymtszw/theme-agnoster"
+	fish -c "fisher add aws docker-completion fishpkg/fish-prompt-metro"
 
 .PHONY: set_shell
 set_shell:
