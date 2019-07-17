@@ -82,6 +82,7 @@ asdf_plugins:
 	$(ASDF_WITHOUT_PATH) plugin-add elm || $(ASDF_WITHOUT_PATH) plugin-update elm
 	$(ASDF_WITHOUT_PATH) plugin-add ruby || $(ASDF_WITHOUT_PATH) plugin-update ruby
 	$(ASDF_WITHOUT_PATH) plugin-add nodejs || $(ASDF_WITHOUT_PATH) plugin-update nodejs
+	bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 	$(ASDF_WITHOUT_PATH) plugin-add rust || $(ASDF_WITHOUT_PATH) plugin-update rust
 
 ### fish related
