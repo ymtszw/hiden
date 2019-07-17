@@ -218,7 +218,8 @@ install_fonts: ~/Library/Fonts/Source\ Code\ Pro\ for\ Powerline.otf ~/Library/F
 
 ~/Library/Fonts/Source\ Code\ Pro\ for\ Powerline.otf:
 	git clone https://github.com/powerline/fonts
-	fonts/install.sh "Source Code Pro for Powerline"
+	fonts/install.sh
+	@echo "Re-login after this in order to reload font settings"
 	rm -rf fonts
 
 LATEST_MIGMIX = migmix-2m-20150712
@@ -226,6 +227,7 @@ LATEST_MIGMIX = migmix-2m-20150712
 	curl -O http://jaist.dl.osdn.jp/mix-mplus-ipa/63544/$(LATEST_MIGMIX).zip
 	unzip -q $(LATEST_MIGMIX).zip
 	cp $(LATEST_MIGMIX)/migmix-2m-*.ttf ~/Library/Fonts/.
+	@echo "Re-login after this in order to reload font settings"
 	rm -rf $(LATEST_MIGMIX)*
 
 ### Other dot-files
