@@ -107,8 +107,8 @@ fish_plugins:
 .PHONY: set_shell
 set_shell:
 	@# Password will be prompted
-	if [[ "$${SHELL}" != "$(FISH)" ]]; then chsh -s $(FISH); fi
 	if ! grep -q "$(FISH)" /etc/shells; then echo $(FISH) | sudo tee -a /etc/shells; fi
+	if [[ "$${SHELL}" != "$(FISH)" ]]; then chsh -s $(FISH); fi
 
 ### Atom editor related
 
