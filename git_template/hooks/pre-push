@@ -10,7 +10,7 @@ if [ -f package.json ]; then
   fi
 fi
 if [ -f elm.json ]; then
-  jq '.["source-directories"][]' elm.json | xargs -n1 elm-format --validate
+  jq '.["source-directories"] // ["src"] | .[]' elm.json | xargs -n1 elm-format --validate
   if grep 'elm-explorations/test' elm.json > /dev/null; then
     elm-test
   fi
