@@ -237,7 +237,7 @@ LATEST_MIGMIX = migmix-2m-20150712
 ### Other dot-files
 
 .PHONY: misc
-misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
+misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_config ;
 
 ~/.ctags:
 	ln -s ~/hiden/.ctags ~/.ctags
@@ -250,6 +250,11 @@ misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_template ;
 	mkdir -p ~/.config/git
 	ln -s ~/hiden/gitignore_global ~/.config/git/ignore
 
-.PHONY: git_template
-git_template:
-	git config --global init.templateDir ~/hiden/git_template
+.PHONY: git_config
+git_config:
+	git config --global --replace-all init.templateDir ~/hiden/git_template
+	git config --global --replace-all core.editor vim
+	git config --global --replace-all user.name 'Yu Matsuzawa'
+	@echo ""
+	@echo "MUST: Set git author email with 'git config --global user.email <email>'!"
+	@echo ""
