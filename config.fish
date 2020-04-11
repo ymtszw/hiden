@@ -53,6 +53,8 @@ function sync_history --on-event fish_preexec
   history --merge
 end
 
+set fish_complete_path /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d $fish_complete_path
+
 # Import common settings
 
 source "$HOME/hiden/shrc.sh"
