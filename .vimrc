@@ -32,3 +32,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
+
+" Open commit message editor with insert mode
+" https://superuser.com/a/1184689
+autocmd FileType gitcommit exec 'au VimEnter * startinsert'
