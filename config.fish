@@ -53,4 +53,3 @@ end
 # Import common settings
 
 source "$HOME/hiden/shrc.sh"
-
