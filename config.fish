@@ -32,6 +32,7 @@ abbr goms 'git commit --gpg-sign'
 abbr gba 'git rebase'
 abbr ga 'git add'
 abbr gai 'git add --interactive'
+abbr gap 'git add --patch'
 abbr grev 'git diff origin/master...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
 abbr gpi 'git cherry-pick'
 abbr gar 'git apply -R'
