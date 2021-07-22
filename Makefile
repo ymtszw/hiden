@@ -11,27 +11,21 @@ all: check_requirements install_stuff ;
 check_requirements:
 	@if [[ "$(abspath $(dir .))" != "$(abspath $(dir ~))" ]]; then echo "hiden must be at ~/hiden !"; exit 1; fi
 	@if [[ "$(shell uname)" != "Darwin" ]]; then echo "Only supports macOS"; exit 1; fi
-	@which -s curl git
+	@which -s brew curl git
 
 #
 # Install stuff!
 #
 .PHONY: install_stuff
-install_stuff: user_bin brew asdf fish vim ssh install_fonts misc ;
+install_stuff: user_bin brew_packages fish vim ssh install_fonts misc ;
 
 ### Custom scripts
 
 .PHONY: user_bin
-user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ~/bin/imgcat ;
+user_bin: ~/bin ~/bin/local_git_user ~/bin/imgcat ;
 
 ~/bin:
 	mkdir -p ~/bin
-
-~/bin/toggle_id:
-	ln -Fs ~/hiden/bin/toggle_id ~/bin/toggle_id
-
-~/bin/vpn:
-	ln -Fs ~/hiden/bin/vpn ~/bin/vpn
 
 ~/bin/local_git_user:
 	ln -Fs ~/hiden/bin/local_git_user ~/bin/local_git_user
@@ -41,17 +35,13 @@ user_bin: ~/bin ~/bin/toggle_id ~/bin/vpn ~/bin/local_git_user ~/bin/imgcat ;
 
 ### Homebrew related
 
-.PHONY: brew
-brew: /usr/local/bin/brew brew_packages ;
-
-/usr/local/bin/brew:
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 .PHONY: brew_packages
 brew_packages:
 	@# Installing or upgrading already installed ones using `brew bundle`
 	@# If `brew bundle`'s automatic installation of Homebrew-bundle fails, try manually git-cloning the Homebrew-bundle repository!
 	brew bundle --file=~/hiden/Brewfile
+	gh completion -s fish > ~/.config/fish/completions/gh.fish
+	gh auth login
 
 ### iTerm2 related
 
@@ -62,28 +52,6 @@ LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
 	unzip -q $(LATEST_ITERM_ZIP)
 	sudo mv iTerm.app /Applications/.
 	rm $(LATEST_ITERM_ZIP)
-
-### asdf related
-
-ASDF_WITHOUT_PATH = ~/.asdf/bin/asdf
-.PHONY: asdf
-asdf: $(ASDF_WITHOUT_PATH) ~/.config/fish/completions/asdf.fish asdf_plugins ;
-
-$(ASDF_WITHOUT_PATH):
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1 # Can be upgraded by git-pull
-
-~/.config/fish/completions/asdf.fish:
-	mkdir -p ~/.config/fish/completions
-	ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions/asdf.fish
-
-asdf_plugins:
-	$(ASDF_WITHOUT_PATH) plugin-add erlang || $(ASDF_WITHOUT_PATH) plugin-update erlang
-	$(ASDF_WITHOUT_PATH) plugin-add elixir || $(ASDF_WITHOUT_PATH) plugin-update elixir
-	$(ASDF_WITHOUT_PATH) plugin-add elm || $(ASDF_WITHOUT_PATH) plugin-update elm
-	$(ASDF_WITHOUT_PATH) plugin-add ruby || $(ASDF_WITHOUT_PATH) plugin-update ruby
-	$(ASDF_WITHOUT_PATH) plugin-add nodejs || $(ASDF_WITHOUT_PATH) plugin-update nodejs
-	bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-	$(ASDF_WITHOUT_PATH) plugin-add rust || $(ASDF_WITHOUT_PATH) plugin-update rust
 
 ### fish related
 
@@ -112,63 +80,6 @@ set_shell:
 	@# Password will be prompted
 	if ! grep -q "$(shell which fish)" /etc/shells; then echo $(shell which fish) | sudo tee -a /etc/shells; fi
 	if [[ "$${SHELL}" != "$(shell which fish)" ]]; then chsh -s $(shell which fish); fi
-
-### Atom editor related
-
-.PHONY: atom
-atom: /Applications/Atom.app atom_config init_atom_packages update_atom_packages install_git_packages  ;
-
-ATOM_ZIP = atom-mac.zip
-/Applications/Atom.app:
-	curl -Lo $(ATOM_ZIP) https://atom.io/download/mac
-	unzip -q $(ATOM_ZIP)
-	sudo mv Atom.app /Applications/.
-	rm $(ATOM_ZIP)
-
-.PHONY: atom_config
-atom_config:
-	ln -Fs ~/hiden/.atom/styles.less ~/.atom/styles.less
-	ln -Fs ~/hiden/.atom/keymap.cson ~/.atom/keymap.cson
-	ln -Fs ~/hiden/.atom/snippets.cson ~/.atom/snippets.cson
-	ln -Fs ~/hiden/.atom/config.cson ~/.atom/config.cson
-
-# Check the most fundamental package. If not exist, perform init install
-.PHONY: init_atom_packages
-init_atom_packages: ~/.atom/packages/linter ;
-
-ATOM_PACKAGE_FILE = atom_packages.txt
-~/.atom/packages/linter:
-	make install_atom_packages:
-
-.PHONY: install_atom_packages
-install_atom_packages:
-	@# apm commands may need to be absolute path before first boot
-	@# This is rather heavy action; better do it one by one, or create more "smart" install script
-	apm install --packages-file $(ATOM_PACKAGE_FILE)
-
-.PHONY: install_git_packages
-install_git_packages:
-	@# Git packages won't install automatically; always install latest
-	apm install ymtszw/language-elixir-with-croma
-	apm install ymtszw/language-elm
-
-.PHONY: dump_atom_packages
-dump_atom_packages:
-	@# Source information of git packages aren't dumped
-	apm list --bare --installed --enabled | sed -E '/(language-el(ixir|m)|^\s*$$)/d' > $(ATOM_PACKAGE_FILE)
-
-.PHONY: update_atom_packages
-update_atom_packages: install_updated_packages prune_uninstalled_packages ;
-
-.PHONY: install_updated_packages
-install_updated_packages:
-	@# Do not re-install disabled packages
-	apm list --bare --installed | sed -E '/language-el(ixir|m)/d' | comm -23 $(ATOM_PACKAGE_FILE) - | xargs -n1 apm install
-
-.PHONY: prune_uninstalled_packages
-prune_uninstalled_packages:
-	@# Regenerate current apm list since it could be updated by `install_updated_packages` target
-	apm list --bare --installed | sed -E '/language-el(ixir|m)/d' | comm -13 $(ATOM_PACKAGE_FILE) - | sed -E 's/@.*//' | xargs -n1 apm uninstall
 
 ### Vim related
 
