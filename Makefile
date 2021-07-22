@@ -87,22 +87,22 @@ asdf_plugins:
 
 ### fish related
 
-FISH = /usr/local/bin/fish
 .PHONY: fish
-fish: $(FISH) ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
+fish: fish_bin ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
 
-$(FISH):
+.PHONY: fish_bin
+fish_bin:
 	brew install fish
 
 ~/.config/fish/functions/fisher.fish:
-	curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+	fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 
 ~/.config/fish/config.fish:
 	ln -s ~/hiden/config.fish ~/.config/fish/config.fish
 
 .PHONY: fish_plugins
 fish_plugins:
-	fish -c "fisher install oh-my-fish/plugin-aws fishpkg/fish-prompt-metro"
+	fish -c "fisher install oh-my-fish/plugin-aws oh-my-fish/theme-bobthefish"
 	curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
 	curl https://raw.githubusercontent.com/docker/compose/master/contrib/completion/fish/docker-compose.fish -o ~/.config/fish/completions/docker-compose.fish
 
@@ -110,8 +110,8 @@ fish_plugins:
 .PHONY: set_shell
 set_shell:
 	@# Password will be prompted
-	if ! grep -q "$(FISH)" /etc/shells; then echo $(FISH) | sudo tee -a /etc/shells; fi
-	if [[ "$${SHELL}" != "$(FISH)" ]]; then chsh -s $(FISH); fi
+	if ! grep -q "$(shell which fish)" /etc/shells; then echo $(shell which fish) | sudo tee -a /etc/shells; fi
+	if [[ "$${SHELL}" != "$(shell which fish)" ]]; then chsh -s $(shell which fish); fi
 
 ### Atom editor related
 
