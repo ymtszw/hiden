@@ -148,10 +148,7 @@ LATEST_MIGMIX = migmix-2m-20150712
 ### Other dot-files
 
 .PHONY: misc
-misc: ~/.ctags ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_config ;
-
-~/.ctags:
-	ln -s ~/hiden/.ctags ~/.ctags
+misc: ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_config ;
 
 ~/.gnupg/gpg-agent.conf:
 	mkdir -p ~/.gnupg
