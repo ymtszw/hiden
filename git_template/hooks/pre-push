@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-if [ -f mix.exs ]; then
-  mix format --check-formatted
-  PORT=27878 mix test
-fi
-if [ -f package.json ]; then
-  if npm run | grep '^  test$' > /dev/null; then
-    npm test
-  fi
-fi
-if [ -f elm.json ]; then
-  jq '.["source-directories"] // ["src"] | .[]' elm.json | xargs -n1 elm-format --validate
-  if grep 'elm-explorations/test' elm.json > /dev/null; then
-    elm-test
-  fi
-fi
+# Enable whatever suitable:
+# make test
+# npm test
+# yarn test
+# mix test
+# elm-test
