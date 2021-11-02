@@ -163,6 +163,7 @@ git_config:
 	git config --global --replace-all init.templateDir ~/hiden/git_template
 	git config --global --replace-all core.editor vim
 	git config --global --replace-all user.name 'Yu Matsuzawa'
+	git config --global --replace-all advice.detachedHead false
 	@echo ""
 	@echo "MUST: Set git author email with 'git config --global user.email <email>'!"
 	@echo ""
