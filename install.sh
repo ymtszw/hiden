@@ -7,6 +7,7 @@ set -euo pipefail
 
 echo "Customizing devcontainer..."
 echo "\$USER: $USER"
+pwd
 
 if [ "$REMOTE_CONTAINERS" != "true" ]; then
   echo "This script is meant to be used inside VSCode devcontainer!"
@@ -23,7 +24,7 @@ if which fish; then
   # fishがoptional featureでインストールされてるときの設定
   ln -s ~/hiden/config.fish ~/.config/fish/config.fish
   fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-  make fish_plugins
+  # make fish_plugins
   sudo chsh -s "$(which fish)" "$USER"
 fi
 
