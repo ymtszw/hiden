@@ -46,6 +46,7 @@ if [ -f ~/.config/fish/config.fish ]; then
 fi
 make ~/.config/fish/config.fish
 make ~/.config/fish/functions/fisher.fish # fisherを実際に呼び出すインストールが何故かdotfilesスクリプトの中だと成功しないので、fisher installは起動後に手動でやる
+make fish_plugins
 "$SUDO" chsh -s "$(which fish)" "$USER"
 
 # vim config
