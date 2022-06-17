@@ -63,7 +63,8 @@ fish_bin:
 	brew install fish
 
 ~/.config/fish/functions/fisher.fish:
-	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+	curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/completions/fisher.fish > ~/.config/fish/completions/fisher.fish
+	curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish > ~/.config/fish/functions/fisher.fish
 
 ~/.config/fish/config.fish:
 	ln -s ~/hiden/config.fish ~/.config/fish/config.fish
