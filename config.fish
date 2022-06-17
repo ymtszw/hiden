@@ -36,21 +36,17 @@ abbr gap 'git add --patch'
 abbr grev 'git diff origin/master...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
 abbr gpi 'git cherry-pick'
 abbr gar 'git apply -R'
-abbr ssr 'sshrc'
+abbr ssr sshrc
 
 function rl -d "Reload fish config"
-  source "$HOME/.config/fish/config.fish"
+    source "$HOME/.config/fish/config.fish"
 end
 
-function sshrc -d "sshrc with ssh like completions" --wraps "ssh"
-  /usr/local/bin/sshrc $argv
+function sshrc -d "sshrc with ssh like completions" --wraps ssh
+    /usr/local/bin/sshrc $argv
 end
 
 function sync_history --on-event fish_preexec
-  history --save
-  history --merge
+    history --save
+    history --merge
 end
-
-# Import common settings
-
-source "$HOME/hiden/shrc.sh"
