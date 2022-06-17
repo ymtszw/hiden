@@ -6,6 +6,7 @@ set -euo pipefail
 #
 
 echo "Customizing devcontainer..."
+echo "\$USER: $USER"
 
 if [ "$REMOTE_CONTAINERS" != "true" ]; then
   echo "This script is meant to be used inside VSCode devcontainer!"
