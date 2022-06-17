@@ -149,6 +149,21 @@ LATEST_MIGMIX = migmix-2m-20150712
 	@echo "Re-login after this in order to reload font settings"
 	rm -rf $(LATEST_MIGMIX)*
 
+### VSCode Remote Extensions
+
+.PHONY: vscode_extensions
+vscode_extensions:
+	code --install-extension sleistner.vscode-fileutils
+	code --install-extension wmaurer.change-case
+	code --install-extension streetsidesoftware.code-spell-checker
+	code --install-extension ionutvmi.path-autocomplete
+	code --install-extension timonwong.shellcheck
+	code --install-extension TabNine.tabnine-vscode
+	code --install-extension shardulm94.trailing-spaces
+	code --install-extension eamodio.gitlens
+	code --install-extension GitHub.vscode-pull-request-github
+	code --install-extension bmalehorn.vscode-fish
+
 ### Other dot-files
 
 .PHONY: misc
