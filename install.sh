@@ -40,6 +40,7 @@ if ! which fish; then
   "$SUDO" apt-get install -y fish
 fi
 
+# fish config
 if [ -f ~/.config/fish/config.fish ]; then
   rm ~/.config/fish/config.fish
 fi
@@ -47,5 +48,8 @@ ln -s ~/hiden/config.fish ~/.config/fish/config.fish
 # fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
 # make fish_plugins
 "$SUDO" chsh -s "$(which fish)" "$USER"
+
+# vim config
+make vim
 
 echo "Done!"
