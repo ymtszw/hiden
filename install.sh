@@ -45,10 +45,22 @@ if [ -f ~/.config/fish/config.fish ]; then
   rm ~/.config/fish/config.fish
 fi
 make ~/.config/fish/config.fish
-make ~/.config/fish/functions/fisher.fish # fisherを実際に呼び出すインストールが何故かdotfilesスクリプトの中だと成功しないので、fisher installは起動後に手動でやる
+make ~/.config/fish/functions/fisher.fish # fisher installが何故かdotfilesスクリプトの中だと成功しないので、起動後に手動でやる
 "$SUDO" chsh -s "$(which fish)" "$USER"
 
 # vim config
 make vim
+
+# install favorite extensions server-side
+code --install-extension sleistner.vscode-fileutils
+code --install-extension wmaurer.change-case
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension ionutvmi.path-autocomplete
+code --install-extension timonwong.shellcheck
+code --install-extension TabNine.tabnine-vscode
+code --install-extension shardulm94.trailing-spaces
+code --install-extension eamodio.gitlens
+code --install-extension GitHub.vscode-pull-request-github
+code --install-extension bmalehorn.vscode-fish
 
 echo "Done!"
