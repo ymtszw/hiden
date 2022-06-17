@@ -63,6 +63,8 @@ fish_bin:
 	brew install fish
 
 ~/.config/fish/functions/fisher.fish:
+	mkdir -p ~/.config/fish/completions
+	mkdir -p ~/.config/fish/functions
 	curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/completions/fisher.fish > ~/.config/fish/completions/fisher.fish
 	curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish > ~/.config/fish/functions/fisher.fish
 

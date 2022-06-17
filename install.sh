@@ -44,7 +44,7 @@ fi
 if [ -f ~/.config/fish/config.fish ]; then
   rm ~/.config/fish/config.fish
 fi
-ln -s ~/hiden/config.fish ~/.config/fish/config.fish
+make ~/.config/fish/config.fish
 make ~/.config/fish/functions/fisher.fish # fisherを実際に呼び出すインストールが何故かdotfilesスクリプトの中だと成功しないので、fisher installは起動後に手動でやる
 "$SUDO" chsh -s "$(which fish)" "$USER"
 
