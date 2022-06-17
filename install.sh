@@ -41,8 +41,8 @@ if ! which fish; then
 fi
 
 ln -s ~/hiden/config.fish ~/.config/fish/config.fish
-fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-make fish_plugins
+# fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+# make fish_plugins
 "$SUDO" chsh -s "$(which fish)" "$USER"
 
 echo "Done!"
