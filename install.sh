@@ -18,7 +18,7 @@ if [ "$USER" == "root" ]; then
   SUDO=""
 else
   SUDO="sudo"
-  if ! which "$SUDO"; then
+  if ! which sudo; then
     # 非rootでsudoもなければ好きなツールを自前でインストールする権限が足りないのでdevcontainerの管理者と相談
     echo "sudo missing!!! Request devcontainer owner to include sudo in the image and grant password-less sudoer privilege!"
     exit 1
@@ -26,18 +26,18 @@ else
 fi
 
 # devcontainerはだいたいDebian/Ubuntuベースであると期待し、以下決め打ちでapt-getを使う
-"$SUDO" apt-get update
+$SUDO apt-get update
 
 if ! which make; then
-  "$SUDO" apt-get install -y make
+  $SUDO apt-get install -y make
 fi
 
 if ! which curl; then
-  "$SUDO" apt-get install -y curl
+  $SUDO apt-get install -y curl
 fi
 
 if ! which fish; then
-  "$SUDO" apt-get install -y fish
+  $SUDO apt-get install -y fish
 fi
 
 # fish config
@@ -46,7 +46,7 @@ if [ -f ~/.config/fish/config.fish ]; then
 fi
 make ~/.config/fish/config.fish
 make ~/.config/fish/functions/fisher.fish # fisher installが何故かdotfilesスクリプトの中だと成功しないので、起動後に手動でやる
-"$SUDO" chsh -s "$(which fish)" "$USER"
+$SUDO chsh -s "$(which fish)" "$USER"
 
 # vim config
 make vim
