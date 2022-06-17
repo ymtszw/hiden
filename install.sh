@@ -5,6 +5,8 @@ set -euo pipefail
 # devcontainer個人カスタマイズスクリプト
 #
 
+echo "Customizing devcontainer..."
+
 if [ "$REMOTE_CONTAINERS" != "true" ]; then
   echo "This script is meant to be used inside VSCode devcontainer!"
   exit 1
@@ -23,3 +25,5 @@ if which fish; then
   make fish_plugins
   sudo chsh -s "$(which fish)" "$USER"
 fi
+
+echo "Done!"
