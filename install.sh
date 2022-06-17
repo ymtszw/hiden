@@ -20,6 +20,6 @@ if which fish; then
   # fishがoptional featureでインストールされてるときの設定
   sudo chsh -s "$(which fish)" "$USER"
   fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-  ln -s "$(dirname "$0")/config.fish" "$HOME/.config/fish/config.fish"
+  ln -s ~/hiden/config.fish ~/.config/fish/config.fish
   make fish_plugins
 fi
