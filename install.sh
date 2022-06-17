@@ -6,26 +6,43 @@ set -euo pipefail
 #
 
 echo "Customizing devcontainer..."
-echo "\$USER: $USER"
-pwd
 
 if [ "$REMOTE_CONTAINERS" != "true" ]; then
   echo "This script is meant to be used inside VSCode devcontainer!"
   exit 1
 fi
 
-if ! which make; then
-  # makeは流石に入っててくれないと困る
-  echo "make missing!!! Request devcontainer owner to include make in the image."
-  exit 1
+# このdevcontainerがrootユーザか否かチェックし、それを元にsudoを使うか分岐
+echo "\$USER: $USER"
+if [ "$USER" == "root" ]; then
+  SUDO=""
+else
+  SUDO="sudo"
+  if ! which "$SUDO"; then
+    # 非rootでsudoもなければ好きなツールを自前でインストールする権限が足りないのでdevcontainerの管理者と相談
+    echo "sudo missing!!! Request devcontainer owner to include sudo in the image and grant password-less sudoer privilege!"
+    exit 1
+  fi
 fi
 
-if which fish; then
-  # fishがoptional featureでインストールされてるときの設定
-  ln -s ~/hiden/config.fish ~/.config/fish/config.fish
-  # fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-  # make fish_plugins
-  # sudo chsh -s "$(which fish)" "$USER"
+# devcontainerはだいたいDebian/Ubuntuベースであると期待し、以下決め打ちでapt-getを使う
+"$SUDO" apt-get update
+
+if ! which make; then
+  "$SUDO" apt-get install -y make
 fi
+
+if ! which curl; then
+  "$SUDO" apt-get install -y curl
+fi
+
+if ! which fish; then
+  "$SUDO" apt-get install -y fish
+fi
+
+ln -s ~/hiden/config.fish ~/.config/fish/config.fish
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+make fish_plugins
+"$SUDO" chsh -s "$(which fish)" "$USER"
 
 echo "Done!"
