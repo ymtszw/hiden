@@ -22,16 +22,13 @@ install_stuff: user_bin brew_packages fish vim ssh install_fonts misc ;
 ### Custom scripts
 
 .PHONY: user_bin
-user_bin: ~/bin ~/bin/local_git_user ~/bin/imgcat ;
+user_bin: ~/bin ~/bin/local_git_user ;
 
 ~/bin:
 	mkdir -p ~/bin
 
 ~/bin/local_git_user:
-	ln -Fs ~/hiden/bin/local_git_user ~/bin/local_git_user
-
-~/bin/imgcat:
-	ln -Fs ~/hiden/bin/imgcat ~/bin/imgcat
+	ln -Fs $(HIDEN)bin/local_git_user ~/bin/local_git_user
 
 ### Homebrew related
 
@@ -42,16 +39,6 @@ brew_packages:
 	brew bundle --file=$(HIDEN)Brewfile
 	gh completion -s fish > ~/.config/fish/completions/gh.fish
 	gh auth login
-
-### iTerm2 related
-
-# It will upgrade itself to the latest version, after first boot
-LATEST_ITERM_ZIP = iTerm2-3_1_5.zip
-/Applications/iTerm.app:
-	curl -O https://iterm2.com/downloads/stable/$(LATEST_ITERM_ZIP)
-	unzip -q $(LATEST_ITERM_ZIP)
-	sudo mv iTerm.app /Applications/.
-	rm $(LATEST_ITERM_ZIP)
 
 ### fish related
 
