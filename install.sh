@@ -76,6 +76,7 @@ if [ -f ~/.config/fish/config.fish ]; then
 fi
 make ~/.config/fish/config.fish
 make ~/.config/fish/functions/fisher.fish
+make fish_plugins
 $SUDO chsh -s "$(which fish)" "$USER"
 
 # vim config
