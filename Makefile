@@ -64,6 +64,7 @@ fish_plugins:
 	curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
 	curl https://raw.githubusercontent.com/docker/compose/master/contrib/completion/fish/docker-compose.fish -o ~/.config/fish/completions/docker-compose.fish
 	if which aws; then fish -c "fisher install oh-my-fish/plugin-aws"; fi
+	if which gh; then gh completion -s fish > ~/.config/fish/completions/gh.fish; fi
 
 
 .PHONY: set_shell
