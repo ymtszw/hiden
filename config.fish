@@ -51,4 +51,4 @@ function sync_history --on-event fish_preexec
     history --merge
 end
 
-source shrc.sh
+source "$HOME/hiden/shrc.sh"
