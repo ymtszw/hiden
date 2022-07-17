@@ -91,7 +91,7 @@ force_vimrc:
 	@cat ~/.vim_runtime/vimrcs/basic.vim >> ~/.vimrc
 	@cat $(HIDEN).vimrc >> ~/.vimrc
 	git config --global --replace-all core.editor vim
-	gh config set editor vim
+	if which gh; then gh config set editor vim; fi
 	@echo "Open vim and run :PlugInstall to finish plugin install"
 
 ### SSH related
@@ -175,5 +175,4 @@ git_config:
 	@echo ""
 	@echo "MUST: Set git author email with 'git config --global user.email <email>'!"
 	@echo ""
-	gh completion -s fish > ~/.config/fish/completions/gh.fish
 	gh auth login
