@@ -37,9 +37,6 @@ brew_packages:
 	@# Installing or upgrading already installed ones using `brew bundle`
 	@# If `brew bundle`'s automatic installation of Homebrew-bundle fails, try manually git-cloning the Homebrew-bundle repository!
 	brew bundle --file=$(HIDEN)Brewfile
-	gh completion -s fish > ~/.config/fish/completions/gh.fish
-	gh auth login
-	gh config set editor vim
 
 ### fish related
 
@@ -177,3 +174,6 @@ git_config:
 	@echo ""
 	@echo "MUST: Set git author email with 'git config --global user.email <email>'!"
 	@echo ""
+	gh completion -s fish > ~/.config/fish/completions/gh.fish
+	gh auth login
+	gh config set editor vim
