@@ -175,4 +175,3 @@ git_config:
 	@echo ""
 	@echo "MUST: Set git author email with 'git config --global user.email <email>'!"
 	@echo ""
-	gh auth login
