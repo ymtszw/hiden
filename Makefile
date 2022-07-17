@@ -90,6 +90,8 @@ force_vimrc:
 	@echo "" >> ~/.vimrc
 	@cat ~/.vim_runtime/vimrcs/basic.vim >> ~/.vimrc
 	@cat $(HIDEN).vimrc >> ~/.vimrc
+	git config --global --replace-all core.editor vim
+	gh config set editor vim
 	@echo "Open vim and run :PlugInstall to finish plugin install"
 
 ### SSH related
@@ -166,7 +168,6 @@ misc: ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_config ;
 .PHONY: git_config
 git_config:
 	git config --global --replace-all init.templateDir $(HIDEN)git_template
-	git config --global --replace-all core.editor vim
 	git config --global --replace-all user.name 'Yu Matsuzawa'
 	git config --global --replace-all advice.detachedHead false
 	git config --global --replace-all core.quotepath false
@@ -176,4 +177,3 @@ git_config:
 	@echo ""
 	gh completion -s fish > ~/.config/fish/completions/gh.fish
 	gh auth login
-	gh config set editor vim
