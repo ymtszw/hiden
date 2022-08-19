@@ -58,7 +58,8 @@ fish_bin:
 
 .PHONY: fish_plugins
 fish_plugins:
-	fish -c "fisher install oh-my-fish/theme-bobthefish 2m/fish-history-merge danhper/fish-ssh-agent"
+	fish -c "fisher install hauleth/agnoster 2m/fish-history-merge danhper/fish-ssh-agent"
+	fish -c "agnoster powerline"
 	curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
 	curl https://raw.githubusercontent.com/docker/compose/master/contrib/completion/fish/docker-compose.fish -o ~/.config/fish/completions/docker-compose.fish
 	if which aws; then fish -c "fisher install oh-my-fish/plugin-aws"; fi
