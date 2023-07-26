@@ -22,7 +22,7 @@ abbr gcs 'git commit --gpg-sign --interactive --verbose'
 abbr gpu 'git push'
 abbr gl 'git log --graph --oneline --decorate --boundary --all'
 abbr ghe 'git checkout'
-abbr gma 'git checkout master; git pull --prune'
+abbr gma "git checkout (git-default-branch); git pull --prune"
 abbr gf 'git fetch --prune --prune-tags'
 abbr gip 'git pull --prune'
 abbr ger 'git merge'
@@ -33,9 +33,11 @@ abbr gba 'git rebase'
 abbr ga 'git add'
 abbr gai 'git add --interactive'
 abbr gap 'git add --patch'
-abbr grev 'git diff origin/master...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
+abbr grev 'git diff (git-default-branch)...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
 abbr gpi 'git cherry-pick'
 abbr gar 'git apply -R'
+alias git-default-branch 'git rev-parse --abbrev-ref origin/HEAD | xargs -n1 basename'
+abbr gdef git-default-branch
 abbr ssr sshrc
 
 function rl -d "Reload fish config"
