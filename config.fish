@@ -32,7 +32,7 @@ abbr gba 'git rebase'
 abbr ga 'git add'
 abbr gai 'git add --interactive'
 abbr gap 'git add --patch'
-abbr grev 'git diff (git-default-branch)...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
+abbr grev 'git diff origin/(git-default-branch)...HEAD' # review current HEAD against its merge-base (branch/diverge point) from master
 abbr gpi 'git cherry-pick'
 abbr gar 'git apply -R'
 alias git-default-branch 'git rev-parse --abbrev-ref origin/HEAD | xargs -n1 basename'
