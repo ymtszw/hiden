@@ -4,7 +4,6 @@
 
 abbr cdu 'cd ..'
 abbr ll 'ls -lha'
-abbr a. 'atom .'
 abbr cdu 'cd ..'
 abbr cd. 'cd ..'
 abbr cdh 'cd ~/hiden'
