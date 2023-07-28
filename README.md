@@ -11,7 +11,7 @@ Bunch of my personal configurations/convenient scripts for development environme
   - [MigMix 2M font](http://mix-mplus-ipa.osdn.jp/migmix/) for editor UI
 - Using [`fish`](https://github.com/fish-shell/fish-shell)
   and [`fisherman`](https://github.com/fisherman/fisherman) package manager
-- Using [`asdf`](https://github.com/asdf-vm/asdf) as language versions manager
+- Using [`rtx`](https://github.com/jdxcode/rtx) as runtime manager
 - Utilizing [git template](https://git-scm.com/docs/git-init#_template_directory)
   and [git global ignore config (core.excludesFile)](https://git-scm.com/docs/git-config#git-config-coreexcludesFile)
 - Also installs some other utility programs, has convenient scripts and Vim configurations
