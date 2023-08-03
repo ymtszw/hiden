@@ -41,7 +41,7 @@ brew_packages:
 ### fish related
 
 .PHONY: fish
-fish: fish_bin ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish fish_plugins set_shell ;
+fish: fish_bin ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish ~/.config/starship.toml fish_plugins set_shell ;
 
 .PHONY: fish_bin
 fish_bin:
@@ -56,10 +56,12 @@ fish_bin:
 ~/.config/fish/config.fish:
 	ln -s $(HIDEN)config.fish ~/.config/fish/config.fish
 
+~/.config/starship.toml:
+	ln -s $(HIDEN)starship.toml ~/.config/starship.toml
+
 .PHONY: fish_plugins
 fish_plugins:
-	fish -c "fisher install hauleth/agnoster 2m/fish-history-merge danhper/fish-ssh-agent"
-	fish -c "agnoster powerline"
+	fish -c "fisher install 2m/fish-history-merge danhper/fish-ssh-agent"
 	curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
 	curl https://raw.githubusercontent.com/docker/compose/master/contrib/completion/fish/docker-compose.fish -o ~/.config/fish/completions/docker-compose.fish
 	if which aws; then fish -c "fisher install oh-my-fish/plugin-aws"; fi
