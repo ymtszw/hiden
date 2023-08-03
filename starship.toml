@@ -7,6 +7,15 @@ disabled = true
 [package]
 disabled = true
 
+[elixir]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ruby]
+disabled = true
+
 [shell]
 disabled = false
 
