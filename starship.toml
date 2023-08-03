@@ -16,6 +16,9 @@ disabled = true
 [ruby]
 disabled = true
 
+[elm]
+disabled = true
+
 [shell]
 disabled = false
 
