@@ -53,3 +53,8 @@ function sync_history --on-event fish_preexec
 end
 
 source "$HOME/hiden/shrc.sh"
+
+if which starship > /dev/null
+    starship init fish | source
+end
+
