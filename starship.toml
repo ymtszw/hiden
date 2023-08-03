@@ -1,0 +1,14 @@
+[aws]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[package]
+disabled = true
+
+[shell]
+disabled = false
+
+[time]
+disabled = false
