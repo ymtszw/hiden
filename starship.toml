@@ -28,3 +28,6 @@ disabled = false
 [git_status]
 # $stashedにそんなに興味がないので除いている
 format = "([\\[$conflicted$deleted$renamed$modified$staged$untracke$ahead_behind\\]]($style) )"
+
+[git_commit]
+only_detached = false
