@@ -72,7 +72,7 @@ fi
 
 # fish config
 ## starship
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- --yes
 make ~/.config/starship.toml
 ## other configs
 if [ -f ~/.config/fish/config.fish ]; then
