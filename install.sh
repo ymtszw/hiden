@@ -71,6 +71,10 @@ if ! which fish; then
 fi
 
 # fish config
+## starship
+curl -sS https://starship.rs/install.sh | sh
+make ~/.config/starship.toml
+## other configs
 if [ -f ~/.config/fish/config.fish ]; then
   rm ~/.config/fish/config.fish
 fi
