@@ -31,3 +31,6 @@ format = "([\\[$conflicted$deleted$renamed$modified$staged$untracke$ahead_behind
 
 [git_commit]
 only_detached = false
+
+[bun]
+disabled = true
