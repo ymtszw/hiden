@@ -36,6 +36,7 @@ abbr grev 'git diff origin/(git-default-branch)...HEAD' # review current HEAD ag
 abbr gpi 'git cherry-pick'
 abbr gar 'git apply -R'
 alias git-default-branch 'git rev-parse --abbrev-ref origin/HEAD | xargs -n1 basename'
+alias git-current-branch 'git rev-parse --abbrev-ref HEAD'
 abbr gdef git-default-branch
 abbr ssr sshrc
 
@@ -54,7 +55,6 @@ end
 
 source "$HOME/hiden/shrc.sh"
 
-if which starship > /dev/null
+if which starship >/dev/null
     starship init fish | source
 end
-
