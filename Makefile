@@ -22,13 +22,14 @@ install_stuff: user_bin brew_packages fish vim ssh install_fonts misc ;
 ### Custom scripts
 
 .PHONY: user_bin
-user_bin: ~/bin ~/bin/local_git_user ;
+user_bin: /usr/local/bin/trello-card-id /usr/local/bin/imgcat ;
 
-~/bin:
-	mkdir -p ~/bin
+/usr/local/bin/trello-card-id:
+	sudo ln -Fs $(HIDEN)bin/trello-card-id /usr/local/bin/trello-card-id
 
-~/bin/local_git_user:
-	ln -Fs $(HIDEN)bin/local_git_user ~/bin/local_git_user
+/usr/local/bin/imgcat:
+	sudo curl -o /usr/local/bin/imgcat -L https://iterm2.com/utilities/imgcat
+	sudo chmod +x /usr/local/bin/imgcat
 
 ### Homebrew related
 
