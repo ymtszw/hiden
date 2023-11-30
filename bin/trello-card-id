@@ -2,4 +2,3 @@
 set -euo pipefail
 board=$(npx --package=trello-cli -- trello show-boards | fzf --ansi | sed -nr 's/^(.+) \(ID:.+$/\1/p')
 npx --package=trello-cli -- trello show-cards --board="$board" | fzf --ansi | sed -nr 's/^\* (.+) - .+$/\1/p' | tee >(pbcopy)
-
