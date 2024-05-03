@@ -24,7 +24,6 @@ brew "direnv"
 brew "mise"
 brew "gh"
 brew "starship"
-brew "fzf"
 
 tap "ynqa/tap"
 brew "jnv"
