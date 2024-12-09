@@ -39,3 +39,8 @@ disabled = true
 
 [terraform]
 disabled = true
+
+[cmd_duration]
+show_notifications = true
+min_time_to_notify = 10_000
+notification_timeout = 3_000
