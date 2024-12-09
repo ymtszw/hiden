@@ -36,3 +36,6 @@ only_detached = false
 
 [bun]
 disabled = true
+
+[terraform]
+disabled = true
