@@ -3,6 +3,9 @@ command_timeout = 1500
 [aws]
 disabled = true
 
+[gcloud]
+disabled = true
+
 [docker_context]
 disabled = true
 
@@ -42,5 +45,5 @@ disabled = true
 
 [cmd_duration]
 show_notifications = true
-min_time_to_notify = 10_000
+min_time_to_notify = 30_000
 notification_timeout = 3_000
