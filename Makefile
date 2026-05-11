@@ -44,6 +44,19 @@ brew_packages:
 .PHONY: fish
 fish: fish_bin ~/.config/fish/functions/fisher.fish ~/.config/fish/config.fish ~/.config/starship.toml fish_plugins set_shell ;
 
+### Other shells related
+
+.PHONY: other_shells
+other_shells: other_shells_bash other_shells_zsh ;
+
+.PHONY: other_shells_bash
+other_shells_bash:
+	@grep -qxF 'command -v starship >/dev/null && eval "`starship init bash`"' ~/.bashrc 2>/dev/null || echo 'command -v starship >/dev/null && eval "`starship init bash`"' >> ~/.bashrc
+
+.PHONY: other_shells_zsh
+other_shells_zsh:
+	@grep -qxF 'command -v starship >/dev/null && eval "`starship init zsh`"' ~/.zshrc 2>/dev/null || echo 'command -v starship >/dev/null && eval "`starship init zsh`"' >> ~/.zshrc
+
 .PHONY: fish_bin
 fish_bin:
 	brew install fish
