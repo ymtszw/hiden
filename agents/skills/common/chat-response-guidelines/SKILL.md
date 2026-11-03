@@ -38,22 +38,22 @@ Move the following items **out of chat text and into an artifact**:
 * Core conclusion / policy (1-2 sentences).
 * Key highlights / decisions (3 bullet points, 1 line each).
 * Clickable file link to the generated artifact.
-* **Next Action Pill**: A single concise line suggesting the immediate next step (e.g. `👉 次のアクション: ...`).
+* **Next Action Pill**: A single concise line suggesting the immediate next step (e.g. `👉 Next Action: ...` or localized equivalent).
 
 ---
 
 ## 3. Formatting Example (Zero Scroll)
 
 ```markdown
-BlizzardのIP追従は **(1) BGP自動同期**, **(2) 集約CIDR指定**, **(3) 接続時検知** の3軸で設計するのが最適です。
+Optimal IP routing maintenance is designed around **(1) automated BGP sync**, **(2) supernetting CIDRs**, and **(3) runtime socket detection**.
 
-* **BGP APIによる自動追跡**: 公式AS番号からAPI経由で最新CIDRを自動差分取得
-* **集約指定（Supernetting）**: クライアント側は上位CIDRを指定し配布頻度をゼロ化
-* **未知IPの漏れ検知**: ソケット接続先とルーティング表を照合するPowerShell検知
+* **Automated BGP Sync**: Fetch official prefix updates via public ASN REST API on a periodic cadence.
+* **Aggregated Supernetting**: Configure client routing rules with summary CIDRs to minimize route churn.
+* **Socket Anomaly Detection**: Audit socket connections against local routing tables via PowerShell.
 
-詳細仕様書、CIDR表、検知スクリプトは以下にまとめました。
-👉 詳細設計書: [blizzard-route-maintenance.md](file:///path/to/blizzard-route-maintenance.md)
-💡 次の推奨アクション: 「PowerShellスクリプトの実機テスト」または「CIDR一覧の確認」
+Detailed design specs, CIDR tables, and detection scripts are documented below.
+👉 Detailed Design: [network-route-maintenance.md](file:///path/to/network-route-maintenance.md)
+💡 Next Action: Run PowerShell script verification or review CIDR allocation table.
 
 > 🧭 [Direct: Flash]
 ```

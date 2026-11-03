@@ -51,9 +51,9 @@ powershell -ExecutionPolicy Bypass -File .\agents\setup-windows.ps1
 
 ## 3. Local-First Workflow: Ad-hoc Adaptation & Promotion
 
-This repository supports a 2-stage lifecycle: **ad-hoc local adaptation** during daily work, followed by **inventory & promotion (棚卸・昇格)** into Git-tracked dotfiles.
+This repository supports a 2-stage lifecycle: **ad-hoc local adaptation** during daily work, followed by **inventory & promotion** into Git-tracked dotfiles.
 
-### Step 1: Ad-hoc Local Application (作業中のローカル適用)
+### Step 1: Ad-hoc Local Application
 When an agent or user crafts a new rule or skill during pair programming:
 - **Local Rules**: Add to `agents/rules/local.md` (or `agents/AGENTS.local.md`).
 - **Local Skills**: Create a directory under `agents/skills/local/<skill-name>/` with a standard `SKILL.md`.
@@ -65,7 +65,7 @@ When an agent or user crafts a new rule or skill during pair programming:
 
 Run `setup-windows.ps1` (or `setup-unix.sh`) to activate. Because skills are deployed as junctions / symlinks, any subsequent edits to files inside the skill are instantly active across all agents without redeploying.
 
-### Step 2: Inventory & Promotion (棚卸と昇格)
+### Step 2: Inventory & Promotion
 Periodically review what has accumulated in the local-only areas:
 
 1. **Promote Skills**:

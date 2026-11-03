@@ -4,19 +4,19 @@ Universal operational invariants, communication standards, and architectural con
 
 ---
 
-## 0. Environment & Tool Terminology Mapping (用語・ツールの読み替え規則)
-各エージェントのツール体系や命名の差異は、以下の抽象概念に対応付けて解釈・適用すること:
+## 0. Environment & Tool Terminology Mapping
+Map differing tool systems and platform terminologies to these abstract actions:
 
-| 抽象概念 / アクション | Google Antigravity (AGY) | Claude Code | OpenAI Codex / CLI | GitHub Copilot |
+| Abstract Action | Google Antigravity (AGY) | Claude Code | OpenAI Codex / CLI | GitHub Copilot |
 |---|---|---|---|---|
-| **コマンド実行 (CLI)** | `run_command` | `Bash` | `execute_command` / bash | Terminal execution |
-| **ファイル閲覧** | `read_file` | `View` / `Read` | `read_file` | File access |
-| **ファイル編集** | `write_file` / `edit_file` | `Edit` / `Write` | `apply_patch` / `edit` | File edit |
-| **サブエージェント委譲** | `invoke_subagent` / `send_message` | Sub-agent / task | Agent delegation | Multi-agent delegation |
-| **プロセス・タスク管理** | `manage_task` | background task | process / task | Background process |
-| **成果物 (Artifact)** | `<conversation>/artifact.md` | Artifact / Markdown | Output file / diff | Output doc / markdown |
-| **Fast Tier モデル** | Gemini Flash | Claude Haiku | GPT-4o mini, o3-mini | Instant / Default |
-| **Frontier Tier モデル** | Argon / Claude Opus | Claude Opus / Sonnet | o1 / o3 / GPT-4o | Claude 3.5 Sonnet / o1 |
+| **Command Execution (CLI)** | `run_command` | `Bash` | `execute_command` / bash | Terminal execution |
+| **File Read / View** | `read_file` | `View` / `Read` | `read_file` | File access |
+| **File Create / Edit** | `write_file` / `edit_file` | `Edit` / `Write` | `apply_patch` / `edit` | File edit |
+| **Subagent Delegation** | `invoke_subagent` / `send_message` | Sub-agent / task | Agent delegation | Multi-agent delegation |
+| **Process / Task Management** | `manage_task` | background task | process / task | Background process |
+| **Artifact Output** | `<conversation>/artifact.md` | Artifact / Markdown | Output file / diff | Output doc / markdown |
+| **Fast Tier Model** | Gemini Flash | Claude Haiku | GPT-4o mini, o3-mini | Instant / Default |
+| **Frontier Tier Model** | Argon / Claude Opus | Claude Opus / Sonnet | o1 / o3 / GPT-4o | Claude 3.5 Sonnet / o1 |
 
 ---
 
@@ -60,9 +60,9 @@ Operate under an abstract **Two-Tier Architecture (Fast Tier vs. Frontier Tier)*
 Ensure zero vertical scrolling in the user's fixed 1600x1300 UI (central chat pane):
 - **Sizing Bounds**: 300 to 450 characters (Hard max: 600 chars). 8 to 12 total lines (Hard max: 15 lines).
 - **Structure**: 1-2 sentence conclusion + 3-4 bullet points (1 line each) + clickable artifact file link + Next Action Pill + mandatory 1-line footer.
-- **Language**: Converse with the user in Japanese. Think and internalize rules in English.
+- **Language**: Converse with the user in their preferred language (e.g. Japanese). Internalize rules, think, and code in English.
 - **Artifact-First Triage**: Offload ALL code snippets (>= 3 lines), URLs, CIDR/IP lists, configuration schemas, and multi-step workflows into Markdown files (`.md`).
-- **Next Action Pill**: Append a single concise next recommendation before the footer (e.g. `💡 次の推奨アクション: ...`).
+- **Next Action Pill**: Append a single concise next recommendation before the footer (e.g. `💡 Next Action: ...` or localized equivalent).
 
 ---
 
@@ -76,17 +76,17 @@ Ensure zero vertical scrolling in the user's fixed 1600x1300 UI (central chat pa
 ---
 
 ## 4. Customization Policy: Rules vs Skills Triage & Local-First Lifecycle
-When asked to create or modify custom instructions (ルール/スキルの追加・作成):
+When asked to create or modify custom instructions (rules or skills):
 - **Recommend Rule (`AGENTS.md` / `rules/*.md`)**: If the instruction defines non-negotiable operational invariants, machine-wide security policies, global output formats, or behaviors that must trigger unconditionally across all sessions.
 - **Recommend Skill (`skills/<name>/SKILL.md`)**: If the instruction defines domain-specific workflows, multi-step runbooks, heavy reference tables/templates, or specialized procedures needed only on-demand.
 - **Triage Protocol**: Explain token-budget and trigger implications, state recommended placement with rationale, and confirm with the user before creating files.
 
 ### Local-First Adaptation & Promotion Lifecycle
-1. **Ad-hoc Local Application (作業中のローカル適用)**:
+1. **Ad-hoc Local Application**:
    - In-progress, experimental, or machine-specific rules go into `agents/rules/local.md` (or `AGENTS.local.md`).
    - In-progress, experimental, or machine-specific skills go into `agents/skills/local/<skill-name>/`.
    - These locations are git-ignored, preventing dirtying the tracked dotfiles repository during ad-hoc work while immediately applying to all local agent environments upon setup/sync.
-2. **Inventory & Promotion (棚卸と昇格)**:
+2. **Inventory & Promotion**:
    - When local rules/skills mature through actual usage, promote them during review:
      - Rules: Merge into `rules/00-core.md` (universal) or `rules/10-<os>.md` (platform-specific).
      - Skills: Move from `skills/local/<name>` to `skills/common/<name>` or `skills/<os>/<name>`.
