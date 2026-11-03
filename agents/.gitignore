@@ -1,0 +1,5 @@
+build/
+AGENTS.local.md
+rules/local.md
+skills/local/*
+!skills/local/.gitkeep

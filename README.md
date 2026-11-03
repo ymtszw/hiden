@@ -15,6 +15,7 @@ Bunch of my personal configurations/convenient scripts for development environme
 - Utilizing [git template](https://git-scm.com/docs/git-init#_template_directory)
   and [git global ignore config (core.excludesFile)](https://git-scm.com/docs/git-config#git-config-coreexcludesFile)
 - Also installs some other utility programs, has convenient scripts and Vim configurations
+- Unified **Agent Dotfiles** for AI assistants (Codex, Copilot, Claude Code, Antigravity) under `agents/` (see [agents/README.md](agents/README.md))
 
 ## Installation
 
@@ -29,6 +30,16 @@ make
 And set "Load preferences from a custom folder or URL: ~/hiden/iterm2" in iTerm2.
 
 Just re-invoke `make` to pull latest changes.
+
+### AI Agent Dotfiles Setup
+
+Deploy unified rules and skills for AI agents (OpenAI Codex, GitHub Copilot, Claude Code, Google Antigravity):
+
+```sh
+make agents
+```
+
+For Windows (PowerShell) or local override details, refer to [agents/README.md](agents/README.md).
 
 ## SSH Configs and [sshrc]
 

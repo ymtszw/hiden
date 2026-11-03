@@ -171,6 +171,10 @@ vscode_extensions:
 
 ### Other dot-files
 
+.PHONY: agents
+agents:
+	@$(HIDEN)agents/setup-unix.sh
+
 .PHONY: misc
 misc: ~/.gnupg/gpg-agent.conf ~/.config/git/ignore git_config ;
 
