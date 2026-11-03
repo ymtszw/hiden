@@ -138,6 +138,16 @@ function Deploy-Skills {
     param([string]$DestSkillsDir)
     New-Item -ItemType Directory -Path $DestSkillsDir -Force | Out-Null
 
+    # Clean up stale junctions or symlinks whose target no longer exists
+    Get-ChildItem -Path $DestSkillsDir -Force -ErrorAction SilentlyContinue | ForEach-Object {
+        if ($_.Attributes -match "ReparsePoint") {
+            $target = $_.Target
+            if ($target -and (-not (Test-Path $target))) {
+                $_.Delete()
+            }
+        }
+    }
+
     $count = 0
     foreach ($cat in @("common", "windows", "local")) {
         $CatDir = Join-Path $ScriptDir "skills\$cat"

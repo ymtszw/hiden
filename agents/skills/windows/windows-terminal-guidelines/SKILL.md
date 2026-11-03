@@ -1,14 +1,14 @@
 ---
 name: windows-terminal-guidelines
 description: >-
-  Guidelines, safety practices, and command conventions for running terminal tasks and CLI processes on Windows (PowerShell/cmd) within Antigravity.
+  Guidelines, safety practices, and command conventions for running terminal tasks and CLI processes on Windows (PowerShell/cmd) across AI coding agents.
   Use whenever executing shell commands, building code, running tests, invoking git/npm/cargo, launching dev servers,
   or diagnosing stuck, hanging, or non-responsive terminal tasks on Windows.
 ---
 
-# Windows Terminal Execution Guidelines for Antigravity
+# Windows Terminal Execution Guidelines for AI Agents
 
-On Windows environments, terminal commands executed via Antigravity's `run_command` tool run under **PowerShell** by default. Because of Windows process models and pseudoconsole (ConPTY) stream management, interactive prompts, continuation mode (`>>`), unclosed standard input handles, or lingering child processes can cause terminal tasks to hang indefinitely.
+On Windows environments, terminal commands executed via agent CLI tools (e.g. `run_command`, `Bash`, terminal executors) run under **PowerShell** by default. Because of Windows process models and pseudoconsole (ConPTY) stream management, interactive prompts, continuation mode (`>>`), unclosed standard input handles, or lingering child processes can cause terminal tasks to hang indefinitely.
 
 Follow these strict guidelines when planning or executing terminal commands on Windows.
 
@@ -108,6 +108,6 @@ If a task stops responding or locks a TCP port / file:
    Stop-Process -Name "git" -Force -ErrorAction SilentlyContinue
    ```
 
-3. **Manage Antigravity Tasks**:
-   - Check active tasks with `manage_task` (Action: `'list'`).
-   - If a background task is unresponsive, terminate it with `manage_task` (Action: `'kill'`, TaskId: `...`).
+3. **Manage Agent Background Tasks**:
+   - Check active tasks with the agent's task management tool (e.g. `manage_task` Action: `'list'`).
+   - If a background task is unresponsive, terminate it (e.g. `manage_task` Action: `'kill'`, TaskId: `...`, or terminate via PID).

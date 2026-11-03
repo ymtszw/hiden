@@ -22,7 +22,7 @@ Balance responsiveness, cost/quota efficiency, and deep reasoning across differe
 
 ## 1. Self-Suppression Guards (Skip Conditions)
 Skip this routing protocol entirely and let the frontline (Fast Tier) execute/reply immediately if:
-1. **Subagent Context**: Current execution is inside an `invoke_subagent` session.
+1. **Subagent Context**: Current execution is inside a subagent session (e.g. `invoke_subagent`, sub-agent task, or delegated agent).
 2. **Lightweight Task**: Simple Q&A, single-file edits, command runs, grep/search, or casual chat.
 
 ---
@@ -43,14 +43,14 @@ When escalated:
    - macOS / Linux: `bash ~/.gemini/config/skills/resilient-tiered-routing/scripts/get-quota.sh`
 3. **Route Order**: Prioritize highest capability available (e.g. Opus/o1 -> Argon/Sonnet) -> Fallback to Fast Tier direct.
 4. **Max 1-Hop Ceiling**: Never cascade sequentially through multiple frontier models. If the chosen leader stalls or fails, fall back to Fast Tier immediately to avoid compounding latency.
-5. **Session Reuse**: Reuse existing `conversationId` via `send_message` if active; always pass `Workspace: "inherit"`. Instruct leader for "Direct full-edit or Unified Diff" (Zero Plan-Only).
+5. **Session Reuse**: Reuse active session or message channel if active (e.g. `send_message`); always pass inherited workspace. Instruct leader for "Direct full-edit or Unified Diff" (Zero Plan-Only).
 
 ---
 
 ## 4. Subagent Invocation Guidance
-When launching or delegating to the frontier tier:
-* **For Path A/B (Lead)**: `invoke_subagent` (TypeName: "self", Role: "Frontier Implementer", Prompt: "Implement/Fix with direct diff/full-edit...").
-* **For Path C (Audit)**: `invoke_subagent` (TypeName: "self", Role: "Code Auditor", Prompt: "Review the attached diff against requirements, edge cases, platform pitfalls, and regressions. Report LGTM or specific risks.").
+When delegating to the frontier tier (via subagent or multi-agent delegation tool):
+* **For Path A/B (Lead)**: Delegate with Role: "Frontier Implementer", Prompt: "Implement/Fix with direct diff/full-edit...".
+* **For Path C (Audit)**: Delegate with Role: "Code Auditor", Prompt: "Review the attached diff against requirements, edge cases, platform pitfalls, and regressions. Report LGTM or specific risks.".
 
 ---
 

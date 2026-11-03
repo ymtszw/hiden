@@ -4,6 +4,22 @@ Universal operational invariants, communication standards, and architectural con
 
 ---
 
+## 0. Environment & Tool Terminology Mapping (用語・ツールの読み替え規則)
+各エージェントのツール体系や命名の差異は、以下の抽象概念に対応付けて解釈・適用すること:
+
+| 抽象概念 / アクション | Google Antigravity (AGY) | Claude Code | OpenAI Codex / CLI | GitHub Copilot |
+|---|---|---|---|---|
+| **コマンド実行 (CLI)** | `run_command` | `Bash` | `execute_command` / bash | Terminal execution |
+| **ファイル閲覧** | `read_file` | `View` / `Read` | `read_file` | File access |
+| **ファイル編集** | `write_file` / `edit_file` | `Edit` / `Write` | `apply_patch` / `edit` | File edit |
+| **サブエージェント委譲** | `invoke_subagent` / `send_message` | Sub-agent / task | Agent delegation | Multi-agent delegation |
+| **プロセス・タスク管理** | `manage_task` | background task | process / task | Background process |
+| **成果物 (Artifact)** | `<conversation>/artifact.md` | Artifact / Markdown | Output file / diff | Output doc / markdown |
+| **Fast Tier モデル** | Gemini Flash | Claude Haiku | GPT-4o mini, o3-mini | Instant / Default |
+| **Frontier Tier モデル** | Argon / Claude Opus | Claude Opus / Sonnet | o1 / o3 / GPT-4o | Claude 3.5 Sonnet / o1 |
+
+---
+
 ## 1. Tiered Resilient Routing Protocol
 Operate under an abstract **Two-Tier Architecture (Fast Tier vs. Frontier Tier)** to balance responsiveness, quota/budget consumption, and reasoning depth:
 

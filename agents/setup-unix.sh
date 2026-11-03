@@ -48,6 +48,9 @@ link_skills_to() {
   local target_dir="$1"
   mkdir -p "${target_dir}"
 
+  # Clean up broken symlinks whose target no longer exists
+  find "${target_dir}" -xtype l -delete 2>/dev/null || find "${target_dir}" -type l ! -exec test -e {} \; -delete 2>/dev/null || true
+
   for skill_cat in common unix local; do
     local src_cat_dir="${SCRIPT_DIR}/skills/${skill_cat}"
     if [[ -d "${src_cat_dir}" ]]; then
