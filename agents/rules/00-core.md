@@ -5,19 +5,38 @@ Universal operational invariants, communication standards, and architectural con
 ---
 
 ## 1. Tiered Resilient Routing Protocol
-Gemini 3.8 Flash is the frontline router and primary executor. Manage quota and escalate selectively:
-- **Skip Condition**: Skip routing inside subagents or for lightweight tasks (simple Q&A, single-file edits, command runs, search/grep). Reply directly via Flash (`> 🧭 [Direct: Flash]`).
-- **Tri-Path Escalation Triggers**: Escalate to a frontier reasoning tier (Opus/Argon) when:
+Operate under an abstract **Two-Tier Architecture (Fast Tier vs. Frontier Tier)** to balance responsiveness, quota/budget consumption, and reasoning depth:
+
+### Model Tier Mapping
+- **Fast Tier (Frontline Router & Primary Executor)**:
+  - Lightweight, high-throughput, low-latency model. Runs root sessions and lightweight tasks directly.
+  - *Google / AGY*: Gemini Flash (e.g. Gemini 3.8 Flash)
+  - *OpenAI / Codex*: Fast/Instant models (e.g. GPT-4o mini, o3-mini) or previous-generation fast tier
+  - *Anthropic / Claude*: Claude Haiku
+  - *GitHub Copilot*: Default / Instant model
+- **Frontier Tier (Deep Reasoning, Architectural Lead & Code Review)**:
+  - Heavy reasoning and frontier-grade capability for complex tasks.
+  - *Google / AGY*: Argon (or Claude Opus under AI Pro / Ultra subscription)
+  - *OpenAI / Codex*: Latest-generation flagship / reasoning models (e.g. o1, GPT-4o)
+  - *Anthropic / Claude*: Claude Opus / Sonnet
+  - *GitHub Copilot*: Claude 3.5 Sonnet / o1
+
+### Operational Invariants
+- **Skip Condition**: Skip routing inside subagents or for lightweight tasks (simple Q&A, single-file edits, command runs, search/grep). Reply directly via Fast Tier (`> 🧭 [Direct: <FastModel>]`).
+- **Tri-Path Escalation Triggers**: Escalate to the Frontier Tier when:
   - **Path A (Structural)**: Task modifies >= 3 files across module boundaries, involves concurrency/race conditions, or requires greenfield architectural design.
-  - **Path B (Execution Feedback)**: Flash attempts an implementation, but local verification (`cargo test`, `npm test`, linters) fails after 2 iterations. Pass stderr/trace on escalation.
-  - **Path C (Quality Review)**: Flash successfully completes a non-trivial implementation where total execution took > 60s, or required >= 3 tool calls, or modified >= 30 lines. Invoke Opus/Argon as a 1-hop auditor for boundary conditions, regression risks, and platform pitfalls before finalizing.
-- **Protocol & Execution**: Follow `skills/resilient-tiered-routing/SKILL.md` for quota script, cooldown, single-hop rules, and model invocation.
+  - **Path B (Execution Feedback)**: Fast tier attempts an implementation, but local verification (`cargo test`, `npm test`, linters) fails after 2 iterations. Pass stderr/trace on escalation.
+  - **Path C (Quality Review)**: Fast tier successfully completes a non-trivial implementation where total execution took > 60s, or required >= 3 tool calls, or modified >= 30 lines. Invoke Frontier Tier as a 1-hop auditor for boundary conditions, regression risks, and platform pitfalls before finalizing.
+- **Quota & Cooldown**:
+  - If a model hits rate limits (429) or is exhausted (<= 10%), mark in **Cooldown** and failover to the next available tier or back to Fast Tier direct.
+  - Follow `skills/resilient-tiered-routing/SKILL.md` for environment-specific quota adapters and single-hop rules.
+- **Execution Ceilings**: Max 1-Hop ceiling (no multi-hop cascading). Always pass `Workspace: "inherit"`. Instruct leader for "Direct full-edit or Unified Diff" (Zero Plan-Only).
 - **Mandatory 1-Line Footer**:
-  - Direct: `> 🧭 [Direct: Flash]`
-  - Escalated: `> 🧭 [Router: Flash ➔ Lead: Opus (Path A/B)]`
-  - Reviewed: `> 🧭 [Exec: Flash ➔ Review: Opus (Path C)]`
-  - Reused: `> 🧭 [Router: Flash ➔ Lead: Opus (Reused)]`
-  - Fallback/Cooldown: `> 🧭 [Router: Flash ➔ Fallback: Argon]`
+  - Direct: `> 🧭 [Direct: <FastModel>]` (e.g. `[Direct: Flash]`)
+  - Escalated: `> 🧭 [Router: <FastModel> ➔ Lead: <FrontierModel> (Path A/B)]`
+  - Reviewed: `> 🧭 [Exec: <FastModel> ➔ Review: <FrontierModel> (Path C)]`
+  - Reused: `> 🧭 [Router: <FastModel> ➔ Lead: <FrontierModel> (Reused)]`
+  - Fallback/Cooldown: `> 🧭 [Router: <FastModel> ➔ Fallback: <FallbackModel>]`
 
 ---
 
