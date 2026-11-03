@@ -22,13 +22,14 @@ if [[ -f "${SCRIPT_DIR}/AGENTS.local.md" ]]; then
   cat "${SCRIPT_DIR}/AGENTS.local.md" >> "${BUILD_DIR}/AGENTS.md"
 fi
 
-# 2. Deploy rules to OpenAI Codex and GitHub Copilot
-mkdir -p "${HOME}/.codex" "${HOME}/.copilot"
+# 2. Deploy rules to OpenAI Codex, GitHub Copilot, and Claude Code
+mkdir -p "${HOME}/.codex" "${HOME}/.copilot" "${HOME}/.claude"
 ln -sf "${BUILD_DIR}/AGENTS.md" "${HOME}/.codex/AGENTS.md"
 ln -sf "${BUILD_DIR}/AGENTS.md" "${HOME}/.copilot/copilot-instructions.md"
-echo "  ✓ Linked rules to ~/.codex/AGENTS.md and ~/.copilot/copilot-instructions.md"
+ln -sf "${BUILD_DIR}/AGENTS.md" "${HOME}/.claude/CLAUDE.md"
+echo "  ✓ Linked rules to ~/.codex/AGENTS.md, ~/.copilot/copilot-instructions.md, and ~/.claude/CLAUDE.md"
 
-# 3. Deploy skills (common + unix) to Codex & Copilot
+# 3. Deploy skills (common + unix) to Codex, Copilot, and Claude Code
 link_skills_to() {
   local target_dir="$1"
   mkdir -p "${target_dir}"
@@ -49,7 +50,8 @@ link_skills_to() {
 
 link_skills_to "${HOME}/.codex/skills"
 link_skills_to "${HOME}/.copilot/skills"
-echo "  ✓ Linked common & unix skills to ~/.codex/skills and ~/.copilot/skills"
+link_skills_to "${HOME}/.claude/skills"
+echo "  ✓ Linked common & unix skills to ~/.codex/skills, ~/.copilot/skills, and ~/.claude/skills"
 
 # 4. Configure Google Antigravity (AGY)
 # AGY can register skills directly via ~/.gemini/config/skills.json

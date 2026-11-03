@@ -57,15 +57,18 @@ function Link-ItemSafe {
     }
 }
 
-# 2. Deploy rules to Codex and Copilot
+# 2. Deploy rules to Codex, Copilot, and Claude Code
 $CodexDir = Join-Path $UserProfile ".codex"
 $CopilotDir = Join-Path $UserProfile ".copilot"
+$ClaudeDir = Join-Path $UserProfile ".claude"
 New-Item -ItemType Directory -Path $CodexDir -Force | Out-Null
 New-Item -ItemType Directory -Path $CopilotDir -Force | Out-Null
+New-Item -ItemType Directory -Path $ClaudeDir -Force | Out-Null
 
 Copy-Item -Path $DestRuleFile -Destination (Join-Path $CodexDir "AGENTS.md") -Force
 Copy-Item -Path $DestRuleFile -Destination (Join-Path $CopilotDir "copilot-instructions.md") -Force
-Write-Host "  ✓ Deployed rules to ~/.codex/AGENTS.md and ~/.copilot/copilot-instructions.md" -ForegroundColor Green
+Copy-Item -Path $DestRuleFile -Destination (Join-Path $ClaudeDir "CLAUDE.md") -Force
+Write-Host "  ✓ Deployed rules to ~/.codex/AGENTS.md, ~/.copilot/copilot-instructions.md, and ~/.claude/CLAUDE.md" -ForegroundColor Green
 
 # 3. Deploy skills (common + windows)
 function Deploy-Skills {
@@ -86,7 +89,8 @@ function Deploy-Skills {
 
 Deploy-Skills -DestSkillsDir (Join-Path $CodexDir "skills")
 Deploy-Skills -DestSkillsDir (Join-Path $CopilotDir "skills")
-Write-Host "  ✓ Deployed common & windows skills to ~/.codex/skills and ~/.copilot/skills" -ForegroundColor Green
+Deploy-Skills -DestSkillsDir (Join-Path $ClaudeDir "skills")
+Write-Host "  ✓ Deployed common & windows skills to ~/.codex/skills, ~/.copilot/skills, and ~/.claude/skills" -ForegroundColor Green
 
 # 4. Configure Antigravity (AGY) if present
 $AgyConfigDir = Join-Path $UserProfile ".gemini\config"

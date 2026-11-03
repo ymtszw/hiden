@@ -5,6 +5,7 @@ A unified configuration and skill repository for AI coding agents across machine
 Supported Agents:
 - **OpenAI Codex** (`~/.codex/`)
 - **GitHub Copilot** (`~/.copilot/`)
+- **Claude Code** (`~/.claude/`)
 - **Google Antigravity (AGY)** (`~/.gemini/config/`)
 
 ---
