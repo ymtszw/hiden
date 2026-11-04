@@ -8,7 +8,7 @@ Supported Agents:
 - **OpenAI Codex** (`~/.codex/`)
 - **GitHub Copilot** (`~/.copilot/`)
 
-For ChatGPT and Gemini web apps, use the manually installed [web custom instructions](web/custom-instructions.md).
+For web-based AI apps (such as `chatgpt.com` and `gemini.google.com`), use the manually installed [web custom instructions](web/custom-instructions.md).
 
 ---
 
@@ -51,7 +51,7 @@ powershell -ExecutionPolicy Bypass -File .\agents\setup-windows.ps1
 ```
 *(Directory junctions are used on Windows so no Administrator elevation is required)*
 
-### ChatGPT / Gemini Web
+### Web-based AI apps
 
 Copy the entire contents of [web/custom-instructions.md](web/custom-instructions.md) into the web app's custom instruction field:
 
