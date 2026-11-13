@@ -2,9 +2,17 @@
 # macOS / Linux quota checker for language_server (Antigravity)
 set -euo pipefail
 
-PID=$(pgrep -f "language_server" | head -n 1 || true)
+PID=$(pgrep -f "language_server.*--csrf_token" | head -n 1 || true)
 if [ -z "$PID" ]; then
-  echo '{"status":"fallback","reason":"language_server not running"}'
+  for p in $(pgrep -f "language_server" || true); do
+    if ps -p "$p" -o command= 2>/dev/null | grep -q -- '--csrf_token'; then
+      PID="$p"
+      break
+    fi
+  done
+fi
+if [ -z "$PID" ]; then
+  echo '{"status":"fallback","reason":"language_server with --csrf_token not running"}'
   exit 0
 fi
 

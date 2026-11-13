@@ -4,17 +4,25 @@ param()
 $ErrorActionPreference = 'Stop'
 
 function Get-QuotaSummary {
-    $proc = Get-CimInstance Win32_Process -Filter "Name = 'language_server.exe'" -ErrorAction SilentlyContinue | Select-Object -First 1
-    if (-not $proc) {
+    $procs = Get-CimInstance Win32_Process -Filter "Name = 'language_server.exe'" -ErrorAction SilentlyContinue
+    if (-not $procs) {
         return @{ status = "fallback"; reason = "language_server.exe not running" }
     }
 
+    $targetProc = $null
     $csrfToken = ""
-    if ($proc.CommandLine -match '--csrf_token\s+([a-zA-Z0-9\-]+)') {
-        $csrfToken = $matches[1]
+    foreach ($p in $procs) {
+        if ($p.CommandLine -match '--csrf_token\s+([a-zA-Z0-9\-]+)') {
+            $csrfToken = $matches[1]
+            $targetProc = $p
+            break
+        }
+    }
+    if (-not $targetProc) {
+        return @{ status = "fallback"; reason = "language_server.exe with --csrf_token not found" }
     }
 
-    $connections = Get-NetTCPConnection -OwningProcess $proc.ProcessId -State Listen -ErrorAction SilentlyContinue
+    $connections = Get-NetTCPConnection -OwningProcess $targetProc.ProcessId -State Listen -ErrorAction SilentlyContinue
     if (-not $connections) {
         return @{ status = "fallback"; reason = "listening port not found" }
     }
