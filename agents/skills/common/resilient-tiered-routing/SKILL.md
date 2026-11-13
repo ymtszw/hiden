@@ -20,10 +20,12 @@ Balance responsiveness, cost/quota efficiency, and deep reasoning across platfor
 
 ---
 
-## 1. Self-Suppression Guards (Skip Conditions / Zero-Hop)
-Skip this routing protocol entirely and let the frontline (Fast Tier) execute/reply immediately if:
-1. **Subagent Context**: Current execution is inside a subagent session (e.g. `invoke_subagent`, sub-agent task, or delegated agent).
-2. **Lightweight Task**: Simple Q&A, single-file edits, command runs, grep/search, or casual chat.
+## 1. Pre-Execution Gate & Skip Conditions
+Before calling file creation or edit tools (`write_file`, `edit_file`) in a root session, run this mechanical check:
+- **Mandatory Delegation**: If the prompt explicitly requests parallel development ("並行開発", "並列") or satisfies Path A/S, **never implement directly in the root session**; delegate immediately on Turn 1.
+- **Skip Condition (Zero-Hop Direct)**: Skip routing and let Fast Tier execute/reply directly ONLY if:
+  1. **Subagent Context**: Current execution is already inside a delegated subagent or worker.
+  2. **Strictly Lightweight Task**: Simple Q&A, single-file edits, command runs, grep/search, or casual chat.
 
 ---
 
@@ -35,7 +37,8 @@ Escalate directly under these conditions without intermediate cascading:
 * **Path C (Audit & Greenfield) ➔ Route to Frontier Tier (Argon / Opus / o1)**:
   - Greenfield architectural design or final production-level diff audit (edge cases, platform pitfalls, and regressions).
 * **Path S (Swarm Parallelism) ➔ Route to Swarm Orchestrator**:
-  - Task splits into >= 2 completely independent, non-colliding components/files requiring parallel workers. Strictly prohibited for sequential tasks.
+  - Prompt explicitly requests parallel execution or task splits into >= 2 completely independent, non-colliding components/files.
+  - **Launch `swarm` on Turn 1**; strictly prohibited to self-implement sequentially in root session. Prohibited only for sequential, tightly coupled edits.
 
 ---
 

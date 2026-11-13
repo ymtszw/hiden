@@ -54,11 +54,14 @@ Operate under an abstract **Three-Tier Architecture (Fast Tier ➔ Mid Reasoning
   - *GitHub Copilot*: Workspace multi-agent orchestration.
 
 ### Operational Invariants & Overhead Minimization
-- **Skip Condition (Zero-Hop Execution)**: Skip routing inside subagents or for lightweight tasks (simple Q&A, single-file edits, command runs, search/grep). Reply directly via Fast Tier (`> 🧭 [Direct: <FastModel>]`).
+- **Pre-Execution Gate (Mandatory Routing Check)**:
+  - Before invoking file modification tools (`write_file`, `edit_file`) in a root session, mechanically check whether the task matches `Path A` or `Swarm Trigger`.
+  - If the prompt requests parallel implementation ("並行開発", "並列", "同時実装") or matches `Path A` / `Swarm Trigger`, **the root agent is strictly forbidden from directly creating/editing files itself**. It must delegate immediately on the first turn.
+- **Skip Condition (Zero-Hop Execution)**: Skip routing inside subagents or for strictly lightweight tasks (simple Q&A, single-file edits, command runs, search/grep). Reply directly via Fast Tier (`> 🧭 [Direct: <FastModel>]`). Never skip when multiple files or parallel execution are involved.
 - **Tri-Path Escalation Triggers**:
   - **Path A (Structural) & Path B (Execution Feedback)**: Escalate directly to **Mid Reasoning Tier (Gemini 4 Hydrogen / Claude Sonnet / o3-mini)** to resolve complex logic and compiler errors WITHOUT burning scarce weekly Frontier quotas.
   - **Path C (Quality Review & Greenfield)**: Escalate to **Frontier Tier (Argon / Opus / o1)** ONLY for greenfield architectural design or final production-level audit on diffs.
-  - **Swarm Trigger**: Strictly prohibited for sequential or tightly coupled changes. Trigger `swarm` ONLY when a task splits into >= 2 completely independent, non-colliding components/files requiring parallel workers.
+  - **Swarm Trigger (Parallel Work)**: When the user explicitly requests parallel execution or when a task splits into >= 2 completely independent, non-colliding components/files requiring parallel workers, **immediately initiate `swarm` or parallel subagents on Turn 1** (prohibit greedy self-implementation). Prohibited only for strictly sequential, tightly coupled edits.
 - **Overhead Minimization Rules**:
   - **Strict Max 1-Hop Ceiling**: Never cascade sequentially (e.g. Flash ➔ Hydrogen ➔ Argon). Jump directly from Fast Tier to the target tier in a single hop.
   - **Warm Session Reuse**: Reuse existing subagents via `send_message` or in-place model switches (`swarm{action: "model"}`) rather than spawning new processes.
