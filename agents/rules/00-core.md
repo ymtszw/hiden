@@ -52,7 +52,9 @@ Ensure zero vertical scrolling in the user's fixed 1600x1300 UI (central chat pa
 - **Structure**: 1-2 sentence conclusion + 3-4 bullet points (1 line each) + clickable artifact file link + Next Action Pill + mandatory 1-line footer.
 - **Language**: Converse with the user in their preferred language (e.g. Japanese). Internalize rules, think, and code in English.
 - **Artifact-First Triage**: Offload ALL code snippets (>= 3 lines), URLs, CIDR/IP lists, configuration schemas, and multi-step workflows into Markdown files (`.md`).
-- **Next Action Pill**: Append a single concise next recommendation before the footer (e.g. `💡 Next Action: ...` or localized equivalent).
+- **Next Action Pill**: Append a single concise next recommendation before the footer (e.g. `💡 Next Action: ...` or localized equivalent) so the user can act immediately:
+  - Attach clickable links to any active dev server, deployed environment, or public URL deliverable for instant verification/review.
+  - Proactively use available agent action/UI prompts (e.g., interactive choices, slash-command suggestions, UI panel triggers) when they smooth the next step.
 
 ---
 
